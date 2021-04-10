@@ -13,16 +13,23 @@ var Dash = 600
 const JUMPFORCE = -600
 const GRAVITY = 30
 
-#signal timeout
-#const TIME_PERIOD = 5
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(delta):
+	
+	if Input.is_action_just_pressed("Action_1") and SpriteDireaction == false:
+		Dash = 600
+		velocity.x = SPEED + Dash
+	if Input.is_action_just_pressed("Action_1") and SpriteDireaction:
+		velocity.x = -SPEED - Dash
+		
+		
 	#Sprint Code
-	SpeedBonus = 0
 	if Input.is_action_just_pressed("run") and SprintYes == true:
 		SpeedBonus = 300
-		$Sprint.start()
+		$Sprint_timer.start()
 		print("start")
+	if Input.is_action_pressed("run") and SprintYes == false:
+		SpeedBonus = 0
 		
 	
 	#Checks if "D" is pressed
@@ -37,18 +44,13 @@ func _physics_process(delta):
 		
 	#Checks id "A" is pressed 
 	elif Input.is_action_pressed("left"):
-		velocity.x = -SPEED - SpeedBonus - Dash
+		velocity.x = -SPEED -SpeedBonus -Dash
 		#$Sprite.play("Walk")
 		get_node( "Sprite" ).set_flip_h( true )
 		SpriteDireaction = true
 		#print("move left")
 	
-	
-	#dash Code 
-	if Input.is_action_just_pressed("Action_1") and SpriteDireaction == false:
-		velocity.x = SPEED + Dash
-	if Input.is_action_just_pressed("Action_1") and SpriteDireaction:
-		velocity.x = -SPEED - Dash 
+	 
 		
 	
 	#simulating Gravity with acceleration
@@ -79,6 +81,6 @@ func _on_FallZone_body_entered(body):
 	print("restart")
 
 
-func _on_Timer_timeout():
+func _on_Sprint_timer_timeout():
 	print("time out")
 	SprintYes = false
