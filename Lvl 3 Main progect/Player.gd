@@ -15,7 +15,7 @@ const GRAVITY = 30
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(delta):
-	
+	Dash = 0
 	if Input.is_action_just_pressed("Action_1") and SpriteDireaction == false:
 		Dash = 600
 		velocity.x = SPEED + Dash
