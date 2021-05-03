@@ -7,7 +7,6 @@ var SpeedBonus = 0
 var SprintYes = true
 var Jumps = 1
 var SpriteDireaction 
-var Dash = 600
 #const = constant (wont change/ fixed) 
 
 const JUMPFORCE = -600
@@ -15,13 +14,6 @@ const GRAVITY = 30
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(delta):
-	Dash = 0
-	if Input.is_action_just_pressed("Action_1") and SpriteDireaction == false:
-		Dash = 600
-		velocity.x = SPEED + Dash
-	if Input.is_action_just_pressed("Action_1") and SpriteDireaction:
-		velocity.x = -SPEED - Dash
-		
 		
 	#Sprint Code
 	if Input.is_action_just_pressed("run") and SprintYes == true:
@@ -35,7 +27,7 @@ func _physics_process(delta):
 	#Checks if "D" is pressed
 	if Input.is_action_pressed("right"):
 		#moves the player by the constant speed to the right 
-		velocity.x = SPEED +SpeedBonus +Dash
+		velocity.x = SPEED +SpeedBonus
 		#$Sprite.play("Walk")
 		get_node( "Sprite" ).set_flip_h( false )
 		SpriteDireaction = false 
@@ -44,7 +36,7 @@ func _physics_process(delta):
 		
 	#Checks id "A" is pressed 
 	elif Input.is_action_pressed("left"):
-		velocity.x = -SPEED -SpeedBonus -Dash
+		velocity.x = -SPEED -SpeedBonus 
 		#$Sprite.play("Walk")
 		get_node( "Sprite" ).set_flip_h( true )
 		SpriteDireaction = true
@@ -84,3 +76,10 @@ func _on_FallZone_body_entered(body):
 func _on_Sprint_timer_timeout():
 	print("time out")
 	SprintYes = false
+	$Sprint_CoolDown.start()
+	
+
+
+func _on_Sprint_CoolDown_timeout():
+	print("Fast timeee")
+	SprintYes = true

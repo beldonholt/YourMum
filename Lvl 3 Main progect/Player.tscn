@@ -16,3 +16,13 @@ texture = ExtResource( 1 )
 position = Vector2( 4, -6.52843 )
 scale = Vector2( 1, 0.92 )
 shape = SubResource( 1 )
+
+[node name="Sprint_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Sprint_CoolDown" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Sprint_timer" to="." method="_on_Sprint_timer_timeout"]
+[connection signal="timeout" from="Sprint_CoolDown" to="." method="_on_Sprint_CoolDown_timeout"]

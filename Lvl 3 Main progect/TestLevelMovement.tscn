@@ -29,10 +29,6 @@ shape = SubResource( 1 )
 [node name="Player " parent="." instance=ExtResource( 2 )]
 position = Vector2( 480.1, 159.748 )
 
-[node name="Sprint_timer" type="Timer" parent="Player "]
-wait_time = 2.0
-one_shot = true
-
 [node name="FallZone" type="Area2D" parent="."]
 position = Vector2( 480.509, 603.199 )
 __meta__ = {
@@ -41,6 +37,5 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallZone"]
 shape = SubResource( 2 )
-[connection signal="timeout" from="Player /Sprint_timer" to="Player " method="_on_Sprint_timer_timeout"]
-[connection signal="timeout" from="Player /Sprint_timer" to="Player " method="_on_Sprint_timeout"]
+
 [connection signal="body_entered" from="FallZone" to="Player " method="_on_FallZone_body_entered"]
