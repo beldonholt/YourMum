@@ -68,9 +68,15 @@ func _physics_process(delta):
 	
 
 
-func _on_FallZone_body_entered(body):
-	get_tree().change_scene("res://TestLevelMovement.tscn")
-	print("restart")
+#func _on_FallZone_body_entered(body):
+#	get_tree().change_scene("res://TestLevelMovement.tscn")
+#	print("restart")
+
+
+func collide():
+	if is_in_group("DeathTouch"):
+		get_tree().change_scene("res://TestLevelMovement.tscn")
+	
 
 
 func _on_Sprint_timer_timeout():
@@ -83,3 +89,7 @@ func _on_Sprint_timer_timeout():
 func _on_Sprint_CoolDown_timeout():
 	print("Fast timeee")
 	SprintYes = true
+
+
+func _on_Area2D_area_entered(area):
+	collide() 
