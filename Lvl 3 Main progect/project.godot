@@ -10,7 +10,6 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
@@ -18,6 +17,10 @@ _global_script_class_icons={
 config/name="Lvl 3 Main Progect "
 run/main_scene="res://TestLevelMovement.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [importer_defaults]
 
