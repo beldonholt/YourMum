@@ -29,7 +29,7 @@ script = ExtResource( 6 )
 position = Vector2( -32.758, -19.5028 )
 frames = SubResource( 1 )
 animation = "Run Cycle "
-frame = 2
+frame = 4
 speed_scale = 1.5
 playing = true
 centered = false
@@ -49,5 +49,5 @@ cast_to = Vector2( 0, 30 )
 position = Vector2( -32.758, -19.7388 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 38.7054, 19.8529 )
+position = Vector2( 39.5453, 15.0232 )
 shape = SubResource( 3 )

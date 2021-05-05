@@ -75,6 +75,7 @@ func _physics_process(delta):
 
 func collide():
 	if is_in_group("DeathTouch"):
+		print("hit")
 		get_tree().change_scene("res://TestLevelMovement.tscn")
 	
 

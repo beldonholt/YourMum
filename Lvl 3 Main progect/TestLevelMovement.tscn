@@ -30,7 +30,9 @@ shape = SubResource( 1 )
 [node name="Player " parent="." instance=ExtResource( 2 )]
 position = Vector2( 589.507, 154.991 )
 
-[node name="FallZone" type="Area2D" parent="."]
+[node name="FallZone" type="Area2D" parent="." groups=[
+"DeathTouch",
+]]
 position = Vector2( 480.509, 603.199 )
 __meta__ = {
 "_edit_group_": true
