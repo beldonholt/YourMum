@@ -36,7 +36,7 @@ func _physics_process(delta):
 	#if it hits a wall changes direction
 	if is_on_wall():
 		Direction = Direction* -1
-		#moves ray cast to left side if it hits a wall
+		#moves ray cast to right side if it hits a wall
 		$RayCast2D.position.x *= -1
 	
 	#if reaches edge of platform changes direction 
