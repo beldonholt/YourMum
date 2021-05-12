@@ -93,4 +93,5 @@ func _on_Sprint_CoolDown_timeout():
 
 
 func _on_Area2D_area_entered(area):
+	print("hiy")
 	collide() 

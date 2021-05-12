@@ -13,7 +13,7 @@ extents = Vector2( 585.835, 35.9258 )
 [node name="Test Level " type="Node2D"]
 
 [node name="Floor " type="StaticBody2D" parent="."]
-position = Vector2( 1463.78, 287.093 )
+position = Vector2( -768.106, 309.317 )
 scale = Vector2( 16.96, 1 )
 __meta__ = {
 "_edit_group_": true
