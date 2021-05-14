@@ -9,8 +9,9 @@ extents = Vector2( 22.2771, 38.785 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 22.7095, 39.2336 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 resource_name = "Jump"
+<<<<<<< HEAD
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -25,10 +26,17 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 38 ]
 }
+=======
+>>>>>>> parent of d078304 (Added DEath scene)
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
+resource_name = "Walk"
 length = 2.4
+<<<<<<< HEAD
 step = 0.01
+=======
+loop = true
+>>>>>>> parent of d078304 (Added DEath scene)
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -51,7 +59,11 @@ scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 1 )
 vframes = 11
 hframes = 12
+<<<<<<< HEAD
 frame = 39
+=======
+frame = 1
+>>>>>>> parent of d078304 (Added DEath scene)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.899933, 2.82601 )
@@ -73,13 +85,17 @@ position = Vector2( -2.66869, 0.586533 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -1, -1 )
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+<<<<<<< HEAD
 playback_speed = 2.5
 anims/Jump = SubResource( 3 )
 anims/Walk = SubResource( 4 )
+=======
+anims/Jump = SubResource( 4 )
+anims/Walk = SubResource( 3 )
+>>>>>>> parent of d078304 (Added DEath scene)
 [connection signal="timeout" from="Sprint_timer" to="." method="_on_Sprint_timer_timeout"]
 [connection signal="timeout" from="Sprint_CoolDown" to="." method="_on_Sprint_CoolDown_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
