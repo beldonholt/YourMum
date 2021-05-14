@@ -28,8 +28,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("right"):
 		#moves the player by the constant speed to the right 
 		velocity.x = SPEED +SpeedBonus
-		#$Sprite.play("Walk")
-		get_node( "Sprite" ).set_flip_h( false )
+		$AnimationPlayer.play("Walk")
+		get_node( "Sprite" ).set_flip_h( true )
 		SpriteDireaction = false 
 		#print("move right")
 		
@@ -37,8 +37,8 @@ func _physics_process(delta):
 	#Checks id "A" is pressed 
 	elif Input.is_action_pressed("left"):
 		velocity.x = -SPEED -SpeedBonus 
-		#$Sprite.play("Walk")
-		get_node( "Sprite" ).set_flip_h( true )
+		$AnimationPlayer.play("Walk")
+		get_node( "Sprite" ).set_flip_h( false )
 		SpriteDireaction = true
 		#print("move left")
 	
