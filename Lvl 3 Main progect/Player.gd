@@ -52,13 +52,15 @@ func _physics_process(delta):
 	#Player jump input
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMPFORCE
-		
 	if Input.is_action_just_pressed("jump") and is_on_floor() == false and Jumps == 1:
 		velocity.y = JUMPFORCE
 		Jumps = Jumps -1 
+		
 	if is_on_floor():
 		Jumps = 1
 	
+	if is_on_floor() == false: 
+		$AnimationPlayer.play("Jump")
 	#means it wont constantly move down even on an object
 	#defines witch way is up so that the player can jump 
 	velocity = move_and_slide(velocity,Vector2.UP)

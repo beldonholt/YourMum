@@ -39,5 +39,4 @@ shape = SubResource( 2 )
 
 [node name="Wolf" parent="." instance=ExtResource( 3 )]
 position = Vector2( 96.535, 164.645 )
-
 [connection signal="body_entered" from="FallZone" to="Player " method="_on_FallZone_body_entered"]
