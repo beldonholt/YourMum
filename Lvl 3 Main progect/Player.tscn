@@ -12,6 +12,7 @@ extents = Vector2( 22.7095, 39.2336 )
 [sub_resource type="Animation" id=4]
 resource_name = "Jump"
 <<<<<<< HEAD
+<<<<<<< HEAD
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -28,12 +29,18 @@ tracks/0/keys = {
 }
 =======
 >>>>>>> parent of d078304 (Added DEath scene)
+=======
+>>>>>>> parent of d078304 (Added DEath scene)
 
 [sub_resource type="Animation" id=3]
 resource_name = "Walk"
 length = 2.4
 <<<<<<< HEAD
+<<<<<<< HEAD
 step = 0.01
+=======
+loop = true
+>>>>>>> parent of d078304 (Added DEath scene)
 =======
 loop = true
 >>>>>>> parent of d078304 (Added DEath scene)
@@ -60,8 +67,11 @@ texture = ExtResource( 1 )
 vframes = 11
 hframes = 12
 <<<<<<< HEAD
+<<<<<<< HEAD
 frame = 39
 =======
+=======
+>>>>>>> parent of d078304 (Added DEath scene)
 frame = 1
 >>>>>>> parent of d078304 (Added DEath scene)
 
@@ -89,9 +99,14 @@ current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 <<<<<<< HEAD
+<<<<<<< HEAD
 playback_speed = 2.5
 anims/Jump = SubResource( 3 )
 anims/Walk = SubResource( 4 )
+=======
+anims/Jump = SubResource( 4 )
+anims/Walk = SubResource( 3 )
+>>>>>>> parent of d078304 (Added DEath scene)
 =======
 anims/Jump = SubResource( 4 )
 anims/Walk = SubResource( 3 )
