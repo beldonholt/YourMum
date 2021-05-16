@@ -9,11 +9,10 @@ extents = Vector2( 22.2771, 38.785 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 22.7095, 39.2336 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Jump"
 
-[sub_resource type="Animation" id=3]
-resource_name = "Walk"
+[sub_resource type="Animation" id=4]
 length = 2.4
 loop = true
 tracks/0/type = "value"
@@ -36,8 +35,8 @@ script = ExtResource( 2 )
 position = Vector2( 1.78177, -36.0814 )
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 1 )
-vframes = 11
 hframes = 12
+vframes = 11
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -63,8 +62,9 @@ shape = SubResource( 2 )
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Jump = SubResource( 4 )
-anims/Walk = SubResource( 3 )
+anims/Jump = SubResource( 3 )
+anims/Walk = SubResource( 4 )
+
 [connection signal="timeout" from="Sprint_timer" to="." method="_on_Sprint_timer_timeout"]
 [connection signal="timeout" from="Sprint_CoolDown" to="." method="_on_Sprint_CoolDown_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
