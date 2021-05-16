@@ -28,7 +28,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("right"):
 		#moves the player by the constant speed to the right 
 		velocity.x = SPEED +SpeedBonus
-		#$Sprite.play("Walk")
+		$AnimationPlayer.play("Walk")
 		get_node( "Sprite" ).set_flip_h( false )
 		SpriteDireaction = false 
 		#print("move right")
@@ -37,7 +37,7 @@ func _physics_process(delta):
 	#Checks id "A" is pressed 
 	elif Input.is_action_pressed("left"):
 		velocity.x = -SPEED -SpeedBonus 
-		#$Sprite.play("Walk")
+		$AnimationPlayer.play("Walk")
 		get_node( "Sprite" ).set_flip_h( true )
 		SpriteDireaction = true
 		#print("move left")
@@ -53,12 +53,20 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMPFORCE
 		
+		$AnimationPlayer.play("Jump")
 	if Input.is_action_just_pressed("jump") and is_on_floor() == false and Jumps == 1:
 		velocity.y = JUMPFORCE
+		$AnimationPlayer.play("Jump")
 		Jumps = Jumps -1 
 	if is_on_floor():
 		Jumps = 1
 	
+	if velocity.y < 0 :
+			print("jumping")
+			$AnimationPlayer.play("Jump")
+	elif is_on_floor() == false:
+			print("falling")
+			$AnimationPlayer.play("Jump")
 	#means it wont constantly move down even on an object
 	#defines witch way is up so that the player can jump 
 	velocity = move_and_slide(velocity,Vector2.UP)
