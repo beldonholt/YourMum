@@ -73,8 +73,8 @@ func _physics_process(delta):
 #	print("restart")
 
 
-func collide():
-	if is_in_group("DeathTouch"):
+func collide(area):
+	if area.is_in_group("DeathTouch"):
 		print("hit")
 		get_tree().change_scene("res://TestLevelMovement.tscn")
 	
@@ -93,5 +93,5 @@ func _on_Sprint_CoolDown_timeout():
 
 
 func _on_Area2D_area_entered(area):
-	print("hiy")
-	collide() 
+	print(area)
+	collide(area) 
