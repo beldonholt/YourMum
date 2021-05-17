@@ -16,10 +16,10 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 58.9897
+radius = 69.7618
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 13.817, 5.89877 )
+extents = Vector2( 12.5684, 5.89877 )
 
 [node name="Wolf" type="KinematicBody2D"]
 scale = Vector2( 3, 3 )
@@ -30,7 +30,6 @@ script = ExtResource( 6 )
 position = Vector2( -32.758, -19.5028 )
 frames = SubResource( 1 )
 animation = "Run Cycle "
-frame = 4
 speed_scale = 1.5
 playing = true
 centered = false
@@ -46,10 +45,15 @@ position = Vector2( 21.742, -0.512774 )
 enabled = true
 cast_to = Vector2( 0, 30 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=[
+"DeathTouch",
+]]
 position = Vector2( -32.758, -19.7388 )
 collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 46.2877, 15.0232 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=[
+"DeathTouch",
+]]
+position = Vector2( 48.5352, 17.0209 )
 shape = SubResource( 3 )

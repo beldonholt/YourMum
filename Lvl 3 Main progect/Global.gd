@@ -7,6 +7,6 @@ func sceneSave():
 	print(ActiveScene)
 	
 func loadSave():
-	get_tree().change_scene("res://"+ActiveScene)
-	
+	get_tree().change_scene("res://Ded.tscn")
+
 	

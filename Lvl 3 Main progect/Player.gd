@@ -76,8 +76,7 @@ func _physics_process(delta):
 func collide(area):
 	if area.is_in_group("DeathTouch"):
 		print("hit")
-		get_tree().change_scene("res://TestLevelMovement.tscn")
-	
+		get_node("/root/Global").loadSave()
 
 
 func _on_Sprint_timer_timeout():

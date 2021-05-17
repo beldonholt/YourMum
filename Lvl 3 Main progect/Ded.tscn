@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Button.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1026.0
+margin_bottom = 598.0
+text = "asdgfsadbg jfsdfffffffffffffffffffffffffasdhagyfasgudfbvGAS YVChufujsaakgevu jkbhbzgv dsgvgcsdhvncsvbnxbjuhji gp*GIBVJhzx sxhjcnb cxj misvdvxc nieSdkjzx;OSZ.kdcv nhbdfl;siubigdzvj cnajgthrbfvhjkwkaEARESBGYDHKJ:lfABVHUJXCKFUBDFXCZZHUASRFASUFIHUSAIDFyou ded"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 1023.0
+margin_bottom = 602.0
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
