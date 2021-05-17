@@ -52,7 +52,6 @@ func _physics_process(delta):
 	#Player jump input
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMPFORCE
-		
 		$AnimationPlayer.play("Jump")
 	if Input.is_action_just_pressed("jump") and is_on_floor() == false and Jumps == 1:
 		velocity.y = JUMPFORCE
