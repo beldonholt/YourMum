@@ -33,16 +33,17 @@ func _physics_process(delta):
 	Velocity.y = Velocity.y + GRAVITY
 	Velocity = move_and_slide(Velocity, Vector2.UP)
 	
-	#if it hits a wall changes direction
-	if is_on_wall():
-		Direction = Direction* -1
-		#moves ray cast to right side if it hits a wall
-		$RayCast2D.position.x *= -1
+#	#if it hits a wall changes direction
+#	if is_on_wall():
+#		Direction = Direction* -1
+#		#moves ray cast to right side if it hits a wall
+#		$RayCast2D.position.x *= -1
+#		#moves death box to the other side
+#		$Area2D/CollisionShape2D.position.x *= -1
 	
 	#if reaches edge of platform changes direction 
 	if $RayCast2D.is_colliding() == false:
 		Direction = Direction* -1
 		$RayCast2D.position.x *= -1
-		
+		$Area2D/CollisionShape2D.position.x *= -1
 	
-
