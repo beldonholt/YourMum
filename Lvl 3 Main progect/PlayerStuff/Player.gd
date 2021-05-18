@@ -79,10 +79,13 @@ func _physics_process(delta):
 #	get_tree().change_scene("res://TestLevelMovement.tscn")
 #	print("restart")
 
-
+#this is function that deals with sending signals to global and starts the death sequence
 func collide(area):
+	#checking if i should be dying from the collision i am touching
 	if area.is_in_group("DeathTouch"):
+		#Debug stuff
 		print("hit")
+		#sending signal to global script
 		get_node("/root/Global").loadSave()
 
 
