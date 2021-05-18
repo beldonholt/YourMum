@@ -16,10 +16,10 @@
 [ext_resource path="res://GraveyardTilesetNew/png/Tiles/Tile (16).png" type="Texture" id=14]
 [ext_resource path="res://GraveyardTilesetNew/png/Tiles/Tile (13).png" type="Texture" id=15]
 [ext_resource path="res://GraveyardTilesetNew/png/Tiles/Tile (12).png" type="Texture" id=16]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Wolf.tscn" type="PackedScene" id=18]
-[ext_resource path="res://LevelOne.gd" type="Script" id=19]
-[ext_resource path="res://SpikeBush.tscn" type="PackedScene" id=20]
+[ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=17]
+[ext_resource path="res://BaddieThings/Wolf/Wolf.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Levels/MainLevels/LevelOne.gd" type="Script" id=19]
+[ext_resource path="res://BaddieThings/SpikeBush.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
