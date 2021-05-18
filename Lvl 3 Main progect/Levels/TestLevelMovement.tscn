@@ -4,6 +4,8 @@
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BaddieThings/Wolf/Wolf.tscn" type="PackedScene" id=3]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 83.3858, 32.869 )
 

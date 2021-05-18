@@ -12,6 +12,11 @@ var SpriteDireaction
 const JUMPFORCE = -600
 const GRAVITY = 30
 
+func _process(delta):
+	if velocity.y != 0 or velocity.x != 0:
+		var Pos_ = get_position()
+		Global.AddPlayerPos(Pos_)
+
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(delta):
 		
@@ -61,10 +66,10 @@ func _physics_process(delta):
 		Jumps = 1
 	
 	if velocity.y < 0 :
-			print("jumping")
+#			print("jumping")
 			$AnimationPlayer.play("Jump")
 	elif is_on_floor() == false:
-			print("falling")
+#			print("falling")
 			$AnimationPlayer.play("Jump")
 	#means it wont constantly move down even on an object
 	#defines witch way is up so that the player can jump 
