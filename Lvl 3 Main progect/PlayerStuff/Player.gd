@@ -14,7 +14,8 @@ const GRAVITY = 30
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(_delta):
-		
+	if velocity.x == 0 and velocity.y == 0:
+		$AnimationPlayer.play("Idle")
 	#Sprint Code
 	if Input.is_action_just_pressed("run") and SprintYes == true:
 		SpeedBonus = 300
@@ -28,7 +29,8 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("right"):
 		#moves the player by the constant speed to the right 
 		velocity.x = SPEED +SpeedBonus
-		$AnimationPlayer.play("Walk")
+		if is_on_floor():
+			$AnimationPlayer.play("Walk")
 		get_node( "Sprite" ).set_flip_h( false )
 		SpriteDireaction = false 
 		#print("move right")
@@ -37,7 +39,8 @@ func _physics_process(_delta):
 	#Checks id "A" is pressed 
 	elif Input.is_action_pressed("left"):
 		velocity.x = -SPEED -SpeedBonus 
-		$AnimationPlayer.play("Walk")
+		if is_on_floor():
+			$AnimationPlayer.play("Walk")
 		get_node( "Sprite" ).set_flip_h( true )
 		SpriteDireaction = true
 		#print("move left")
@@ -105,6 +108,3 @@ func _on_Area2D_area_entered(area):
 	print(area)
 	collide(area) 
 
-#func _on_AnimationPlayer_animation_finished(Land):
-#	$Animation.stop()
-	
