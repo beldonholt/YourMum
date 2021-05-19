@@ -13,7 +13,7 @@ const JUMPFORCE = -600
 const GRAVITY = 30
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
-func _physics_process(delta):
+func _physics_process(_delta):
 		
 	#Sprint Code
 	if Input.is_action_just_pressed("run") and SprintYes == true:
@@ -52,20 +52,20 @@ func _physics_process(delta):
 	#Player jump input
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMPFORCE
-		$AnimationPlayer.play("Jump")
 	if Input.is_action_just_pressed("jump") and is_on_floor() == false and Jumps == 1:
 		velocity.y = JUMPFORCE
-		$AnimationPlayer.play("Jump")
 		Jumps = Jumps -1 
 	if is_on_floor():
 		Jumps = 1
 	
-	if velocity.y < 0 :
-			print("jumping")
+	if velocity.y < 0:
 			$AnimationPlayer.play("Jump")
 	elif is_on_floor() == false:
-			print("falling")
-			$AnimationPlayer.play("Jump")
+			$AnimationPlayer.play("Fall")
+			if is_on_floor() and velocity.y >= 0:
+				$AnimationPlayer.play("Land")
+		
+		
 	#means it wont constantly move down even on an object
 	#defines witch way is up so that the player can jump 
 	velocity = move_and_slide(velocity,Vector2.UP)
@@ -104,3 +104,7 @@ func _on_Sprint_CoolDown_timeout():
 func _on_Area2D_area_entered(area):
 	print(area)
 	collide(area) 
+
+#func _on_AnimationPlayer_animation_finished(Land):
+#	$Animation.stop()
+	

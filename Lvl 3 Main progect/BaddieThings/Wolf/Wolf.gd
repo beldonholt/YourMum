@@ -9,7 +9,7 @@ var Velocity = Vector2(0,0)
 # 1 means facing right in this term
 var Direction = 1
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#moves right 
 	Velocity.x = SPEED * Direction
 	
@@ -40,10 +40,20 @@ func _physics_process(delta):
 #		$RayCast2D.position.x *= -1
 #		#moves death box to the other side
 #		$Area2D/CollisionShape2D.position.x *= -1
-	
-	#if reaches edge of platform changes direction 
-	if $RayCast2D.is_colliding() == false:
+	if $Wall.is_colliding():
+		print("wall")
+		$Wall.scale.x *= -1
 		Direction = Direction* -1
 		$RayCast2D.position.x *= -1
 		$Area2D/CollisionShape2D.position.x *= -1
+		
+		
+	#if reaches edge of platform changes direction 
+	if $RayCast2D.is_colliding() == false:
+		print("")
+		Direction = Direction* -1
+		$RayCast2D.position.x *= -1
+		$Area2D/CollisionShape2D.position.x *= -1
+		$Wall.rotation_degrees *= -1
+
 	
