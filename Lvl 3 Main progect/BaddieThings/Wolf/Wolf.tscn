@@ -30,7 +30,7 @@ script = ExtResource( 1 )
 position = Vector2( -32.758, -19.5028 )
 frames = SubResource( 1 )
 animation = "Run Cycle "
-frame = 2
+frame = 1
 speed_scale = 1.5
 playing = true
 centered = false
@@ -44,7 +44,7 @@ shape = SubResource( 2 )
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 21.742, -0.512774 )
 enabled = true
-cast_to = Vector2( 0, 30 )
+cast_to = Vector2( 0, 20 )
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "DeathTouch",
@@ -58,3 +58,8 @@ collision_mask = 2
 ]]
 position = Vector2( 15, -5 )
 shape = SubResource( 3 )
+
+[node name="Wall" type="RayCast2D" parent="."]
+rotation = -1.57147
+enabled = true
+cast_to = Vector2( 0, 30 )
