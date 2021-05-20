@@ -16,7 +16,7 @@ func loadSave():
 	print(PlayerDeaths)
 
 func AddPlayerPos(Pos):
-	if PlayerPos.size() < 100:
+	if PlayerPos.size() < ShadowSpawnTimer:
 		PlayerPos.append(Pos)
 		print(Pos)
 		print(PlayerPos.size())
