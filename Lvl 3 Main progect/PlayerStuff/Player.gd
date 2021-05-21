@@ -12,6 +12,10 @@ var SpriteDireaction
 const JUMPFORCE = -600
 const GRAVITY = 30
 
+func _process(_delta):
+	Global.AddPlayerPos(position)
+	pass
+
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(_delta):
 	if velocity.x == 0 and velocity.y == 0:
