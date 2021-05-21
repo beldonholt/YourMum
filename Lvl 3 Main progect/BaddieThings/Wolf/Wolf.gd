@@ -9,7 +9,7 @@ var Velocity = Vector2(0,0)
 # 1 means facing right in this term
 var Direction = 1
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#moves right 
 	Velocity.x = SPEED * Direction
 	

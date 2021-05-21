@@ -12,13 +12,13 @@ var SpriteDireaction
 const JUMPFORCE = -600
 const GRAVITY = 30
 
-func _process(delta):
+func _process(_delta):
 	if velocity.y != 0 or velocity.x != 0:
 		var Pos_ = get_position()
 		Global.AddPlayerPos(Pos_)
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
-func _physics_process(delta):
+func _physics_process(_delta):
 		
 	#Sprint Code
 	if Input.is_action_just_pressed("run") and SprintYes == true:
@@ -34,7 +34,7 @@ func _physics_process(delta):
 		#moves the player by the constant speed to the right 
 		velocity.x = SPEED +SpeedBonus
 		$AnimationPlayer.play("Walk")
-		get_node( "Sprite" ).set_flip_h( false )
+		get_node("Sprite").set_flip_h(false)
 		SpriteDireaction = false 
 		#print("move right")
 		
@@ -72,7 +72,7 @@ func _physics_process(delta):
 #			print("falling")
 			$AnimationPlayer.play("Jump")
 	#means it wont constantly move down even on an object
-	#defines witch way is up so that the player can jump 
+	#defines which way is up so that the player can jump 
 	velocity = move_and_slide(velocity,Vector2.UP)
 	
 	#player slows down when key not pressed
