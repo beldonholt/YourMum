@@ -40,10 +40,20 @@ func _physics_process(_delta):
 #		$RayCast2D.position.x *= -1
 #		#moves death box to the other side
 #		$Area2D/CollisionShape2D.position.x *= -1
-	
-	#if reaches edge of platform changes direction 
-	if $RayCast2D.is_colliding() == false:
+	if $Wall.is_colliding():
+		#print("wall")
+		$Wall.scale.x *= -1
 		Direction = Direction* -1
 		$RayCast2D.position.x *= -1
 		$Area2D/CollisionShape2D.position.x *= -1
+		
+		
+	#if reaches edge of platform changes direction 
+	if $RayCast2D.is_colliding() == false:
+		print("")
+		Direction = Direction* -1
+		$RayCast2D.position.x *= -1
+		$Area2D/CollisionShape2D.position.x *= -1
+		$Wall.rotation_degrees *= -1
+
 	
