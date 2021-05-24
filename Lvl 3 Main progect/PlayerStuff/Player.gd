@@ -9,12 +9,12 @@ var Jumps = 1
 var SpriteDireaction 
 #const = constant (wont change/ fixed) 
 
-const JUMPFORCE = -600
-const GRAVITY = 30
+const JUMPFORCE = -1000
+var GRAVITY = 40
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(_delta):
-	if velocity.x == 0 and velocity.y == 0:
+	if velocity == Vector2(0,0):
 		$AnimationPlayer.play("Idle")
 	#Sprint Code
 	if Input.is_action_just_pressed("run") and SprintYes == true:
@@ -23,13 +23,16 @@ func _physics_process(_delta):
 		print("start")
 	if Input.is_action_pressed("run") and SprintYes == false:
 		SpeedBonus = 0
-		
+	if Input.is_action_just_pressed("ui_down"):
+		velocity.y += 9000
+	
 	
 	#Checks if "D" is pressed
 	if Input.is_action_pressed("right"):
 		#moves the player by the constant speed to the right 
 		velocity.x = SPEED +SpeedBonus
-		if is_on_floor():
+		if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
+			print("nice",$AnimationPlayer.current_animation)
 			$AnimationPlayer.play("Walk")
 		get_node( "Sprite" ).set_flip_h( false )
 		SpriteDireaction = false 
@@ -39,7 +42,8 @@ func _physics_process(_delta):
 	#Checks id "A" is pressed 
 	elif Input.is_action_pressed("left"):
 		velocity.x = -SPEED -SpeedBonus 
-		if is_on_floor():
+		if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
+			print("nice",$AnimationPlayer.current_animation)
 			$AnimationPlayer.play("Walk")
 		get_node( "Sprite" ).set_flip_h( true )
 		SpriteDireaction = true
@@ -49,7 +53,7 @@ func _physics_process(_delta):
 		
 	
 	#simulating Gravity with acceleration
-	velocity.y = velocity.y + GRAVITY
+	velocity.y += GRAVITY
 	#print(velocity.y)
 	
 	#Player jump input
@@ -74,7 +78,7 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity,Vector2.UP)
 	
 	#player slows down when key not pressed
-	velocity.x = lerp(velocity.x,0,0.1)
+	velocity = velocity.move_toward(Vector2(0,0),25)
 	
 
 
