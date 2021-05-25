@@ -50,7 +50,7 @@ func _physics_process(_delta):
 		
 	#if reaches edge of platform changes direction 
 	if $RayCast2D.is_colliding() == false:
-		print("")
+		#print("")
 		Direction = Direction* -1
 		$RayCast2D.position.x *= -1
 		$Area2D/CollisionShape2D.position.x *= -1

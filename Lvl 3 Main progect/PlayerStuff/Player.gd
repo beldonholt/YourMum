@@ -22,21 +22,17 @@ func _physics_process(_delta):
 		$AnimationPlayer.play("Idle")
 	#Sprint Code
 	if Input.is_action_just_pressed("run") and SprintYes == true:
-		SpeedBonus = 300
 		$Sprint_timer.start()
+		SpeedBonus = 300
 		print("start")
 	if Input.is_action_pressed("run") and SprintYes == false:
 		SpeedBonus = 0
-	if Input.is_action_just_pressed("ui_down"):
-		velocity.y += 9000
-	
 	
 	#Checks if "D" is pressed
 	if Input.is_action_pressed("right"):
 		#moves the player by the constant speed to the right 
 		velocity.x = SPEED +SpeedBonus
 		if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
-			print("nice",$AnimationPlayer.current_animation)
 			$AnimationPlayer.play("Walk")
 		get_node( "Sprite" ).set_flip_h( false )
 		SpriteDireaction = false 
@@ -47,7 +43,6 @@ func _physics_process(_delta):
 	elif Input.is_action_pressed("left"):
 		velocity.x = -SPEED -SpeedBonus 
 		if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
-			print("nice",$AnimationPlayer.current_animation)
 			$AnimationPlayer.play("Walk")
 		get_node( "Sprite" ).set_flip_h( true )
 		SpriteDireaction = true
@@ -94,25 +89,26 @@ func _physics_process(_delta):
 func collide(area):
 	#checking if i should be dying from the collision i am touching
 	if area.is_in_group("DeathTouch"):
-		#Debug stuff
-		print("hit")
+#		#Debug stuff
+#		print("hit")
 		#sending signal to global script
 		get_node("/root/Global").loadSave()
 
 
 func _on_Sprint_timer_timeout():
 	print("time out")
+	SpeedBonus = 0
 	SprintYes = false
 	$Sprint_CoolDown.start()
 	
 
 
 func _on_Sprint_CoolDown_timeout():
-	print("Fast timeee")
+#	print("Fast timeee")
 	SprintYes = true
 
 
 func _on_Area2D_area_entered(area):
-	print(area)
+#	print(area)
 	collide(area) 
 
