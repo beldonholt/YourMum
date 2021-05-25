@@ -68,7 +68,7 @@ func _physics_process(_delta):
 			$AnimationPlayer.play("Jump")
 	elif is_on_floor() == false:
 			$AnimationPlayer.play("Fall")
-			if is_on_floor() and velocity.y >= 0:
+			if is_on_floor():
 				$AnimationPlayer.play("Land")
 		
 		
