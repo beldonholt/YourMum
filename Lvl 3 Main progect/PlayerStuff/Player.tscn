@@ -97,8 +97,8 @@ script = ExtResource( 2 )
 position = Vector2( 1.78177, -36.0814 )
 scale = Vector2( -2.5, 2.5 )
 texture = ExtResource( 1 )
-hframes = 12
 vframes = 11
+hframes = 12
 frame = 47
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -131,8 +131,6 @@ anims/Idle = SubResource( 4 )
 anims/Jump = SubResource( 5 )
 anims/Land = SubResource( 6 )
 anims/Walk = SubResource( 7 )
-
 [connection signal="timeout" from="Sprint_timer" to="." method="_on_Sprint_timer_timeout"]
 [connection signal="timeout" from="Sprint_CoolDown" to="." method="_on_Sprint_CoolDown_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

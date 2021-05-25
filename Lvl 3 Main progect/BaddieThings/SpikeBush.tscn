@@ -3,7 +3,7 @@
 [ext_resource path="res://GraveyardTilesetNew/png/Objects/DeadBush.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 68.9627, 36.3363 )
+extents = Vector2( 58.3151, 29.4932 )
 
 [node name="SpikeBush" type="Node2D"]
 
