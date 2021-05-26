@@ -12,9 +12,6 @@ var SpriteDireaction
 const JUMPFORCE = -1000
 var GRAVITY = 40
 
-func _process(_delta):
-	Global.AddPlayerPos(position)
-	pass
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(_delta):
@@ -112,3 +109,8 @@ func _on_Area2D_area_entered(area):
 #	print(area)
 	collide(area) 
 
+
+
+func _on_PositionTimer_timeout():
+	Global.AddPlayerPos(position)
+	print('timer')

@@ -3,7 +3,7 @@ extends Node
 var ActiveScene = ""
 var PlayerPos = []
 var DifficultyTweak = 0.99
-var ShadowSpawnTimer = 100
+var ShadowSpawnTimer = 50
 var ShadowSpawned = false
 var PlayerDeaths = 0
 
