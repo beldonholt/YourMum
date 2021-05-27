@@ -11,14 +11,12 @@ var PlayerDeaths = 0
 func _process(delta):
 	if (PlayerPos.size() + 30) >= ShadowSpawnTimer:
 		ShadowSpawned = true
-		pass
-	pass
 
 func sceneSave():
 	ActiveScene = "Levels/MainLevels/" + get_tree().get_current_scene().get_name() + ".tscn"
 	print(ActiveScene)
 	
-func loadSave():
+func Death():
 	get_tree().change_scene("res://Levels/Ded/Ded.tscn")
 	PlayerDeaths += 1
 	print(PlayerDeaths)
@@ -30,8 +28,8 @@ func AddPlayerPos(Pos):
 	if PlayerPos.back() != intPos:
 		if PlayerPos.size() <= ShadowSpawnTimer:
 			PlayerPos.append(intPos)
-			print(intPos)
-			print(PlayerPos.size())
+#			print(intPos)
+#			print(PlayerPos.size())
 
 
 func ResetPlayerArray():
