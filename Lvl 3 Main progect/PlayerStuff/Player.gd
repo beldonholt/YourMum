@@ -89,7 +89,9 @@ func collide(area):
 #		#Debug stuff
 #		print("hit")
 		#sending signal to global script
-		get_node("/root/Global").loadSave()
+		Global.Death()
+	else:
+		print("no")
 
 
 func _on_Sprint_timer_timeout():
@@ -113,4 +115,4 @@ func _on_Area2D_area_entered(area):
 
 func _on_PositionTimer_timeout():
 	Global.AddPlayerPos(position)
-	print('timer')
+#	print('timer')

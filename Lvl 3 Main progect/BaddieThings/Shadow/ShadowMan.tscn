@@ -4,12 +4,20 @@
 [ext_resource path="res://BaddieThings/Shadow/ShadowMan.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 34.3286, 34.1818 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="ShadowMan" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="SMArea" type="Area2D" parent="." groups=[
+"DeathTouch",
+]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="SMDeath" type="CollisionShape2D" parent="SMArea" groups=[
+"DeathTouch",
+]]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
