@@ -20,7 +20,7 @@ func _physics_process(_delta):
 	#Sprint Code
 	if Input.is_action_just_pressed("run") and SprintYes == true:
 		$Sprint_timer.start()
-		SpeedBonus = 300
+		SpeedBonus = 6000
 		print("start")
 	if Input.is_action_pressed("run") and SprintYes == false:
 		SpeedBonus = 0
