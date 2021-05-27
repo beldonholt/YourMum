@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/parallax-mountain-montain-far.png-9bb0a52662cd96c9adffcd93ea069b3a.stex"
+path="res://.import/parallax-mountain-montain-far.png-21589aa70a5dd6c5758e9fa547eaf070.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/parallax-mountain-montain-far.png"
-dest_files=[ "res://.import/parallax-mountain-montain-far.png-9bb0a52662cd96c9adffcd93ea069b3a.stex" ]
+source_file="res://Assets/Background/parallax-mountain-montain-far.png"
+dest_files=[ "res://.import/parallax-mountain-montain-far.png-21589aa70a5dd6c5758e9fa547eaf070.stex" ]
 
 [params]
 
