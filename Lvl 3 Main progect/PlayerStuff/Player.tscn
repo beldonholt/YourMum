@@ -111,11 +111,11 @@ wait_time = 0.1
 one_shot = true
 
 [node name="Sprint_CoolDown" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 0.1
 one_shot = true
 
 [node name="PositionTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -128,6 +128,8 @@ shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 1.5, 1.5 )
+smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
