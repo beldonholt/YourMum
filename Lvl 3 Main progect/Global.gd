@@ -22,6 +22,7 @@ func Death():
 	print(PlayerDeaths)
 	ResetPlayerArray()
 	ShadowSpawned = false
+	
 
 
 func AddPlayerPos(Pos):
