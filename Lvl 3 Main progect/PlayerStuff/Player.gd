@@ -2,14 +2,14 @@ extends KinematicBody2D
 
 #players variables 
 var velocity = Vector2(0,0)
-var SPEED = 300
+var SPEED = 500
 var SpeedBonus = 0
 var SprintYes = true
 var Jumps = 1
 var SpriteDireaction 
 #const = constant (wont change/ fixed) 
 
-const JUMPFORCE = -1000
+const JUMPFORCE = -1300
 var GRAVITY = 40
 
 
@@ -20,7 +20,7 @@ func _physics_process(_delta):
 	#Sprint Code
 	if Input.is_action_just_pressed("run") and SprintYes == true:
 		$Sprint_timer.start()
-		SpeedBonus = 6000
+		SpeedBonus = 3000
 		print("start")
 	if Input.is_action_pressed("run") and SprintYes == false:
 		SpeedBonus = 0

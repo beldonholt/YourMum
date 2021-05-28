@@ -429,6 +429,8 @@ position = Vector2( 1859.83, -798.965 )
 [node name="Player" parent="." instance=ExtResource( 18 )]
 position = Vector2( -77.2844, 200.145 )
 
+[node name="BackGround" type="Node" parent="Player"]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 16 )
 cell_size = Vector2( 128, 128 )

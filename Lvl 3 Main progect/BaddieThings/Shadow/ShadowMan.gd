@@ -1,6 +1,6 @@
 extends Node2D
 
-var speed = 300
+var speed = 600
 var ArrayPosition = 1
 
 func _ready():
