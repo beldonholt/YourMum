@@ -5,6 +5,7 @@ var PlayerPos = []
 var DifficultyTweak = 0.99
 var ShadowSpawnTimer = 50
 var ShadowSpawned = false
+var ShadowSpeed = 500
 var PlayerDeaths = 0
 
 
@@ -22,6 +23,7 @@ func Death():
 	print(PlayerDeaths)
 	ResetPlayerArray()
 	ShadowSpawned = false
+	ShadowSpeed += 10
 	
 
 
