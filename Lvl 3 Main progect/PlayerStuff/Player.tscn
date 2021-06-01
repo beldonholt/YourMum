@@ -118,6 +118,10 @@ one_shot = true
 wait_time = 0.25
 autostart = true
 
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
