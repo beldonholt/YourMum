@@ -7,6 +7,7 @@ var SpeedBonus = 0
 var SprintYes = true
 var Jumps = 1
 var SpriteDireaction 
+
 #const = constant (wont change/ fixed) 
 
 const JUMPFORCE = -1300
