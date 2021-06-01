@@ -409,9 +409,6 @@ script = ExtResource( 19 )
 [node name="Wolf" parent="BadThings/Wolves" instance=ExtResource( 17 )]
 position = Vector2( 2235.98, 70.3401 )
 
-[node name="Wolf2" parent="BadThings/Wolves" instance=ExtResource( 17 )]
-position = Vector2( 3561.35, -435.158 )
-
 [node name="Wolf3" parent="BadThings/Wolves" instance=ExtResource( 17 )]
 position = Vector2( 4439.68, 80.0904 )
 
@@ -424,7 +421,10 @@ position = Vector2( 1208.16, -415.608 )
 position = Vector2( 1876.86, -286.487 )
 
 [node name="SpikeBush3" parent="BadThings/SpikeBushes" instance=ExtResource( 20 )]
-position = Vector2( 1859.83, -798.965 )
+position = Vector2( 3724.48, -421.796 )
+
+[node name="SpikeBush4" parent="BadThings/SpikeBushes" instance=ExtResource( 20 )]
+position = Vector2( 1923.4, -811.679 )
 
 [node name="Player" parent="." instance=ExtResource( 18 )]
 position = Vector2( -77.2844, 200.145 )
