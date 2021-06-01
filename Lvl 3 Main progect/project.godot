@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Lvl 3 Main Progect "
-run/main_scene="res://Levels/MainLevels/LevelOne.tscn"
+run/main_scene="res://StartMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
