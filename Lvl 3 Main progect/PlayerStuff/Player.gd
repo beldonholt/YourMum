@@ -7,6 +7,7 @@ var SpeedBonus = 0
 var SprintYes = true
 var Jumps = 1
 var SpriteDireaction 
+var CanJump = true
 
 #const = constant (wont change/ fixed) 
 
@@ -52,16 +53,19 @@ func _physics_process(_delta):
 	#simulating Gravity with acceleration
 	velocity.y += GRAVITY
 	#print(velocity.y)
-	if is_on_floor() == false:
+	if is_on_floor() == false and CanJump:
 		$CoyoteTimer.start()
+		CanJump = false
 		pass
+	if is_on_floor():
+		CanJump = true
 	
 	#Player jump input
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or ($CoyoteTimer.is_stopped() == false)):
 		velocity.y = JUMPFORCE
 	if Input.is_action_just_pressed("jump") and is_on_floor() == false and Jumps == 1:
 		velocity.y = JUMPFORCE
-		Jumps = Jumps -1 
+		Jumps += -1 
 	if is_on_floor():
 		Jumps = 1
 	
