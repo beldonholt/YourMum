@@ -120,11 +120,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="OptionButton" type="OptionButton" parent="."]
+margin_left = 13.1786
+margin_top = 365.661
+margin_right = 294.179
+margin_bottom = 395.661
+
 [node name="Options" type="Button" parent="."]
-margin_left = 19.4576
-margin_top = 288.216
-margin_right = 219.458
-margin_bottom = 336.216
+margin_left = 50.6055
+margin_top = 314.644
+margin_right = 250.606
+margin_bottom = 362.644
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 text = "Options"
