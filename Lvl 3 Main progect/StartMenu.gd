@@ -6,8 +6,8 @@ func _physics_process(_delta):
 		
 	
 func _ready():
-	$AnimationPlayer.play("TitleText")
-	$AnimationPlayer.play("BackGroundFade")
+	$CanvasLayer/AnimationPlayer.play("TitleText")
+	$CanvasLayer/AnimationPlayer.play("BackGroundFade")
 
 
 

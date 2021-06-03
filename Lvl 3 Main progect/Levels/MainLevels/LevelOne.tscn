@@ -426,11 +426,6 @@ position = Vector2( 3724.48, -421.796 )
 [node name="SpikeBush4" parent="BadThings/SpikeBushes" instance=ExtResource( 20 )]
 position = Vector2( 1923.4, -811.679 )
 
-[node name="Player" parent="." instance=ExtResource( 18 )]
-position = Vector2( -77.2844, 200.145 )
-
-[node name="BackGround" type="Node" parent="Player"]
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 16 )
 cell_size = Vector2( 128, 128 )
@@ -443,3 +438,8 @@ position = Vector2( -812.901, 200.01 )
 
 [node name="FallZone" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2325.72, 599.73 )
+
+[node name="Player" parent="." instance=ExtResource( 18 )]
+position = Vector2( -77.2844, 200.145 )
+
+[node name="BackGround" type="Node" parent="Player"]
