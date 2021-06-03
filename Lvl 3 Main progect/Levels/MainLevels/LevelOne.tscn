@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://GraveyardTilesetNew/png/Tiles/Tile (1).png" type="Texture" id=1]
 [ext_resource path="res://GraveyardTilesetNew/png/Tiles/Tile (2).png" type="Texture" id=2]
@@ -22,6 +22,10 @@
 [ext_resource path="res://BaddieThings/SpikeBush.tscn" type="PackedScene" id=20]
 [ext_resource path="res://BaddieThings/Shadow/ShadowMan.tscn" type="PackedScene" id=21]
 [ext_resource path="res://BaddieThings/FallZone.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-bg.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-close-trees.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" type="Texture" id=26]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -402,6 +406,46 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 [node name="LevelOne" type="Node2D"]
 script = ExtResource( 19 )
 
+[node name="BackGround" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BackGround"]
+
+[node name="Far" type="ParallaxLayer" parent="BackGround/ParallaxBackground"]
+motion_scale = Vector2( 0.01, 0.01 )
+motion_mirroring = Vector2( 1920, 1088 )
+
+[node name="Sprite" type="Sprite" parent="BackGround/ParallaxBackground/Far"]
+position = Vector2( -847.57, -250.033 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 23 )
+centered = false
+
+[node name="Trees-2" type="ParallaxLayer" parent="BackGround/ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0.3 )
+motion_mirroring = Vector2( 3552, 0 )
+
+[node name="Sprite" type="Sprite" parent="BackGround/ParallaxBackground/Trees-2"]
+position = Vector2( 434.948, -28.5732 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 25 )
+
+[node name="Background" type="ParallaxLayer" parent="BackGround/ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0.2 )
+motion_mirroring = Vector2( 3552, 0 )
+
+[node name="Sprite" type="Sprite" parent="BackGround/ParallaxBackground/Background"]
+scale = Vector2( 6, 6 )
+texture = ExtResource( 26 )
+
+[node name="Close" type="ParallaxLayer" parent="BackGround/ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+motion_mirroring = Vector2( 3552, 0 )
+
+[node name="Sprite" type="Sprite" parent="BackGround/ParallaxBackground/Close"]
+position = Vector2( 428.115, -28.541 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 24 )
+
 [node name="BadThings" type="Node" parent="."]
 
 [node name="Wolves" type="Node" parent="BadThings"]
@@ -441,5 +485,3 @@ position = Vector2( 2325.72, 599.73 )
 
 [node name="Player" parent="." instance=ExtResource( 18 )]
 position = Vector2( -77.2844, 200.145 )
-
-[node name="BackGround" type="Node" parent="Player"]

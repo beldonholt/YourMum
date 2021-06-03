@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/parallax-mountain-mountains.png-e0ef3d8a6ed87b587747e2b30d714a64.stex"
+path="res://.import/parallax-mountain-trees.png-fde47621f1be4dd493bda9a498632792.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/parallax-mountain-mountains.png"
-dest_files=[ "res://.import/parallax-mountain-mountains.png-e0ef3d8a6ed87b587747e2b30d714a64.stex" ]
+source_file="res://Assets/Background/Moutains/parallax-mountain-trees.png"
+dest_files=[ "res://.import/parallax-mountain-trees.png-fde47621f1be4dd493bda9a498632792.stex" ]
 
 [params]
 
