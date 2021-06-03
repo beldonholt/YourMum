@@ -16,7 +16,7 @@ var GRAVITY = 40
 
 #making a dash overlay using a texture progress to show recharge 
 onready var timer = get_node("Sprint_CoolDown")
-onready var pb = get_node("Camera2D/CanvasLayer/TextureProgress")
+onready var pb = get_node("Camera2D/TextureProgress")
 func _ready():
 	timer.wait_time = pb.value
 func _process(delta):
