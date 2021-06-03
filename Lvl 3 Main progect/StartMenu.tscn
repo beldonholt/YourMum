@@ -20,7 +20,7 @@ resource_name = "BackGroundFade"
 length = 6.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/path = NodePath("CanvasLayer/Sprite:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -35,7 +35,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Label:custom_fonts/font:size")
+tracks/0/path = NodePath("CanvasLayer/Label:custom_fonts/font:size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -47,7 +47,7 @@ tracks/0/keys = {
 "values": [ 48, 47, 50 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Label:custom_fonts/font:outline_size")
+tracks/1/path = NodePath("CanvasLayer/Label:custom_fonts/font:outline_size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
