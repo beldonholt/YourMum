@@ -7,6 +7,7 @@ var SpeedBonus = 0
 var SprintYes = true
 var Jumps = 2
 var SpriteDireaction 
+var  PlayerSelction = ""
 
 #const = constant (wont change/ fixed) 
 
@@ -18,46 +19,95 @@ onready var timer = get_node("Sprint_CoolDown")
 onready var pb = get_node("CanvasLayer/TextureProgress")
 func _ready():
 	timer.wait_time = pb.value
-	pass
-func _process(delta):
+	if Global.PlayerSelection:
+		$Male.visible = true
+		PlayerSelction = true
+	else:
+		$Female.visible = true
+		PlayerSelction = !true
+	
+	
+func _process(_delta):
 	#print(timer.time_left)
 	pb.value = timer.time_left
 	pass
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(_delta):
-	if velocity == Vector2(0,0):
-		$AnimationPlayer.play("Idle")
-	#Sprint Code
-	if Input.is_action_just_pressed("run") and SprintYes == true:
-		$Sprint_timer.start()
-		SpeedBonus = 3000
-		print("start")
-	if Input.is_action_pressed("run") and SprintYes == false:
-		SpeedBonus = 0
-	
-	#Checks if "D" is pressed
-	if Input.is_action_pressed("right"):
-		#moves the player by the constant speed to the right 
-		velocity.x = SPEED +SpeedBonus
-		if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
-			$AnimationPlayer.play("Walk")
-		get_node( "Sprite" ).set_flip_h( false )
-		SpriteDireaction = false 
-		#print("move right")
+	#if female
+	if PlayerSelction != true:
+		if velocity == Vector2(0,0):
+			$AnimationPlayer.play("Idle")
+		#Sprint Code
+		if Input.is_action_just_pressed("run") and SprintYes == true:
+			$Sprint_timer.start()
+			SpeedBonus = 3000
+			print("start")
+		if Input.is_action_pressed("run") and SprintYes == false:
+			SpeedBonus = 0
 		
+		#Checks if "D" is pressed
+		if Input.is_action_pressed("right"):
+			#moves the player by the constant speed to the right 
+			velocity.x = SPEED +SpeedBonus
+			if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
+				$AnimationPlayer.play("Walk")
+			get_node( "Female" ).set_flip_h( false )
+			SpriteDireaction = false 
+			#print("move right")
+			
+			
+		#Checks id "A" is pressed 
+		elif Input.is_action_pressed("left"):
+			velocity.x = -SPEED -SpeedBonus 
+			if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
+				$AnimationPlayer.play("Walk")
+			get_node( "Female" ).set_flip_h( true )
+			SpriteDireaction = true
+			#print("move left")
+		if velocity.y < 0:
+				$AnimationPlayer.play("Jump")
+		elif is_on_floor() == false:
+				$AnimationPlayer.play("Fall")
+				if is_on_floor():
+					$AnimationPlayer.play("Land")
+	#if male
+	if PlayerSelction == true:
+		if velocity == Vector2(0,0):
+			$AnimationPlayer.play("Idle")
+		#Sprint Code
+		if Input.is_action_just_pressed("run") and SprintYes == true:
+			$Sprint_timer.start()
+			SpeedBonus = 3000
+			print("start")
+		if Input.is_action_pressed("run") and SprintYes == false:
+			SpeedBonus = 0
 		
-	#Checks id "A" is pressed 
-	elif Input.is_action_pressed("left"):
-		velocity.x = -SPEED -SpeedBonus 
-		if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
-			$AnimationPlayer.play("Walk")
-		get_node( "Sprite" ).set_flip_h( true )
-		SpriteDireaction = true
-		#print("move left")
-	
-	 
-		
+		#Checks if "D" is pressed
+		if Input.is_action_pressed("right"):
+			#moves the player by the constant speed to the right 
+			velocity.x = SPEED +SpeedBonus
+			if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
+				$AnimationPlayer.play("Walk")
+			get_node( "Male" ).set_flip_h( true )
+			SpriteDireaction = true 
+			#print("move right")
+			
+			
+		#Checks id "A" is pressed 
+		elif Input.is_action_pressed("left"):
+			velocity.x = -SPEED -SpeedBonus 
+			if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
+				$AnimationPlayer.play("Walk")
+			get_node( "Male" ).set_flip_h( false )
+			SpriteDireaction = false
+			#print("move left")
+		if velocity.y < 0:
+				$AnimationPlayer.play("Jump")
+		elif is_on_floor() == false:
+				$AnimationPlayer.play("Fall")
+				if is_on_floor():
+					$AnimationPlayer.play("Land")
 	
 	#simulating Gravity with acceleration
 	velocity.y += GRAVITY
@@ -73,32 +123,24 @@ func _physics_process(_delta):
 		velocity.y = JUMPFORCE
 		Jumps += -1 
 		$CoyoteTimer.stop()
-		print("Single Jump")
-		print(Jumps)
+		#print("Single Jump")
+		#print(Jumps)
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor() == false and Jumps == 1 and $CoyoteTimer.is_stopped():
 		velocity.y = JUMPFORCE
 		Jumps += -1 
-		print("Double Jump")
-		print(Jumps)
+		#print("Double Jump")
+		#print(Jumps)
 	if is_on_floor():
 		Jumps = 2
-	
-	if velocity.y < 0:
-			$AnimationPlayer.play("Jump")
-	elif is_on_floor() == false:
-			$AnimationPlayer.play("Fall")
-			if is_on_floor():
-				$AnimationPlayer.play("Land")
-		
-		
-	#means it wont constantly move down even on an object
-	#defines witch way is up so that the player can jump 
+		#means it wont constantly move down even on an object
+		#defines witch way is up so that the player can jump 
 	velocity = move_and_slide(velocity,Vector2.UP)
-	
-	#player slows down when key not pressed
+		
+		#player slows down when key not pressed
 	velocity = velocity.move_toward(Vector2(0,0),25)
 	
+
 
 
 #func _on_FallZone_body_entered(body):

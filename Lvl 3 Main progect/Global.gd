@@ -7,6 +7,7 @@ var ShadowSpawnTimer = 50
 var ShadowSpawned = false
 var ShadowSpeed = 500
 var PlayerDeaths = 0
+var PlayerSelection = ""
 
 
 func _process(_delta):

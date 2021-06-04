@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://PlayerStuff/Player.png" type="Texture" id=1]
+[ext_resource path="res://Assets/dogica/OTF/dogica.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://red hood itch free Copy-Sheet.png" type="Texture" id=3]
+[ext_resource path="res://CharterSelection.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="CharterSelection" type="Node"]
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -15.1604
+margin_top = -8.23241
+margin_right = 1036.84
+margin_bottom = 616.768
+color = Color( 0.317647, 0.266667, 0.266667, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 152.184
+margin_top = 19.9536
+margin_right = 824.184
+margin_bottom = 86.9536
+custom_fonts/font = SubResource( 1 )
+text = "Chosoe Your Charater "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerSprite" type="Sprite" parent="."]
+position = Vector2( 207.359, 274.771 )
+scale = Vector2( 2.24487, 2.24487 )
+texture = ExtResource( 1 )
+
+[node name="PlayerOne" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 6.0
+margin_right = 383.0
+margin_bottom = 596.0
+rect_pivot_offset = Vector2( -491.463, -8.81131 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RedRidingHood" type="Sprite" parent="."]
+position = Vector2( 778.4, 182.65 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 3 )
+hframes = 11
+vframes = 11
+
+[node name="PlayerTwo" type="Button" parent="."]
+margin_left = 523.881
+margin_top = -1.71356
+margin_right = 1025.88
+margin_bottom = 601.286
+rect_pivot_offset = Vector2( -491.463, -8.81131 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PlayerOne" to="." method="_on_PlayerOne_pressed"]
+[connection signal="pressed" from="PlayerTwo" to="." method="_on_PlayerTwo_pressed"]

@@ -12,7 +12,7 @@ func _ready():
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://Levels/MainLevels/LevelOne.tscn")
+	get_tree().change_scene("res://CharterSelection.tscn")
 
 
 func _on_Quit_pressed():
