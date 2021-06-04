@@ -7,7 +7,7 @@ var SpeedBonus = 0
 var SprintYes = true
 var Jumps = 2
 var SpriteDireaction 
-var  PlayerSelction = ""
+var PlayerSelction = ""
 
 #const = constant (wont change/ fixed) 
 
@@ -179,5 +179,12 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_PositionTimer_timeout():
-	Global.AddPlayerPos(position)
+	if Global.recordPos == true:
+		Global.AddPlayerPos(position)
 #	print('timer')
+
+
+
+func _on_Area2D_body_shape_entered(body_id, body, body_shape, local_shape):
+	get_tree().change_scene("res://Levels/MainLevels/LevelOne.tscn")
+	Global.recordPos = true

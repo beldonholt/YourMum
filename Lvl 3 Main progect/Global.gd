@@ -8,6 +8,7 @@ var ShadowSpawned = false
 var ShadowSpeed = 500
 var PlayerDeaths = 0
 var PlayerSelection = ""
+var recordPos = ""
 
 
 func _process(_delta):
