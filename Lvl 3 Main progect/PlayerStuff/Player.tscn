@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://red hood itch free Copy-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://PlayerStuff/Player.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://PlayerStuff/Player.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Audio/vgm-atmospheric-deadspace.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Audio/vgm-atmospheric-below.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/mixkit-quick-positive-video-game-notification-interface-265.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/Explosion.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.2771, 38.785 )
@@ -192,6 +194,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sounds" type="Node" parent="."]
+
+[node name="DashRecharge" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+volume_db = 4.65
+pitch_scale = 2.07
+mix_target = 1
+
+[node name="Death" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 9 )
+pitch_scale = 0.69
+mix_target = 1
+
+[node name="SoundPause" type="Timer" parent="Sounds"]
+wait_time = 0.75
+one_shot = true
+
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -5.048
@@ -201,7 +220,7 @@ mix_target = 1
 
 [node name="ShadowMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = 9.345
+volume_db = -5.0
 pitch_scale = 0.7
 mix_target = 1
 
@@ -209,3 +228,4 @@ mix_target = 1
 [connection signal="timeout" from="Sprint_CoolDown" to="." method="_on_Sprint_CoolDown_timeout"]
 [connection signal="timeout" from="PositionTimer" to="." method="_on_PositionTimer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="Sounds/SoundPause" to="." method="_on_SoundPause_timeout"]

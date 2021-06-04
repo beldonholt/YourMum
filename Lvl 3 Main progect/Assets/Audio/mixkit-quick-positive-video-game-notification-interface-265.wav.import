@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-quick-positive-video-game-notification-interface-265.wav-ae8e36959fbd44ba8359b8fa3e7c72f8.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/mixkit-quick-positive-video-game-notification-interface-265.wav"
+dest_files=[ "res://.import/mixkit-quick-positive-video-game-notification-interface-265.wav-ae8e36959fbd44ba8359b8fa3e7c72f8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

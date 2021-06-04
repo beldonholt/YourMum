@@ -8,6 +8,7 @@ var SprintYes = true
 var Jumps = 2
 var SpriteDireaction 
 var PlayerSelction = ""
+var Death  = false
 
 #const = constant (wont change/ fixed) 
 
@@ -160,7 +161,10 @@ func collide(area):
 #		#Debug stuff
 #		print("hit")
 		#sending signal to global script
-		Global.Death()
+		#connecting so it can play the sound
+		$Sounds/Death.play()
+		$Sounds/SoundPause.start()
+		
 	else:
 		print("no")
 
@@ -175,6 +179,7 @@ func _on_Sprint_timer_timeout():
 
 func _on_Sprint_CoolDown_timeout():
 #	print("Fast timeee")
+	$Sounds/DashRecharge.play()
 	SprintYes = true
 
 
@@ -191,6 +196,11 @@ func _on_PositionTimer_timeout():
 
 
 
-func _on_Area2D_body_shape_entered(body_id, body, body_shape, local_shape):
+func _on_Area2D_body_shape_entered(_body_id, _body, _body_shape, _local_shape):
 	get_tree().change_scene("res://Levels/MainLevels/LevelOne.tscn")
 	Global.recordPos = true
+
+
+func _on_SoundPause_timeout():
+	Death = true
+	Global.Death()
