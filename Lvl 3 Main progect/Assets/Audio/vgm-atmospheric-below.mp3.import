@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/vgm-atmospheric-below.mp3-04e5f82203b270025828cd582e3ba39c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/vgm-atmospheric-below.mp3"
+dest_files=[ "res://.import/vgm-atmospheric-below.mp3-04e5f82203b270025828cd582e3ba39c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

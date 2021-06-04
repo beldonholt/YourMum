@@ -31,6 +31,12 @@ func _process(_delta):
 	#print(timer.time_left)
 	pb.value = timer.time_left
 	pass
+	# audio players
+	if $BackgroundMusic.playing == false and Global.ShadowSpawned == false:
+		$BackgroundMusic.play()
+	else:
+		if $ShadowMusic.playing == false and Global.ShadowSpawned == true:
+			$ShadowMusic.play()
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(_delta):
