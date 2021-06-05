@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Audio/vgm-atmospheric-deadspace.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Audio/vgm-atmospheric-below.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Audio/mixkit-quick-positive-video-game-notification-interface-265.wav" type="AudioStream" id=8]
-[ext_resource path="res://Assets/Audio/Explosion.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/Hit1.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.2771, 38.785 )
@@ -198,17 +198,18 @@ __meta__ = {
 
 [node name="DashRecharge" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 8 )
-volume_db = 4.65
-pitch_scale = 2.07
+volume_db = 0.5
+pitch_scale = 1.8
 mix_target = 1
 
 [node name="Death" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 9 )
-pitch_scale = 0.69
+volume_db = -7.077
+pitch_scale = 2.07
 mix_target = 1
 
 [node name="SoundPause" type="Timer" parent="Sounds"]
-wait_time = 0.75
+wait_time = 0.1
 one_shot = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
