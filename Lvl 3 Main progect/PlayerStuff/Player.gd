@@ -164,9 +164,6 @@ func collide(area):
 		#connecting so it can play the sound
 		$Sounds/Death.play()
 		$Sounds/SoundPause.start()
-		
-	else:
-		print("no")
 
 
 func _on_Sprint_timer_timeout():
