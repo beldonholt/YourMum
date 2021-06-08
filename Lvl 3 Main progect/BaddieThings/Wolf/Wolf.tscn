@@ -30,7 +30,6 @@ script = ExtResource( 1 )
 position = Vector2( -32.758, -19.5028 )
 frames = SubResource( 1 )
 animation = "Run Cycle "
-frame = 2
 speed_scale = 1.5
 playing = true
 centered = false
@@ -45,6 +44,7 @@ shape = SubResource( 2 )
 position = Vector2( 21.742, -0.512774 )
 enabled = true
 cast_to = Vector2( 0, 20 )
+collision_mask = 2
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "DeathTouch",
@@ -56,10 +56,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=[
 "DeathTouch",
 ]]
-position = Vector2( 15, -5 )
+position = Vector2( 16.3348, -5.05562 )
 shape = SubResource( 3 )
 
 [node name="Wall" type="RayCast2D" parent="."]
 rotation = -1.57147
 enabled = true
 cast_to = Vector2( 0, 20 )
+collision_mask = 2

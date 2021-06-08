@@ -129,6 +129,7 @@ func _physics_process(_delta):
 			print("start coyote timer")
 		pass
 		
+
 	#Player jump input
 	if Input.is_action_just_pressed("jump") :
 		if is_on_floor() or not $CoyoteTimer.is_stopped(): #coyote timer running 
