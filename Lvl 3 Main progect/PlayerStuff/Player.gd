@@ -9,6 +9,7 @@ var Jumps = 2
 var SpriteDireaction 
 var PlayerSelction = ""
 var Death  = false
+var CoyoteYes = true
 
 #const = constant (wont change/ fixed) 
 
@@ -116,30 +117,42 @@ func _physics_process(_delta):
 				if is_on_floor():
 					$AnimationPlayer.play("Land")
 	
+	
+	
 	#simulating Gravity with acceleration
 	velocity.y += GRAVITY
 	#print(velocity.y)
-	if is_on_floor() == false:
-		$CoyoteTimer.start()
-		pass
-	if is_on_floor():
+	if not is_on_floor() and CoyoteYes:
+		if $CoyoteTimer.is_stopped():
+			$CoyoteTimer.start()
+			CoyoteYes = false
+			print("start coyote timer")
 		pass
 		
 	#Player jump input
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or ($CoyoteTimer.is_stopped() == false and Jumps > 1)):
-		velocity.y = JUMPFORCE
-		Jumps += -1 
-		$CoyoteTimer.stop()
-		#print("Single Jump")
-		#print(Jumps)
-		
-	if Input.is_action_just_pressed("jump") and is_on_floor() == false and Jumps == 1 and $CoyoteTimer.is_stopped():
-		velocity.y = JUMPFORCE
-		Jumps += -1 
-		#print("Double Jump")
-		#print(Jumps)
+	if Input.is_action_just_pressed("jump") :
+		if is_on_floor() or not $CoyoteTimer.is_stopped(): #coyote timer running 
+			if Jumps > 1:
+				velocity.y = JUMPFORCE
+				Jumps += -1 
+				$CoyoteTimer.stop()
+				print("Single Jump")
+				print(Jumps)
+
+		elif not is_on_floor():
+			if Jumps == 1:
+				if $CoyoteTimer.is_stopped():
+					velocity.y = JUMPFORCE
+					Jumps += -1 
+					print("Double Jump")
+					print(Jumps)
+					
 	if is_on_floor():
 		Jumps = 2
+		CoyoteYes = true
+		
+		
+		
 		#means it wont constantly move down even on an object
 		#defines witch way is up so that the player can jump 
 	velocity = move_and_slide(velocity,Vector2.UP)
