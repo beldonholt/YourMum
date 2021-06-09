@@ -131,7 +131,6 @@ func _physics_process(_delta):
 		pass
 		
 	if is_on_floor():
-		print('dez')
 		Jumps = 2
 		CoyoteYes = true
 	
