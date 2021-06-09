@@ -10,6 +10,7 @@ var SpriteDireaction
 var PlayerSelction = ""
 var Death  = false
 var CoyoteYes = true
+var FloorJump = true
 
 #const = constant (wont change/ fixed) 
 
@@ -122,35 +123,34 @@ func _physics_process(_delta):
 	#simulating Gravity with acceleration
 	velocity.y += GRAVITY
 	#print(velocity.y)
-	if not is_on_floor() and CoyoteYes:
+	if not is_on_floor() and CoyoteYes and Jumps == 2:
 		if $CoyoteTimer.is_stopped():
 			$CoyoteTimer.start()
 			CoyoteYes = false
 			print("start coyote timer")
 		pass
 		
-
-	#Player jump input
-	if Input.is_action_just_pressed("jump") :
-		if is_on_floor() or not $CoyoteTimer.is_stopped(): #coyote timer running 
-			if Jumps > 1:
+	if is_on_floor():
+		print('dez')
+		Jumps = 2
+		CoyoteYes = true
+	
+	if Input.is_action_just_pressed("jump"):
+		if (is_on_floor() or not $CoyoteTimer.is_stopped()) and Jumps == 2: #coyote timer running 
 				velocity.y = JUMPFORCE
-				Jumps += -1 
+				Jumps = 1
 				$CoyoteTimer.stop()
 				print("Single Jump")
 				print(Jumps)
-
 		elif not is_on_floor():
+			print("yes")
 			if Jumps == 1:
 				if $CoyoteTimer.is_stopped():
 					velocity.y = JUMPFORCE
-					Jumps += -1 
+					Jumps = 0
 					print("Double Jump")
 					print(Jumps)
 					
-	if is_on_floor():
-		Jumps = 2
-		CoyoteYes = true
 		
 		
 		
@@ -161,8 +161,6 @@ func _physics_process(_delta):
 		#player slows down when key not pressed
 	velocity = velocity.move_toward(Vector2(0,0),25)
 	
-
-
 
 #func _on_FallZone_body_entered(body):
 #	get_tree().change_scene("res://TestLevelMovement.tscn")
