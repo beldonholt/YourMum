@@ -142,14 +142,12 @@ func _physics_process(_delta):
 				print("Single Jump")
 				print(Jumps)
 		elif not is_on_floor():
-			print("yes")
 			if Jumps == 1:
 				if $CoyoteTimer.is_stopped():
 					velocity.y = JUMPFORCE
 					Jumps = 0
 					print("Double Jump")
 					print(Jumps)
-					
 		
 		
 		
