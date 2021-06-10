@@ -123,6 +123,7 @@ func _physics_process(_delta):
 	#simulating Gravity with acceleration
 	velocity.y += GRAVITY
 	#print(velocity.y)
+		#coyote Jump timer stuff
 	if not is_on_floor() and CoyoteYes and Jumps == 2:
 		if $CoyoteTimer.is_stopped():
 			$CoyoteTimer.start()
@@ -130,10 +131,12 @@ func _physics_process(_delta):
 			print("start coyote timer")
 		pass
 		
+		#resetting the players jump
 	if is_on_floor():
 		Jumps = 2
 		CoyoteYes = true
 	
+		#making the player jump
 	if Input.is_action_just_pressed("jump"):
 		if (is_on_floor() or not $CoyoteTimer.is_stopped()) and Jumps == 2: #coyote timer running 
 				velocity.y = JUMPFORCE
