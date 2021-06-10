@@ -1,8 +1,8 @@
 extends Node
-
-var ActiveScene = ""
-var PlayerPos = []
-var DifficultyTweak = 0.99
+#varibles 
+var ActiveScene = "" #is the current scene 
+var PlayerPos = [] #array for players position
+var DifficultyTweak = 0.99 
 var ShadowSpawnTimer = 40
 var ShadowSpawned = false
 var ShadowSpeed = 650
