@@ -131,7 +131,7 @@ margin_right = 4737.44
 margin_bottom = 234.439
 rect_pivot_offset = Vector2( 1043.36, 78 )
 custom_fonts/font = SubResource( 1 )
-text = "Watch the gap
+text = "Mind the gap
 "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -156,7 +156,7 @@ margin_right = 7607.17
 margin_bottom = 362.583
 rect_pivot_offset = Vector2( 1043.36, 78 )
 custom_fonts/font = SubResource( 1 )
-text = "Watch out for wolves "
+text = "Watch out for Wolves "
 __meta__ = {
 "_edit_use_anchors_": false
 }
