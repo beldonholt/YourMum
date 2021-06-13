@@ -11,6 +11,8 @@ var PlayerSelction = ""
 var Death  = false
 var CoyoteYes = true
 var FloorJump = true
+var Anmi
+
 
 #const = constant (wont change/ fixed) 
 
@@ -28,6 +30,7 @@ func _ready():
 	else:
 		$Female.visible = true
 		PlayerSelction = !true
+	var Anmi = $AnimationTree.get("parameters/playback")
 	
 	
 func _process(_delta):
@@ -43,10 +46,21 @@ func _process(_delta):
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(_delta):
+	
+		#Sprint Code
+		#This is now the dash code
+	if Input.is_action_just_pressed("run") and SprintYes == true:
+		$Sprint_timer.start()
+		$AnimationTree.travel("Dash") 
+		$AnimationTree.anim_player
+		SpeedBonus = 3000
+		print("start")
+	if Input.is_action_pressed("run") and SprintYes == false:
+			SpeedBonus = 0
 	#if female
 	if PlayerSelction != true:
 		if velocity == Vector2(0,0):
-			$AnimationPlayer.play("Idle")
+			$AnimationTree.travel("idle")
 		#Sprint Code
 		if Input.is_action_just_pressed("run") and SprintYes == true:
 			$Sprint_timer.start()
@@ -59,8 +73,8 @@ func _physics_process(_delta):
 		if Input.is_action_pressed("right"):
 			#moves the player by the constant speed to the right 
 			velocity.x = SPEED +SpeedBonus
-			if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
-				$AnimationPlayer.play("Walk")
+			if is_on_floor():
+				$AnimationTree.travel("walk")
 			get_node( "Female" ).set_flip_h( false )
 			SpriteDireaction = false 
 			#print("move right")
@@ -69,8 +83,8 @@ func _physics_process(_delta):
 		#Checks id "A" is pressed 
 		elif Input.is_action_pressed("left"):
 			velocity.x = -SPEED -SpeedBonus 
-			if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
-				$AnimationPlayer.play("Walk")
+			if is_on_floor():
+				$AnimationTree.travel("walk")
 			get_node( "Female" ).set_flip_h( true )
 			SpriteDireaction = true
 			#print("move left")
@@ -83,21 +97,15 @@ func _physics_process(_delta):
 	#if male
 	if PlayerSelction == true:
 		if velocity == Vector2(0,0):
-			$AnimationPlayer.play("Idle")
-		#Sprint Code
-		if Input.is_action_just_pressed("run") and SprintYes == true:
-			$Sprint_timer.start()
-			SpeedBonus = 3000
-			print("start")
-		if Input.is_action_pressed("run") and SprintYes == false:
-			SpeedBonus = 0
-		
+			Anmi.travel("Idle")
+
+
 		#Checks if "D" is pressed
 		if Input.is_action_pressed("right"):
 			#moves the player by the constant speed to the right 
 			velocity.x = SPEED +SpeedBonus
-			if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
-				$AnimationPlayer.play("Walk")
+			if is_on_floor():
+				Anmi.travel("Walk")
 			get_node( "Male" ).set_flip_h( true )
 			SpriteDireaction = true 
 			#print("move right")
@@ -106,17 +114,17 @@ func _physics_process(_delta):
 		#Checks id "A" is pressed 
 		elif Input.is_action_pressed("left"):
 			velocity.x = -SPEED -SpeedBonus 
-			if is_on_floor() and $AnimationPlayer.current_animation != "Walk":
-				$AnimationPlayer.play("Walk")
+			if is_on_floor():
+				Anmi.travel("Walk")
 			get_node( "Male" ).set_flip_h( false )
 			SpriteDireaction = false
 			#print("move left")
 		if velocity.y < 0:
-				$AnimationPlayer.play("Jump")
+			Anmi.anim_player("Jump")
 		elif is_on_floor() == false:
-				$AnimationPlayer.play("Fall")
+				Anmi.anim_player("Fall")
 				if is_on_floor():
-					$AnimationPlayer.play("Land")
+					Anmi.anim_player("Land")
 	
 	
 	
