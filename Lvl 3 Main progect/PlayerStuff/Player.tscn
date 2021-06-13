@@ -186,16 +186,17 @@ scale = Vector2( 4, -4 )
 texture = ExtResource( 5 )
 hframes = 8
 vframes = 15
-frame = 48
+frame = 41
 
 [node name="Female" type="Sprite" parent="."]
+visible = false
 position = Vector2( 2.62268, -1.1842 )
-rotation = -3.14159
+rotation = 3.14159
 scale = Vector2( 4, -4 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 15
-frame = 51
+frame = 41
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2.04654, 1.84386 )

@@ -57,7 +57,7 @@ func _physics_process(_delta):
 	#if female
 	if PlayerSelction != true:
 		if velocity == Vector2(0,0):
-			$AnimationPlayer.play("idle")
+			$AnimationPlayer.play("Idle")
 		#Sprint Code
 		if Input.is_action_just_pressed("run") and SprintYes == true:
 			$Sprint_timer.start()
@@ -71,9 +71,9 @@ func _physics_process(_delta):
 			#moves the player by the constant speed to the right 
 			velocity.x = SPEED +SpeedBonus
 			if is_on_floor():
-				$AnimationPlayer.play("walk")
-			get_node( "Female" ).set_flip_h( false )
-			SpriteDireaction = false 
+				$AnimationPlayer.play("Walk")
+			get_node( "Female" ).set_flip_h( true )
+			SpriteDireaction = true 
 			#print("move right")
 			
 			
@@ -81,9 +81,9 @@ func _physics_process(_delta):
 		elif Input.is_action_pressed("left"):
 			velocity.x = -SPEED -SpeedBonus 
 			if is_on_floor():
-				$AnimationPlayer.play("walk")
-			get_node( "Female" ).set_flip_h( true )
-			SpriteDireaction = true
+				$AnimationPlayer.play("Walk")
+			get_node( "Female" ).set_flip_h( false )
+			SpriteDireaction = false
 			#print("move left")
 		if velocity.y < 0:
 				$AnimationPlayer.play("Jump")
