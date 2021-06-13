@@ -1,23 +1,108 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://red hood itch free Copy-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://PlayerStuff/Player.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Assets/dogica/OTF/dogica.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://PlayerStuff/Player.png" type="Texture" id=5]
+[ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/herochar sprites(new)/herochar_spritesheet(new).png" type="Texture" id=5]
 [ext_resource path="res://Assets/Audio/vgm-atmospheric-deadspace.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Audio/vgm-atmospheric-below.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Audio/mixkit-quick-positive-video-game-notification-interface-265.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Audio/Hit1.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 22.2771, 38.785 )
+extents = Vector2( 18.8595, 31.7371 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 25.1126, 36.5865 )
+extents = Vector2( 18.1946, 29.4587 )
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "Dash"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "Fall"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "Jump"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "Land"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachine" id=31]
+states/Dash/node = SubResource( 10 )
+states/Dash/position = Vector2( 700, 147 )
+states/Fall/node = SubResource( 11 )
+states/Fall/position = Vector2( 841, 521 )
+states/Idle/node = SubResource( 12 )
+states/Idle/position = Vector2( 422, 310 )
+states/Jump/node = SubResource( 13 )
+states/Jump/position = Vector2( 820, 405 )
+states/Land/node = SubResource( 14 )
+states/Land/position = Vector2( 848, 653 )
+states/Walk/node = SubResource( 15 )
+states/Walk/position = Vector2( 984, 310 )
+transitions = [ "Idle", "Walk", SubResource( 16 ), "Jump", "Fall", SubResource( 17 ), "Fall", "Land", SubResource( 18 ), "Walk", "Idle", SubResource( 19 ), "Idle", "Jump", SubResource( 24 ), "Walk", "Jump", SubResource( 25 ), "Land", "Walk", SubResource( 26 ), "Land", "Idle", SubResource( 27 ), "Idle", "Fall", SubResource( 28 ), "Walk", "Fall", SubResource( 29 ), "Fall", "Jump", SubResource( 30 ), "Dash", "Idle", SubResource( 20 ), "Idle", "Dash", SubResource( 21 ), "Dash", "Walk", SubResource( 22 ), "Walk", "Dash", SubResource( 23 ) ]
+graph_offset = Vector2( 164, -79 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=32]
+
+[sub_resource type="Animation" id=9]
+resource_name = "Dash"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Male:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 72, 73, 74 ]
+}
 
 [sub_resource type="Animation" id=3]
-length = 1.1
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Female:frame")
@@ -31,9 +116,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 39, 40, 41, 42, 43, 44, 45, 46, 47 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Male:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 50 ]
+}
 
 [sub_resource type="Animation" id=4]
-length = 0.1
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Female:frame")
 tracks/0/interp = 1
@@ -45,6 +142,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Male:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 40, 41, 42, 43 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -62,9 +171,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 34, 35, 36, 37, 38, 39 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Male:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 56, 57, 58 ]
+}
 
 [sub_resource type="Animation" id=6]
 length = 0.6
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Female:frame")
 tracks/0/interp = 1
@@ -77,9 +199,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 48, 49, 50, 51 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Male:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 80, 81 ]
+}
 
 [sub_resource type="Animation" id=7]
-length = 2.4
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Female:frame")
@@ -93,6 +226,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Male:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11, 12, 13 ]
+}
 
 [sub_resource type="DynamicFont" id=8]
 size = 24
@@ -104,11 +249,13 @@ font_data = ExtResource( 4 )
 script = ExtResource( 2 )
 
 [node name="Male" type="Sprite" parent="."]
-visible = false
 position = Vector2( 0.283448, -0.871181 )
 rotation = -3.14159
-scale = Vector2( 0.75, -0.75 )
+scale = Vector2( 4, -4 )
 texture = ExtResource( 5 )
+hframes = 8
+vframes = 15
+frame = 43
 
 [node name="Female" type="Sprite" parent="."]
 visible = false
@@ -118,10 +265,9 @@ scale = Vector2( 2.5, -2.5 )
 texture = ExtResource( 1 )
 hframes = 12
 vframes = 11
-frame = 47
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.899933, 2.82601 )
+position = Vector2( 2.04654, 1.84386 )
 scale = Vector2( 1, 0.92 )
 shape = SubResource( 1 )
 
@@ -146,7 +292,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0.887432, 3.08653 )
+position = Vector2( 2.15022, 1.96406 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -156,8 +302,15 @@ limit_left = -750
 limit_top = -854
 limit_bottom = 770
 
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 31 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 32 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
+anims/Dash = SubResource( 9 )
 anims/Fall = SubResource( 3 )
 anims/Idle = SubResource( 4 )
 anims/Jump = SubResource( 5 )
