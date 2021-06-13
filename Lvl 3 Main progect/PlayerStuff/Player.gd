@@ -11,6 +11,7 @@ var PlayerSelction = ""
 var Death  = false
 var CoyoteYes = true
 var FloorJump = true
+var Interactive = false
 
 #const = constant (wont change/ fixed) 
 
@@ -165,10 +166,18 @@ func _physics_process(_delta):
 		#player slows down when key not pressed
 	velocity = velocity.move_toward(Vector2(0,0),25)
 	
+	interact()
+
+
 
 #func _on_FallZone_body_entered(body):
 #	get_tree().change_scene("res://TestLevelMovement.tscn")
 #	print("restart")
+func interact():
+	if Interactive and Input.is_action_just_pressed("Interact"):
+		
+		pass
+	pass
 
 #this is function that deals with sending signals to global and starts the death sequence
 func collide(area):
@@ -180,6 +189,9 @@ func collide(area):
 		#connecting so it can play the sound
 		$Sounds/Death.play()
 		$Sounds/SoundPause.start()
+	if area.is_in_group("Interactive"):
+		Interactive = true
+
 
 
 
@@ -199,7 +211,6 @@ func _on_Sprint_CoolDown_timeout():
 
 
 func _on_Area2D_area_entered(area):
-#	print(area)
 	collide(area) 
 
 
@@ -216,6 +227,12 @@ func _on_Area2D_body_shape_entered(_body_id, _body, _body_shape, _local_shape):
 	Global.recordPos = true
 
 
+
 func _on_SoundPause_timeout():
 	Death = true
 	Global.Death()
+
+
+func _on_Area2D_area_shape_exited(area_id, area, area_shape, local_shape):
+	if area.is_in_group("Interactive"):
+		Interactive = false
