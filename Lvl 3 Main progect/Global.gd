@@ -28,7 +28,6 @@ func Death():
 	ResetPlayerArray()
 	ShadowSpawned = false
 	ShadowSpeed += 10
-	
 
 	#This adds the player position every second to an array for the shadow man to use
 func AddPlayerPos(Pos):

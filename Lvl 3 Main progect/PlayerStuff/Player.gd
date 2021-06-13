@@ -182,6 +182,8 @@ func collide(area):
 		$Sounds/SoundPause.start()
 
 
+
+
 func _on_Sprint_timer_timeout():
 	print("time out")
 	SpeedBonus = 0
