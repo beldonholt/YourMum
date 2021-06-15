@@ -23,13 +23,15 @@ extents = Vector2( 10.8441, 5.89877 )
 
 [node name="Wolf" type="KinematicBody2D"]
 scale = Vector2( 3, 3 )
-collision_layer = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -32.758, -19.5028 )
 frames = SubResource( 1 )
 animation = "Run Cycle "
+frame = 1
 speed_scale = 1.5
 playing = true
 centered = false
@@ -45,6 +47,7 @@ position = Vector2( 21.742, -0.512774 )
 enabled = true
 cast_to = Vector2( 0, 20 )
 collision_mask = 2
+collide_with_bodies = false
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "DeathTouch",
