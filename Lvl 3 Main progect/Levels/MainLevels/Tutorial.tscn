@@ -1,10 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Levels/MainLevels/TilesDeezNuts.tres" type="TileSet" id=1]
-[ext_resource path="res://BaddieThings/Falling/SpikeFall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BaddieThings/FallZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://BaddieThings/Wolf/Wolf.tscn" type="PackedScene" id=6]
 [ext_resource path="res://BaddieThings/SpikeBush.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/dogica/OTF/dogica.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" type="Texture" id=20]
@@ -24,9 +22,6 @@ extents = Vector2( 20.1914, 686.566 )
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource( 26 )
-
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 546.527, -23.4301 )
 
 [node name="BackGround" type="Node2D" parent="."]
 __meta__ = {
@@ -176,9 +171,6 @@ text = "And Spike bushes "
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Wolf" parent="." instance=ExtResource( 6 )]
-position = Vector2( 6890.85, 350.008 )
 
 [node name="SpikeBush" parent="." instance=ExtResource( 7 )]
 position = Vector2( 8386.96, 220.402 )
