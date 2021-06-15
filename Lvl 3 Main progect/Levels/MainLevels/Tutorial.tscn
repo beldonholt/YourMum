@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Levels/MainLevels/TilesDeezNuts.tres" type="TileSet" id=1]
+[ext_resource path="res://Interactibles/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BaddieThings/FallZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BaddieThings/Wolf/Wolf.tscn" type="PackedScene" id=6]
@@ -179,6 +180,12 @@ position = Vector2( 6890.85, 350.008 )
 [node name="SpikeBush" parent="." instance=ExtResource( 7 )]
 position = Vector2( 8386.96, 220.402 )
 
+[node name="Door" parent="." instance=ExtResource( 2 )]
+position = Vector2( 379.648, 285.293 )
+
+[node name="ButtonArea" parent="Door" index="3"]
+position = Vector2( -67.9344, 12.918 )
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -186,3 +193,5 @@ position = Vector2( 9819.22, -432.283 )
 shape = SubResource( 2 )
 
 [connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]
+
+[editable path="Door"]
