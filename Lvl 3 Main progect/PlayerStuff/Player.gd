@@ -233,6 +233,6 @@ func _on_SoundPause_timeout():
 	Global.Death()
 
 
-func _on_Area2D_area_shape_exited(area_id, area, area_shape, local_shape):
-	if area.is_in_group("Interactive"):
+func _on_Area2D_area_shape_exited(_area_id, _area, _area_shape, _local_shape):
+	if _area.is_in_group("Interactive"):
 		Interactive = false
