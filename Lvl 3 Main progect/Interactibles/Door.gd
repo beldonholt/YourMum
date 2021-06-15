@@ -17,19 +17,21 @@ func _process(delta):
 		$AnimationPlayer.play("Idle")
 
 
+func _on_ButtonArea_area_exited(_area):
+	print("exit")
+	if _area.is_in_group("Interactive"):
+		$AnimationPlayer.play_backwards("OpenDoor")
+		$AnimationPlayer.play("Button")
+		DoorClosed = true
+
+	pass # Replace with function body.
+
+
 func _on_ButtonArea_area_entered(area):
 	print("enter")
 	if area.is_in_group("Interactive"):
 		$AnimationPlayer.play("OpenDoor")
+		$AnimationPlayer.play("ButtonPressed")
 		DoorClosed = false
 		pass
-	pass # Replace with function body.
-
-
-func _on_ButtonArea_area_exited(area):
-	print("exit")
-	if area.is_in_group("Interactive"):
-		$AnimationPlayer.play_backwards("OpenDoor")
-		DoorClosed = true
-
 	pass # Replace with function body.

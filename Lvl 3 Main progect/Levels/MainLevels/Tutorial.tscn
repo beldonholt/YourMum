@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Levels/MainLevels/TilesDeezNuts.tres" type="TileSet" id=1]
+[ext_resource path="res://Interactibles/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BaddieThings/FallZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BaddieThings/SpikeBush.tscn" type="PackedScene" id=7]
@@ -77,7 +78,9 @@ tile_data = PoolIntArray( -524301, 4, 0, -524300, 4, 0, -524299, 4, 0, -524298, 
 position = Vector2( 2325.72, 619.73 )
 scale = Vector2( 20.24, 1 )
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
+[node name="Player" parent="." groups=[
+"Interactive",
+] instance=ExtResource( 5 )]
 position = Vector2( -77.2844, 200.145 )
 
 [node name="Labels" type="Node" parent="."]
@@ -181,4 +184,12 @@ position = Vector2( 8386.96, 220.402 )
 position = Vector2( 9819.22, -432.283 )
 shape = SubResource( 2 )
 
+[node name="Door" parent="." instance=ExtResource( 2 )]
+position = Vector2( 253.66, 275.774 )
+
+[node name="ButtonArea" parent="Door" index="3"]
+position = Vector2( -39.3194, 22.7785 )
+
 [connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]
+
+[editable path="Door"]
