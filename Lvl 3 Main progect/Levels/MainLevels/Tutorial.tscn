@@ -187,7 +187,7 @@ shape = SubResource( 2 )
 [node name="Door" parent="." instance=ExtResource( 2 )]
 position = Vector2( 253.66, 275.774 )
 
-[node name="ButtonArea" parent="Door" index="3"]
+[node name="ButtonArea" parent="Door" index="4"]
 position = Vector2( -39.3194, 22.7785 )
 
 [connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]
