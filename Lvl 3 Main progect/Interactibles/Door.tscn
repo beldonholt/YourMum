@@ -1,14 +1,47 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Interactibles/Door.gd" type="Script" id=1]
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/miscellaneous sprites/strange_door_closed_anim_strip_10.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/miscellaneous sprites/buttom_pressed.png" type="Texture" id=3]
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/miscellaneous sprites/strange_door_opening_anim_strip_14.png" type="Texture" id=4]
+[ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/miscellaneous sprites/buttom.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.84628, 24.1429 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
+resource_name = "Button"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ButtonArea/Button:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "ButtonPressed"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ButtonArea/Button:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+
+[sub_resource type="Animation" id=2]
 resource_name = "Idle"
 length = 0.1
 tracks/0/type = "bezier"
@@ -74,8 +107,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "OpenDoor"
+[sub_resource type="Animation" id=3]
 length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("DoorSprite:frame")
@@ -176,7 +208,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 
 [node name="Door" type="StaticBody2D"]
 scale = Vector2( 4, 4 )
@@ -191,8 +223,10 @@ position = Vector2( 0.111866, -0.0720624 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle = SubResource( 4 )
-anims/OpenDoor = SubResource( 2 )
+anims/Button = SubResource( 6 )
+anims/ButtonPressed = SubResource( 5 )
+anims/Idle = SubResource( 2 )
+anims/OpenDoor = SubResource( 3 )
 
 [node name="ButtonArea" type="Area2D" parent="."]
 position = Vector2( 100, 0 )
@@ -201,11 +235,11 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Button" type="Sprite" parent="ButtonArea"]
-scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonArea"]
-shape = SubResource( 3 )
+position = Vector2( 0, -7.58119 )
+shape = SubResource( 4 )
 
 [connection signal="area_entered" from="ButtonArea" to="." method="_on_ButtonArea_area_entered"]
 [connection signal="area_exited" from="ButtonArea" to="." method="_on_ButtonArea_area_exited"]
