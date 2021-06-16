@@ -67,6 +67,7 @@ func _physics_process(_delta):
 			$AnimationPlayer.play("Idle")
 		#Sprint Code
 		if Input.is_action_just_pressed("run") and SprintYes == true:
+			
 			$Sprint_timer.start()
 			SpeedBonus = 3000
 			print("start")
@@ -205,10 +206,12 @@ func _on_Sprint_timer_timeout():
 	print("time out")
 	SpeedBonus = 0
 	SprintYes = false
-	$Sprint_CoolDown.set_wait_time(5)
-	$Sprint_CoolDown.start()
+	GRAVITY = 40
 	if is_on_floor():
 		$Sprint_CoolDown.set_wait_time(2)
+		$Sprint_CoolDown.start()
+	else:
+		$Sprint_CoolDown.set_wait_time(5)
 		$Sprint_CoolDown.start()
 	
 
