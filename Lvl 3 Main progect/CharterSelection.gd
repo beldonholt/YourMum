@@ -1,6 +1,7 @@
 extends Node
 #this code is for the charter selection 
-
+func _process(_delta):
+	$AnimationPlayer.play("Charaters")
 #if the player selects the male charater
 func _on_PlayerOne_pressed():
 	#makes sure it shows the right sprite 
