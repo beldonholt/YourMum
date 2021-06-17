@@ -185,7 +185,7 @@ position = Vector2( 9819.22, -432.283 )
 shape = SubResource( 2 )
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
-position = Vector2( 253.66, 275.774 )
+position = Vector2( 242.078, 288.247 )
 
 [node name="ButtonArea" parent="Door" index="4"]
 position = Vector2( -39.3194, 22.7785 )
