@@ -1,4 +1,3 @@
-space bar jump
 dash too quick
 verticle momentum maintained during dash
 hold jump to vary jump height
