@@ -1,11 +1,8 @@
 extends StaticBody2D
 
+#Weater or not the door is closed
+
 var DoorClosed = true
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,17 +12,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-#	if not $AnimationPlayer.is_playing() and DoorClosed:
-#		$AnimationPlayer.play("Idle")
-	if DoorClosed == true:
-		$DoorSprite.visible = true 
-		$DoorAnimated.visible = false
-	else:
-		$DoorAnimated.visible = true
-		if not $AnimationPlayer.is_playing():
-			$DoorSprite.visible = false 
-		
-	
+	 if $AnimationPlayer.is_playing() == false and DoorClosed == true:
+			$DoorSprite.visible = true 
+			$DoorAnimated.visible = false
 
 
 func _on_ButtonArea_area_exited(_area):
@@ -33,11 +22,14 @@ func _on_ButtonArea_area_exited(_area):
 	if _area.is_in_group("Interactive"):
 		DoorClosed = true
 		$AnimationPlayer.play_backwards("OpenDoor")
+		
 	pass # Replace with function body.
 
 func _on_ButtonArea_area_entered(area):
 	print("enter")
 	if area.is_in_group("Interactive"):
+		$DoorSprite.visible = false
+		$DoorAnimated.visible = true
 		DoorClosed = false
 		$AnimationPlayer.play("OpenDoor")
 	pass # Replace with function body.

@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.40984, 21.9975 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=2]
 resource_name = "CloseDoor"
 length = 1.42857
 step = 0.0714286
@@ -89,7 +89,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("DoorAnimated:frame")
@@ -190,7 +190,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=4]
 
 [node name="Door" type="StaticBody2D"]
 scale = Vector2( 4, 4 )
@@ -211,8 +211,8 @@ position = Vector2( 0.445953, 1.93246 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/CloseDoor = SubResource( 7 )
-anims/OpenDoor = SubResource( 5 )
+anims/CloseDoor = SubResource( 2 )
+anims/OpenDoor = SubResource( 3 )
 
 [node name="ButtonArea" type="Area2D" parent="."]
 position = Vector2( 100, 0 )
@@ -225,7 +225,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonArea"]
 position = Vector2( 0, -7.58119 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [connection signal="area_entered" from="ButtonArea" to="." method="_on_ButtonArea_area_entered"]
 [connection signal="area_exited" from="ButtonArea" to="." method="_on_ButtonArea_area_exited"]
