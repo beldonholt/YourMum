@@ -15,7 +15,7 @@ var Interactive = false
 
 #const = constant (wont change/ fixed) 
 
-const JUMPFORCE = -1300
+var JUMPFORCE = -1300
 var GRAVITY = 40
 
 #making a dash overlay using a texture progress to show recharge 
