@@ -61,12 +61,8 @@ func _physics_process(_delta):
 		print("start")
 	if Input.is_action_pressed("run") and SprintYes == false:
 			SpeedBonus = 0
-	if Input.is_action_pressed("jump"):
-		print("hello")
-		JUMPFORCE = -2000
-	if Input.is_action_just_pressed("jump"):
-		print("no")
-	#if female
+			
+			
 	if PlayerSelction != true:
 		if velocity == Vector2(0,0):
 			$AnimationPlayer.play("Idle")
