@@ -16,7 +16,7 @@ var Interactive = false
 #const = constant (wont change/ fixed) 
 
 var JUMPFORCE = -1300
-var GRAVITY = 40
+var GRAVITY = 60
 
 #making a dash overlay using a texture progress to show recharge 
 onready var timer = get_node("Sprint_CoolDown")
@@ -56,16 +56,15 @@ func _physics_process(_delta):
 		#This is now the dash code
 	if Input.is_action_just_pressed("run") and SprintYes == true:
 		$Sprint_timer.start()
-		$AnimationPlayer.play("Dash") 
+		$AnimationPlayer.play("Dash")
 		SpeedBonus = 3000
 		print("start")
 	if Input.is_action_pressed("run") and SprintYes == false:
-			SpeedBonus = 0
+		SpeedBonus = 0
 	if Input.is_action_pressed("jump"):
-		print("hello")
 		JUMPFORCE = -2000
 	if Input.is_action_just_pressed("jump"):
-		print("no")
+		pass
 	#if female
 	if PlayerSelction != true:
 		if velocity == Vector2(0,0):
@@ -83,7 +82,7 @@ func _physics_process(_delta):
 		if Input.is_action_pressed("right"):
 			#moves the player by the constant speed to the right 
 			velocity.x = SPEED +SpeedBonus
-			if is_on_floor():
+			if is_on_floor() and not $AnimationPlayer.is_playing("Dash"):
 				$AnimationPlayer.play("Walk")
 			get_node( "Female" ).set_flip_h( true )
 			SpriteDireaction = true 
@@ -93,7 +92,7 @@ func _physics_process(_delta):
 		#Checks id "A" is pressed 
 		elif Input.is_action_pressed("left"):
 			velocity.x = -SPEED -SpeedBonus 
-			if is_on_floor():
+			if is_on_floor() and not $AnimationPlayer.is_playing("Dash"):
 				$AnimationPlayer.play("Walk")
 			get_node( "Female" ).set_flip_h( false )
 			SpriteDireaction = false
@@ -114,7 +113,7 @@ func _physics_process(_delta):
 		if Input.is_action_pressed("right"):
 			#moves the player by the constant speed to the right 
 			velocity.x = SPEED +SpeedBonus
-			if is_on_floor():
+			if is_on_floor() and not $AnimationPlayer.is_playing():
 				$AnimationPlayer.play("Walk")
 			get_node( "Male" ).set_flip_h( true )
 			SpriteDireaction = true 
@@ -124,7 +123,7 @@ func _physics_process(_delta):
 		#Checks id "A" is pressed 
 		elif Input.is_action_pressed("left"):
 			velocity.x = -SPEED -SpeedBonus 
-			if is_on_floor():
+			if is_on_floor() and not $AnimationPlayer.is_playing():
 				$AnimationPlayer.play("Walk")
 			get_node( "Male" ).set_flip_h( false )
 			SpriteDireaction = false

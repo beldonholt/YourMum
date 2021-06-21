@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/miscellaneous sprites/strange_door_opening_anim_strip_14.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.40984, 21.9975 )
+extents = Vector2( 8.40984, 4.15937 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "CloseDoor"
@@ -36,57 +36,57 @@ tracks/1/keys = {
 "update": 1,
 "values": [  ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("CollisionShape2D:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1.54339, -0.25, 0, 0.25, 0, 1.40308, -0.25, 0, 0.25, 0, 1.68369, -0.25, 0, 0.25, 0, 1.54338, -0.25, 0, 0.25, 0, 1.68369, -0.25, 0, 0.25, 0, 1.824, -0.25, 0, 0.25, 0, 1.12246, -0.25, 0, 0.25, 0, 0.561234, -0.25, 0, 0.25, 0, 0.445953, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.428571, 0.571429, 0.642857, 0.714286, 0.857143, 0.928571, 1.07143, 1.14286, 1.21429, 1.35714 )
 }
 tracks/3/type = "bezier"
-tracks/3/path = NodePath("CollisionShape2D:position:x")
+tracks/3/path = NodePath("CollisionShape2D:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1.54339, -0.25, 0, 0.25, 0, 1.40308, -0.25, 0, 0.25, 0, 1.68369, -0.25, 0, 0.25, 0, 1.54338, -0.25, 0, 0.25, 0, 1.68369, -0.25, 0, 0.25, 0, 1.824, -0.25, 0, 0.25, 0, 1.12246, -0.25, 0, 0.25, 0, 0.561234, -0.25, 0, 0.25, 0, 0.445953, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 19.7706, -0.25, 0, 0.25, 0, 17.8298, -0.25, 0, 0.25, 0, 15.7737, -0.25, 0, 0.25, 0, 14.1051, -0.25, 0, 0.25, 0, 12.0324, -0.25, 0, 0.25, 0, 9.95962, -0.25, 0, 0.25, 0, 8.16746, -0.25, 0, 0.25, 0, 5.81407, -0.25, 0, 0.25, 0, 4.60818, -0.25, 0, 0.25, 0, 1.93246, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0.428571, 0.571429, 0.642857, 0.714286, 0.857143, 0.928571, 1.07143, 1.14286, 1.21429, 1.35714 )
 }
 tracks/4/type = "bezier"
-tracks/4/path = NodePath("CollisionShape2D:position:y")
+tracks/4/path = NodePath("CollisionShape2D:shape:extents:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"points": PoolRealArray( 19.7706, -0.25, 0, 0.25, 0, 17.8298, -0.25, 0, 0.25, 0, 15.7737, -0.25, 0, 0.25, 0, 14.1051, -0.25, 0, 0.25, 0, 12.0324, -0.25, 0, 0.25, 0, 9.95962, -0.25, 0, 0.25, 0, 8.16746, -0.25, 0, 0.25, 0, 5.81407, -0.25, 0, 0.25, 0, 4.60818, -0.25, 0, 0.25, 0, 1.93246, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 8.40984, -0.25, 0, 0.25, 0, 6.50734, -0.25, 0, 0.25, 0, 6.64764, -0.25, 0, 0.25, 0, 6.50734, -0.25, 0, 0.25, 0, 6.78795, -0.25, 0, 0.25, 0, 6.92826, -0.25, 0, 0.25, 0, 6.92826, -0.25, 0, 0.25, 0, 6.92826, -0.25, 0, 0.25, 0, 8.40984, -0.25, 0, 0.25, 0, 8.40984, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0.428571, 0.571429, 0.642857, 0.714286, 0.857143, 0.928571, 1.07143, 1.14286, 1.21429, 1.35714 )
 }
 tracks/5/type = "bezier"
-tracks/5/path = NodePath("CollisionShape2D:shape:extents:x")
+tracks/5/path = NodePath("CollisionShape2D:shape:extents:y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"points": PoolRealArray( 8.40984, -0.25, 0, 0.25, 0, 6.50734, -0.25, 0, 0.25, 0, 6.64764, -0.25, 0, 0.25, 0, 6.50734, -0.25, 0, 0.25, 0, 6.78795, -0.25, 0, 0.25, 0, 6.92826, -0.25, 0, 0.25, 0, 6.92826, -0.25, 0, 0.25, 0, 6.92826, -0.25, 0, 0.25, 0, 8.40984, -0.25, 0, 0.25, 0, 8.40984, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0.428571, 0.571429, 0.642857, 0.714286, 0.857143, 0.928571, 1.07143, 1.14286, 1.21429, 1.35714 )
+"points": PoolRealArray( 4.15937, -0.25, 0, 0.25, 0, 6.09183, -0.25, 0, 0.25, 0, 8.17294, -0.25, 0, 0.25, 0, 9.95675, -0.25, 0, 0.25, 0, 12.0379, -0.25, 0, 0.25, 0, 14.2676, -0.25, 0, 0.25, 0, 15.7541, -0.25, 0, 0.25, 0, 18.1325, -0.25, 0, 0.25, 0, 19.6191, -0.25, 0, 0.25, 0, 21.9975, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1, 0.2, 0.285714, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 )
 }
-tracks/6/type = "bezier"
-tracks/6/path = NodePath("CollisionShape2D:shape:extents:y")
+tracks/6/type = "value"
+tracks/6/path = NodePath("CollisionShape2D:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"points": PoolRealArray( 4.15937, -0.25, 0, 0.25, 0, 6.09183, -0.25, 0, 0.25, 0, 8.17294, -0.25, 0, 0.25, 0, 9.95675, -0.25, 0, 0.25, 0, 12.0379, -0.25, 0, 0.25, 0, 14.2676, -0.25, 0, 0.25, 0, 15.7541, -0.25, 0, 0.25, 0, 18.1325, -0.25, 0, 0.25, 0, 19.6191, -0.25, 0, 0.25, 0, 21.9975, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 )
+"times": PoolRealArray( 0.0714286 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -205,9 +205,10 @@ frame = 1
 [node name="DoorAnimated" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 hframes = 14
+frame = 13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.445953, 1.93246 )
+position = Vector2( 0, 19.7706 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -6,7 +6,6 @@ var DoorClosed = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimationPlayer.play("Idle")
 	$DoorAnimated.visible = false
 	$DoorSprite.visible = true
 	pass # Replace with function body.
