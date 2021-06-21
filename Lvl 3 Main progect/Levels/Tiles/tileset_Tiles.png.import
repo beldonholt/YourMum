@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_TileSet.png-c0895266c3d4771b2bb37cd9cdfe003c.stex"
+path="res://.import/tileset_Tiles.png-41358dbeb35aeab6c8e4e3490f415d81.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/TileSet/tileset_TileSet.png"
-dest_files=[ "res://.import/tileset_TileSet.png-c0895266c3d4771b2bb37cd9cdfe003c.stex" ]
+source_file="res://Levels/Tiles/tileset_Tiles.png"
+dest_files=[ "res://.import/tileset_Tiles.png-41358dbeb35aeab6c8e4e3490f415d81.stex" ]
 
 [params]
 
