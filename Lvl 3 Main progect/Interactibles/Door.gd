@@ -14,13 +14,14 @@ func _process(delta):
 	 if $AnimationPlayer.is_playing() == false and DoorClosed == true:
 			$DoorSprite.visible = true 
 			$DoorAnimated.visible = false
+			
 
 
 func _on_ButtonArea_area_exited(_area):
 	print("exit")
 	if _area.is_in_group("Interactive"):
 		DoorClosed = true
-		$AnimationPlayer.play_backwards("OpenDoor")
+		$AnimationPlayer.play("CloseDoor")
 		
 	pass # Replace with function body.
 
