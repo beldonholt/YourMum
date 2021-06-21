@@ -238,6 +238,7 @@ func _on_PositionTimer_timeout():
 func _on_Area2D_body_shape_entered(_body_id, _body, _body_shape, _local_shape):
 	get_tree().change_scene("res://Levels/MainLevels/LevelOne.tscn")
 	Global.recordPos = true
+	Global.PlayerDeaths = 0
 
 
 
