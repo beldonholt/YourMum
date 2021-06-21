@@ -192,4 +192,5 @@ position = Vector2( -39.3194, 22.7785 )
 
 [connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]
 
+[editable path="Player"]
 [editable path="Door"]

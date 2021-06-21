@@ -18,7 +18,6 @@ extents = Vector2( 18.1946, 29.4587 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Dash"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Male:frame")
 tracks/0/interp = 1
@@ -181,7 +180,6 @@ font_data = ExtResource( 4 )
 script = ExtResource( 2 )
 
 [node name="Male" type="Sprite" parent="."]
-visible = false
 position = Vector2( 0.283448, -0.871181 )
 rotation = -3.14159
 scale = Vector2( 4, -4 )
@@ -312,6 +310,5 @@ mix_target = 1
 [connection signal="timeout" from="Sprint_CoolDown" to="." method="_on_Sprint_CoolDown_timeout"]
 [connection signal="timeout" from="PositionTimer" to="." method="_on_PositionTimer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]
 [connection signal="area_shape_exited" from="Area2D" to="." method="_on_Area2D_area_shape_exited"]
 [connection signal="timeout" from="Sounds/SoundPause" to="." method="_on_SoundPause_timeout"]
