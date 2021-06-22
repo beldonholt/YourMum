@@ -35,11 +35,12 @@ func _process(_delta):
 	#print(timer.time_left
 	if timer.wait_time > 0 and pb.value > 0:
 		timer.wait_time = pb.value
-	if is_on_floor():
-		SprintYes = true
+	if is_on_floor() and SprintYes == true:
 		$Sprint_CoolDown.set_wait_time(1)
+		$CanvasLayer/TextureProgress.max_value = 1
 	elif is_on_floor() == false:
 		$Sprint_CoolDown.set_wait_time(5)
+		$CanvasLayer/TextureProgress.max_value = 5
 	pb.value = timer.time_left
 	pass
 	# audio players
@@ -207,9 +208,8 @@ func _on_Sprint_timer_timeout():
 	print("time out")
 	SpeedBonus = 0
 	SprintYes = false
-	GRAVITY = 40
 	if is_on_floor():
-		$Sprint_CoolDown.set_wait_time(2)
+		$Sprint_CoolDown.set_wait_time(3)
 		$Sprint_CoolDown.start()
 	else:
 		$Sprint_CoolDown.set_wait_time(5)
