@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Levels/Tiles/tileset_Tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://Interactibles/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BaddieThings/FallZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BaddieThings/SpikeBush.tscn" type="PackedScene" id=7]
@@ -185,12 +184,4 @@ position = Vector2( 8673.83, 220.402 )
 position = Vector2( 11116.4, -277.267 )
 shape = SubResource( 2 )
 
-[node name="Door" parent="." instance=ExtResource( 2 )]
-position = Vector2( 242.078, 288.247 )
-
-[node name="ButtonArea" parent="Door" index="4"]
-position = Vector2( -39.3194, 22.7785 )
-
 [connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]
-
-[editable path="Door"]
