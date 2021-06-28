@@ -317,6 +317,34 @@ mix_target = 1
 wait_time = 0.3
 one_shot = true
 
+[node name="WallRightTop" type="RayCast2D" parent="."]
+position = Vector2( 0, -26.378 )
+enabled = true
+cast_to = Vector2( 20, 0 )
+collision_mask = 7
+collide_with_areas = true
+
+[node name="WallRightBottom" type="RayCast2D" parent="."]
+position = Vector2( 0, 25.1415 )
+enabled = true
+cast_to = Vector2( 20, 0 )
+collision_mask = 7
+collide_with_areas = true
+
+[node name="WallLeftTop" type="RayCast2D" parent="."]
+position = Vector2( 0.589928, -26.26 )
+enabled = true
+cast_to = Vector2( -20, 0 )
+collision_mask = 7
+collide_with_areas = true
+
+[node name="WallLeftBottom" type="RayCast2D" parent="."]
+position = Vector2( 0, 24.984 )
+enabled = true
+cast_to = Vector2( -20, 0 )
+collision_mask = 7
+collide_with_areas = true
+
 [connection signal="timeout" from="PositionTimer" to="." method="_on_PositionTimer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_shape_exited" from="Area2D" to="." method="_on_Area2D_area_shape_exited"]

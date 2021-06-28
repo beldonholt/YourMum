@@ -12,7 +12,9 @@ var CoyoteYes = true
 var FloorJump = true
 var Interactive = false
 var Dashing
+var CanDash = false 
 var DashSpeed = 2000
+
 
 #const = constant (wont change/ fixed) 
 
@@ -37,9 +39,17 @@ func _process(_delta):
 	else:
 		if $ShadowMusic.playing == false and Global.ShadowSpawned == true:
 			$ShadowMusic.play()
-	if Input.is_action_just_pressed("AblityOne"):
-			Dashing = true
-			if Dashing == true:
+	
+	if is_on_floor():
+		print("can dash")
+		CanDash = true
+	if is_on_floor() == false and Dashing == true:
+		CanDash = false
+
+	if CanDash == true:
+		if Input.is_action_just_pressed("AblityOne") and (Input.is_action_pressed("left") or Input.is_action_pressed("right")):
+				Dashing = true
+				print("dash")
 				$AnimationPlayer.play("Dash")
 				if SpriteDireaction == true:
 					velocity.x = DashSpeed
