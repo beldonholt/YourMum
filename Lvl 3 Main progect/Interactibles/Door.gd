@@ -1,35 +1,24 @@
 extends StaticBody2D
 
-#Weater or not the door is closed
-
 var DoorClosed = true
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$DoorAnimated.visible = false
-	$DoorSprite.visible = true
-	pass # Replace with function body.
-
-func _process(delta):
-	 if $AnimationPlayer.is_playing() == false and DoorClosed == true:
-			$DoorSprite.visible = true 
-			$DoorAnimated.visible = false
-			
-
+var speed = 100
 
 func _on_ButtonArea_area_exited(_area):
 	print("exit")
-	if _area.is_in_group("Interactive"):
+	if _area.is_in_group("Interactive") and not DoorClosed:
 		DoorClosed = true
-		$AnimationPlayer.play("CloseDoor")
-		
-	pass # Replace with function body.
+	pass 
 
 func _on_ButtonArea_area_entered(area):
 	print("enter")
-	if area.is_in_group("Interactive"):
-		$DoorSprite.visible = false
-		$DoorAnimated.visible = true
+	if area.is_in_group("Interactive") and DoorClosed:
 		DoorClosed = false
-		$AnimationPlayer.play("OpenDoor")
-	pass # Replace with function body.
+	pass 
+
+func _process(delta):
+	if DoorClosed:
+		$DoorSprite.position = $DoorSprite.position.move_toward(Vector2(0,0),speed*delta)
+		$DoorCollision.position = $DoorCollision.position.move_toward(Vector2(0,0),speed*delta)
+	else:
+		$DoorSprite.position = $DoorSprite.position.move_toward(Vector2(0,50),speed*delta)
+		$DoorCollision.position = $DoorCollision.position.move_toward(Vector2(0,50),speed*delta)
