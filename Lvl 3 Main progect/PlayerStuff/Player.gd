@@ -12,6 +12,7 @@ var Death  = false
 var CoyoteYes = true
 var FloorJump = true
 var Interactive = false
+var dashing
 
 #const = constant (wont change/ fixed) 
 
@@ -53,28 +54,24 @@ func _process(_delta):
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(_delta):
 	
-		#Sprint Code
-		#This is now the dash code
-	if Input.is_action_just_pressed("run") and SprintYes == true:
-		$Sprint_timer.start()
-		$AnimationPlayer.play("Dash") 
-		SpeedBonus = 3000
-		print("start")
-	if Input.is_action_pressed("run") and SprintYes == false:
-			SpeedBonus = 0
-			
-			
+	# if female
 	if PlayerSelction != true:
 		if velocity == Vector2(0,0):
 			$AnimationPlayer.play("Idle")
 		#Sprint Code
-		if Input.is_action_just_pressed("run") and SprintYes == true:
-			
-			$Sprint_timer.start()
-			SpeedBonus = 3000
-			print("start")
-		if Input.is_action_pressed("run") and SprintYes == false:
-			SpeedBonus = 0
+			#Sprint Code
+		if Input.is_action_just_pressed("run") and is_on_floor():
+			print("dash")
+			dashing = true
+			velocity.x += velocity.x + SpeedBonus
+		
+#		if Input.is_action_just_pressed("run") and SprintYes == true:
+#
+#			$Sprint_timer.start()
+#			SpeedBonus = 3000
+#			print("start")
+#		if Input.is_action_pressed("run") and SprintYes == false:
+#			SpeedBonus = 0
 		
 		#Checks if "D" is pressed
 		if Input.is_action_pressed("right"):
@@ -102,7 +99,7 @@ func _physics_process(_delta):
 				if is_on_floor():
 					$AnimationPlayer.play("Land")
 	#if male
-	if PlayerSelction == true:
+	if PlayerSelction:
 		if velocity == Vector2(0,0):
 			$AnimationPlayer.play("Idle")
 
@@ -136,7 +133,8 @@ func _physics_process(_delta):
 	
 	
 	#simulating Gravity with acceleration
-	velocity.y += GRAVITY
+	if not dashing:
+		velocity.y += GRAVITY
 	#print(velocity.y)
 		#coyote Jump timer stuff
 	if not is_on_floor() and CoyoteYes and Jumps == 2:
