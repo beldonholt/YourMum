@@ -31,6 +31,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 72, 73, 74 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Female:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 72, 73, 74 ]
+}
 
 [sub_resource type="Animation" id=4]
 loop = true
@@ -198,7 +210,7 @@ scale = Vector2( 4, -4 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 15
-frame = 41
+frame = 75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
 "Player",
@@ -302,8 +314,36 @@ pitch_scale = 0.7
 mix_target = 1
 
 [node name="Dash" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.3
 one_shot = true
+
+[node name="WallRightTop" type="RayCast2D" parent="."]
+position = Vector2( 0, -26.378 )
+enabled = true
+cast_to = Vector2( 20, 0 )
+collision_mask = 7
+collide_with_areas = true
+
+[node name="WallRightBottom" type="RayCast2D" parent="."]
+position = Vector2( 0, 25.1415 )
+enabled = true
+cast_to = Vector2( 20, 0 )
+collision_mask = 7
+collide_with_areas = true
+
+[node name="WallLeftTop" type="RayCast2D" parent="."]
+position = Vector2( 0.589928, -26.26 )
+enabled = true
+cast_to = Vector2( -20, 0 )
+collision_mask = 7
+collide_with_areas = true
+
+[node name="WallLeftBottom" type="RayCast2D" parent="."]
+position = Vector2( 0, 24.984 )
+enabled = true
+cast_to = Vector2( -20, 0 )
+collision_mask = 7
+collide_with_areas = true
 
 [connection signal="timeout" from="PositionTimer" to="." method="_on_PositionTimer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
