@@ -53,7 +53,8 @@ func _physics_process(_delta):
 	
 	# if female
 	if PlayerSelction != true:
-
+		if Dashing and $AnimationPlayer.is_playing() == false:
+			$AnimationPlayer.play("Dash")
 		if velocity == Vector2(0,0):
 			$AnimationPlayer.play("Idle")
 		if not Dashing:

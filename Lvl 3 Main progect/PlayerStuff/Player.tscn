@@ -31,6 +31,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 72, 73, 74 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Female:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 72, 73, 74 ]
+}
 
 [sub_resource type="Animation" id=4]
 loop = true
@@ -198,7 +210,7 @@ scale = Vector2( 4, -4 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 15
-frame = 41
+frame = 75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
 "Player",
@@ -302,7 +314,7 @@ pitch_scale = 0.7
 mix_target = 1
 
 [node name="Dash" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.3
 one_shot = true
 
 [connection signal="timeout" from="PositionTimer" to="." method="_on_PositionTimer_timeout"]
