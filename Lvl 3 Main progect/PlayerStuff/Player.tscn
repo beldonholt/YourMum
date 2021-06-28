@@ -18,6 +18,7 @@ extents = Vector2( 18.1946, 29.4587 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Dash"
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Male:frame")
 tracks/0/interp = 1
@@ -206,14 +207,6 @@ position = Vector2( 2.04654, 1.84386 )
 scale = Vector2( 1, 0.92 )
 shape = SubResource( 1 )
 
-[node name="Sprint_timer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-
-[node name="Sprint_CoolDown" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-
 [node name="PositionTimer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
@@ -308,9 +301,12 @@ volume_db = -5.0
 pitch_scale = 0.7
 mix_target = 1
 
-[connection signal="timeout" from="Sprint_timer" to="." method="_on_Sprint_timer_timeout"]
-[connection signal="timeout" from="Sprint_CoolDown" to="." method="_on_Sprint_CoolDown_timeout"]
+[node name="Dash" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [connection signal="timeout" from="PositionTimer" to="." method="_on_PositionTimer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_shape_exited" from="Area2D" to="." method="_on_Area2D_area_shape_exited"]
 [connection signal="timeout" from="Sounds/SoundPause" to="." method="_on_SoundPause_timeout"]
+[connection signal="timeout" from="Dash" to="." method="_on_Dash_timeout"]
