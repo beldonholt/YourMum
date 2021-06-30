@@ -41,7 +41,7 @@ func _process(_delta):
 			$ShadowMusic.play()
 	
 	if is_on_floor():
-		print("can dash")
+#		print("can dash")
 		CanDash = true
 	if is_on_floor() == false and Dashing == true:
 		CanDash = false
@@ -97,33 +97,32 @@ func _physics_process(_delta):
 	if PlayerSelction:
 		if velocity == Vector2(0,0):
 			$AnimationPlayer.play("Idle")
-
-
+		if not Dashing:
 		#Checks if "D" is pressed
-		if Input.is_action_pressed("right"):
-			#moves the player by the constant speed to the right 
-			velocity.x = SPEED +SpeedBonus
-			if is_on_floor():
-				$AnimationPlayer.play("Walk")
-			get_node( "Male" ).set_flip_h( true )
-			SpriteDireaction = true 
-			#print("move right")
-			
-			
-		#Checks id "A" is pressed 
-		elif Input.is_action_pressed("left"):
-			velocity.x = -SPEED -SpeedBonus 
-			if is_on_floor():
-				$AnimationPlayer.play("Walk")
-			get_node( "Male" ).set_flip_h( false )
-			SpriteDireaction = false
-			#print("move left")
-		if velocity.y < 0:
-			$AnimationPlayer.play("Jump")
-		elif is_on_floor() == false:
-				$AnimationPlayer.play("Fall")
+			if Input.is_action_pressed("right"):
+				#moves the player by the constant speed to the right 
+				velocity.x = SPEED +SpeedBonus
 				if is_on_floor():
-					$AnimationPlayer.play("Land")
+					$AnimationPlayer.play("Walk")
+				get_node( "Male" ).set_flip_h( true )
+				SpriteDireaction = true 
+				#print("move right")
+				
+				
+			#Checks id "A" is pressed 
+			elif Input.is_action_pressed("left"):
+				velocity.x = -SPEED -SpeedBonus 
+				if is_on_floor():
+					$AnimationPlayer.play("Walk")
+				get_node( "Male" ).set_flip_h( false )
+				SpriteDireaction = false
+				#print("move left")
+			if velocity.y < 0:
+				$AnimationPlayer.play("Jump")
+			elif is_on_floor() == false:
+					$AnimationPlayer.play("Fall")
+					if is_on_floor():
+						$AnimationPlayer.play("Land")
 	
 	
 	
