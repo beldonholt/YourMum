@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Levels/Tiles/tileset_Tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://BaddieThings/Falling/SpikeFall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/MainLevels/Tutorial.gd" type="Script" id=3]
 [ext_resource path="res://BaddieThings/FallZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Interactibles/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://BaddieThings/SpikeBush.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/dogica/OTF/dogica.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" type="Texture" id=20]
@@ -67,12 +66,6 @@ motion_mirroring = Vector2( 3552, 0 )
 position = Vector2( 428.115, -28.541 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 23 )
-
-[node name="Door" parent="." instance=ExtResource( 6 )]
-position = Vector2( 406.167, 351.46 )
-
-[node name="ButtonArea" parent="Door" index="2"]
-position = Vector2( -18.386, 22.234 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -216,5 +209,3 @@ position = Vector2( 11116.4, -277.267 )
 shape = SubResource( 2 )
 
 [connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]
-
-[editable path="Door"]
