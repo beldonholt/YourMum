@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
-[ext_resource path="res://Levels/MainLevels/Tutorial.gd" type="Script" id=3]
+[ext_resource path="res://BaddieThings/Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
+[ext_resource path="res://BaddieThings/Levels/MainLevels/Tutorial.gd" type="Script" id=3]
 [ext_resource path="res://BaddieThings/FallZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BaddieThings/SpikeBush.tscn" type="PackedScene" id=7]
