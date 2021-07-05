@@ -39,7 +39,8 @@ func _process(_delta):
 	else:
 		if $ShadowMusic.playing == false and Global.ShadowSpawned == true:
 			$ShadowMusic.play()
-	
+	if is_on_wall():
+		Dashing = false 
 	if is_on_floor():
 #		print("can dash")
 		CanDash = true
@@ -227,3 +228,4 @@ func _on_Area2D_area_shape_exited(_area_id, _area, _area_shape, _local_shape):
 func _on_Dash_timeout():
 	SpeedBonus = 0
 	Dashing = false
+	velocity.x = SPEED
