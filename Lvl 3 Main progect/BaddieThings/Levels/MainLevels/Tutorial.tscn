@@ -178,7 +178,7 @@ __meta__ = {
 [node name="Node" type="Node" parent="."]
 
 [node name="SpikeBush" parent="Node" instance=ExtResource( 7 )]
-position = Vector2( 8673.83, 220.402 )
+position = Vector2( 8668.9, 223.993 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
