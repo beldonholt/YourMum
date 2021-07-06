@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://BaddieThings/Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
-[ext_resource path="res://BaddieThings/Levels/MainLevels/Tutorial.gd" type="Script" id=3]
+[ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/MainLevels/Tutorial.gd" type="Script" id=3]
 [ext_resource path="res://BaddieThings/FallZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BaddieThings/SpikeBush.tscn" type="PackedScene" id=7]
@@ -18,7 +18,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 8 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 20.1914, 686.566 )
+extents = Vector2( 18.8867, 117.222 )
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource( 3 )
@@ -183,7 +183,7 @@ position = Vector2( 8668.9, 223.993 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 11116.4, -277.267 )
+position = Vector2( 10581.8, 130.027 )
 shape = SubResource( 2 )
 
 [connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]

@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 #players variables 
 var velocity = Vector2(0,0)
-var SPEED = 500
+var SPEED = Global.SPEED
 var SpeedBonus = 0
 var Jumps = 2
 var SpriteDireaction 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_Tiles_All.png-396e581c06eb170bc54fdff2711cd8e7.stex"
+path="res://.import/tileset_Tiles.png-41358dbeb35aeab6c8e4e3490f415d81.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BaddieThings/Levels/Tiles_All/tileset_Tiles_All.png"
-dest_files=[ "res://.import/tileset_Tiles_All.png-396e581c06eb170bc54fdff2711cd8e7.stex" ]
+source_file="res://Levels/Tiles/tileset_Tiles.png"
+dest_files=[ "res://.import/tileset_Tiles.png-41358dbeb35aeab6c8e4e3490f415d81.stex" ]
 
 [params]
 

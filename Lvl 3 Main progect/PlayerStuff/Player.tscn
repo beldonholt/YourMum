@@ -193,7 +193,6 @@ font_data = ExtResource( 4 )
 script = ExtResource( 2 )
 
 [node name="Male" type="Sprite" parent="."]
-visible = false
 position = Vector2( 0.283448, -0.871181 )
 rotation = -3.14159
 scale = Vector2( 4, -4 )
@@ -344,6 +343,18 @@ enabled = true
 cast_to = Vector2( -20, 0 )
 collision_mask = 7
 collide_with_areas = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color( 1, 0.980392, 0.980392, 1 )
+show_behind_parent = true
+margin_left = -770.0
+margin_top = -443.0
+margin_right = 766.0
+margin_bottom = 449.0
+color = Color( 0, 0, 0, 0.298039 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="PositionTimer" to="." method="_on_PositionTimer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
