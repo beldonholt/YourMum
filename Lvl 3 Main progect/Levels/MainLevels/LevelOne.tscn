@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://BaddieThings/Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-bg.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-close-trees.png" type="Texture" id=5]
-[ext_resource path="res://BaddieThings/Levels/MainLevels/LevelOne.gd" type="Script" id=6]
+[ext_resource path="res://Levels/MainLevels/LevelOne.gd" type="Script" id=6]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=7]
 
 [node name="LevelOne" type="Node2D"]
