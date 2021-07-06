@@ -9,6 +9,7 @@ var ShadowSpeed = 650
 var PlayerDeaths = 0
 var PlayerSelection = ""
 var recordPos = false
+var SPEED = 500
 
 	#checking for the time for the shadow to spawn
 func _process(_delta):
