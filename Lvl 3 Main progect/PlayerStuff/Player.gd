@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 #players variables 
 var velocity = Vector2(0,0)
-var SPEED = Global.SPEED
 var SpeedBonus = 0
 var Jumps = 2
 var SpriteDireaction 
@@ -54,7 +53,7 @@ func _process(_delta):
 				$AnimationPlayer.play("Dash")
 				if SpriteDireaction == true:
 					velocity.x = DashSpeed
-				else:
+				if SpriteDireaction !=true:
 					velocity.x = -DashSpeed
 				velocity.y = 0
 				$Dash.start()
@@ -72,7 +71,7 @@ func _physics_process(_delta):
 		#Checks if "D" is pressed
 			if Input.is_action_pressed("right"):
 				#moves the player by the constant speed to the right 
-				velocity.x = SPEED 
+				velocity.x = Global.SPEED 
 				if is_on_floor():
 					$AnimationPlayer.play("Walk")
 				get_node( "Female" ).set_flip_h( true )
@@ -82,13 +81,13 @@ func _physics_process(_delta):
 				
 			#Checks id "A" is pressed 
 			elif Input.is_action_pressed("left"):
-				velocity.x = -SPEED -SpeedBonus 
+				velocity.x = -Global.SPEED
 				if is_on_floor():
 					$AnimationPlayer.play("Walk")
 				get_node( "Female" ).set_flip_h( false )
 				SpriteDireaction = false
 				#print("move left")
-			if velocity.y < 0:
+			if velocity.y < 0 and Dashing == false:
 					$AnimationPlayer.play("Jump")
 			elif is_on_floor() == false:
 					$AnimationPlayer.play("Fall")
@@ -102,7 +101,7 @@ func _physics_process(_delta):
 		#Checks if "D" is pressed
 			if Input.is_action_pressed("right"):
 				#moves the player by the constant speed to the right 
-				velocity.x = SPEED +SpeedBonus
+				velocity.x = Global.SPEED 
 				if is_on_floor():
 					$AnimationPlayer.play("Walk")
 				get_node( "Male" ).set_flip_h( true )
@@ -112,7 +111,7 @@ func _physics_process(_delta):
 				
 			#Checks id "A" is pressed 
 			elif Input.is_action_pressed("left"):
-				velocity.x = -SPEED -SpeedBonus 
+				velocity.x = -Global.SPEED 
 				if is_on_floor():
 					$AnimationPlayer.play("Walk")
 				get_node( "Male" ).set_flip_h( false )
@@ -145,7 +144,7 @@ func _physics_process(_delta):
 		CoyoteYes = true
 	
 		#making the player jump
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and Dashing == false:
 		if (is_on_floor() or not $CoyoteTimer.is_stopped()) and Jumps == 2: #coyote timer running 
 				velocity.y = JUMPFORCE
 				Jumps = 1
@@ -228,4 +227,8 @@ func _on_Area2D_area_shape_exited(_area_id, _area, _area_shape, _local_shape):
 func _on_Dash_timeout():
 	SpeedBonus = 0
 	Dashing = false
-	velocity.x = SPEED
+	$AnimationPlayer.stop()
+	if SpriteDireaction == true:
+		velocity.x = Global.SPEED
+	if SpriteDireaction != true:
+		velocity.x = -Global.SPEED
