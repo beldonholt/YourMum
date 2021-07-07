@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
-[node name="SpikeBush" type="Node2D"]
+[node name="Spike" type="Node2D"]
 
 [node name="spikes" type="Sprite" parent="."]
 position = Vector2( 0, 8 )
