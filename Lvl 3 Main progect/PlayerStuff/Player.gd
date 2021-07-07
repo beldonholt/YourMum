@@ -22,7 +22,7 @@ var GRAVITY = 38
 
 #making a dash overlay using a texture progress to show recharge 
 func _ready():
-	
+	Dashing = false
 	if Global.PlayerSelection:
 		$Male.visible = true
 		PlayerSelction = true
