@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
+[ext_resource path="res://BaddieThings/Falling/SpikeFall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/MainLevels/Tutorial.gd" type="Script" id=3]
 [ext_resource path="res://BaddieThings/FallZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=5]
@@ -151,26 +152,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Movement6" type="Label" parent="Labels"]
-margin_left = 6935.17
-margin_top = 257.583
-margin_right = 7607.17
-margin_bottom = 362.583
-rect_pivot_offset = Vector2( 1043.36, 78 )
-custom_fonts/font = SubResource( 1 )
-text = "Watch out for Wolves "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Movement7" type="Label" parent="Labels"]
-margin_left = 8272.67
-margin_top = -20.0632
-margin_right = 8944.67
-margin_bottom = 84.9368
+margin_left = 6992.0
+margin_top = 112.0
+margin_right = 7632.0
+margin_bottom = 144.0
 rect_pivot_offset = Vector2( 1043.36, 78 )
 custom_fonts/font = SubResource( 1 )
-text = "And Spike bushes "
+text = "watch out for Spikes"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -178,12 +167,30 @@ __meta__ = {
 [node name="Node" type="Node" parent="."]
 
 [node name="SpikeBush" parent="Node" instance=ExtResource( 7 )]
-position = Vector2( 8668.9, 223.993 )
+position = Vector2( 8288, 280 )
+
+[node name="Spikes" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 7840, -32 )
+
+[node name="Spikes2" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 7776, -32 )
+
+[node name="Spikes3" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 7712, -32 )
+
+[node name="Spikes4" parent="Node" instance=ExtResource( 2 )]
+position = Vector2( 7648, -32 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 10581.8, 130.027 )
 shape = SubResource( 2 )
+
+[node name="SpikeBush" parent="." instance=ExtResource( 7 )]
+position = Vector2( 8160, 344 )
+
+[node name="SpikeBush2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 8352, 216 )
 
 [connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]
