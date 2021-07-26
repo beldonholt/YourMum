@@ -11,7 +11,7 @@ var Direction = true
 func _physics_process(_delta):
 	Velocity.x = SPEED
 	#checks if sprite is going right or left and faces acordingly
-	print(Direction)
+	#print(Direction)
 	if Direction:
 		SPEED = -100
 		$AnimatedSprite.flip_h = true
@@ -39,6 +39,7 @@ func _physics_process(_delta):
 #	if $RayCast2D.is_colliding():
 #		print("ahsafvhuak vbfgulaiuernhjkgntfihnwstjrnhwui4th")
 	#if reaches edge of platform changes direction 
+	print($RayCast2D.is_colliding())
 	if not $RayCast2D.is_colliding():
 		print("hasbf whe")
 		Direction = !Direction
