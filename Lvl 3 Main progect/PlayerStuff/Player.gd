@@ -168,6 +168,7 @@ func _physics_process(_delta):
 		#player slows down when key not pressed
 	velocity = velocity.move_toward(Vector2(0,0),25)
 	
+	
 	interact()
 
 
