@@ -4,11 +4,11 @@
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/miscellaneous sprites/spikes_trap.png" type="Texture" id=2]
 [ext_resource path="res://BaddieThings/Falling/SpikeFall.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.98487, 5.59159 )
-
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8.1543, 3.72982 )
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9.63707, 5.49415 )
 
 [node name="Spikes" type="KinematicBody2D"]
 scale = Vector2( 4, 4 )
@@ -16,28 +16,30 @@ collision_layer = 3
 motion/sync_to_physics = true
 script = ExtResource( 3 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8, 8 )
+shape = SubResource( 2 )
+
 [node name="Idle" type="Sprite" parent="."]
+position = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 
 [node name="Active" type="Sprite" parent="."]
 visible = false
+position = Vector2( 8, 8 )
 texture = ExtResource( 2 )
 
 [node name="Check" type="RayCast2D" parent="."]
-position = Vector2( 0, -5.98462 )
+position = Vector2( 8, 13.008 )
 enabled = true
 cast_to = Vector2( 0, 200 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 3
-position = Vector2( 0, 3.37119 )
-shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "DeathTouch",
 ]]
+position = Vector2( 8, 7.72 )
 collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, 4.59619 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )

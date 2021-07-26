@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-close-trees.png" type="Texture" id=5]
 [ext_resource path="res://Levels/MainLevels/LevelOne.gd" type="Script" id=6]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://BaddieThings/Spikes.tscn" type="PackedScene" id=8]
+[ext_resource path="res://BaddieThings/Falling/SpikeFall.tscn" type="PackedScene" id=9]
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource( 6 )
@@ -71,3 +73,76 @@ tile_data = PoolIntArray( 1703922, 48, 0, 1703923, 48, 1, 1703924, 48, 1, 170392
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( -77.2844, 200.145 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Spikes" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 4544, 896 )
+
+[node name="Spikes2" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 4160, 896 )
+
+[node name="Spike" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 3904, 1088 )
+
+[node name="Spikes4" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 5312, 768 )
+
+[node name="Spike2" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 5120, 1024 )
+
+[node name="Spike3" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 3008, 768 )
+rotation = 3.14159
+
+[node name="Spike6" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 3712, 1024 )
+
+[node name="Spikes3" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 6080, 704 )
+
+[node name="Spikes5" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 6016, 704 )
+
+[node name="Spikes6" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 5952, 704 )
+
+[node name="Spike7" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 4928, 896 )
+rotation = -3.14159
+
+[node name="Spike8" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 3328, 832 )
+rotation = 3.14159
+
+[node name="Spike4" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 4352, 960 )
+rotation = -3.14159
+
+[node name="Spikes7" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 2688, 704 )
+
+[node name="Spikes8" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 2432, 704 )
+
+[node name="Spikes9" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 2304, 704 )
+
+[node name="Spikes10" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 2368, 704 )
+
+[node name="Spike5" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 832, 1664 )
+rotation = -1.5708
+
+[node name="Spike9" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 832, 1600 )
+rotation = -1.5708
+
+[node name="Spike10" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 832, 1536 )
+rotation = -1.5708
+
+[node name="Spike11" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 832, 1728 )
+rotation = -1.5708
