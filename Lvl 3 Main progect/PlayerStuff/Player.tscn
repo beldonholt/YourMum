@@ -348,10 +348,10 @@ collide_with_areas = true
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color( 1, 0.980392, 0.980392, 1 )
 show_behind_parent = true
-margin_left = -770.0
-margin_top = -443.0
-margin_right = 766.0
-margin_bottom = 449.0
+margin_left = -1855.0
+margin_top = -911.0
+margin_right = 1778.0
+margin_bottom = 895.0
 color = Color( 0, 0, 0, 0.298039 )
 __meta__ = {
 "_edit_use_anchors_": false

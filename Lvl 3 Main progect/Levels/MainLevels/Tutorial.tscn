@@ -165,27 +165,27 @@ __meta__ = {
 
 [node name="Spikes" parent="Node2D" instance=ExtResource( 2 )]
 light_mask = 2
-position = Vector2( 7840, -32 )
+position = Vector2( 7816.69, -65.9028 )
 
 [node name="Spikes2" parent="Node2D" instance=ExtResource( 2 )]
 light_mask = 2
-position = Vector2( 7776, -32 )
+position = Vector2( 7752.5, -66 )
 
 [node name="Spikes3" parent="Node2D" instance=ExtResource( 2 )]
 light_mask = 2
-position = Vector2( 7712, -32 )
+position = Vector2( 7688.5, -66 )
 
 [node name="Spikes4" parent="Node2D" instance=ExtResource( 2 )]
 light_mask = 2
-position = Vector2( 7648, -32 )
+position = Vector2( 7623.5, -66 )
 
 [node name="SpikeBush2" parent="Node2D" instance=ExtResource( 7 )]
 light_mask = 2
-position = Vector2( 8160, 344 )
+position = Vector2( 8128.25, 322.57 )
 
 [node name="SpikeBush3" parent="Node2D" instance=ExtResource( 7 )]
 light_mask = 2
-position = Vector2( 8352, 216 )
+position = Vector2( 8353.59, 192.189 )
 
 [node name="Wolf" parent="Node2D" instance=ExtResource( 6 )]
 position = Vector2( 5974, 225.466 )
@@ -201,6 +201,6 @@ shape = SubResource( 2 )
 [node name="Player" parent="." groups=[
 "Interactive",
 ] instance=ExtResource( 5 )]
-position = Vector2( 5253.24, 387.987 )
+position = Vector2( 170.732, 334.109 )
 
 [connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]

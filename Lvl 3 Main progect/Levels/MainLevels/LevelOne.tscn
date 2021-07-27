@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://BaddieThings/Spikes.tscn" type="PackedScene" id=8]
 [ext_resource path="res://BaddieThings/Falling/SpikeFall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://BaddieThings/Shadow/ShadowMan.tscn" type="PackedScene" id=10]
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource( 6 )
@@ -74,6 +75,9 @@ tile_data = PoolIntArray( 1703922, 48, 0, 1703923, 48, 1, 1703924, 48, 1, 170392
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( -77.2844, 200.145 )
 
+[node name="ShadowMan" parent="." instance=ExtResource( 10 )]
+position = Vector2( -616, -288 )
+
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Spikes" parent="Node2D" instance=ExtResource( 9 )]
@@ -97,6 +101,15 @@ rotation = 3.14159
 
 [node name="Spike6" parent="Node2D" instance=ExtResource( 8 )]
 position = Vector2( 3712, 1024 )
+
+[node name="Spike13" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 768, 1984 )
+
+[node name="Spike14" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 635.96, 1857.1 )
+
+[node name="Spike15" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 704, 1920 )
 
 [node name="Spikes3" parent="Node2D" instance=ExtResource( 9 )]
 position = Vector2( 6080, 704 )
@@ -127,6 +140,9 @@ position = Vector2( 2432, 704 )
 
 [node name="Spikes9" parent="Node2D" instance=ExtResource( 9 )]
 position = Vector2( 2304, 704 )
+
+[node name="Spikes11" parent="Node2D" instance=ExtResource( 9 )]
+position = Vector2( 640, 1216 )
 
 [node name="Spikes10" parent="Node2D" instance=ExtResource( 9 )]
 position = Vector2( 2368, 704 )

@@ -32,6 +32,9 @@ func _ready():
 	
 	
 func _process(_delta):
+	if Input.is_action_just_pressed("Restart"):
+		get_tree().change_scene(Global.ActiveScene)
+		
 	# audio players
 	if $BackgroundMusic.playing == false and Global.ShadowSpawned == false:
 		$BackgroundMusic.play()
