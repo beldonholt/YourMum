@@ -45,7 +45,7 @@ script = ExtResource( 2 )
 modulate = Color( 0.517647, 0.509804, 0.509804, 1 )
 show_behind_parent = true
 light_mask = 3
-position = Vector2( 505.392, 337.855 )
+position = Vector2( 505.392, 336.855 )
 scale = Vector2( 5.0363, 5.0363 )
 texture = ExtResource( 1 )
 
