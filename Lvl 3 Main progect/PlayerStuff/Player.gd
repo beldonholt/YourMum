@@ -161,6 +161,8 @@ func _physics_process(_delta):
 					Jumps = 0
 					print("Double Jump")
 					print(Jumps)
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y = JUMPFORCE * 0.38 
 		
 		
 		
