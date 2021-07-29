@@ -7,14 +7,14 @@ func _physics_process(_delta):
 	if $Check.get_collider().is_in_group("Player") == true:
 		fall = true
 	if fall == true:
-		fall()
+		Fall()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Idle.visible = true
 	$Active.visible = false 
 
-func fall():
+func Fall():
 	$Check.enabled = false 
 	velocity.y += GRAVITY
 	position += velocity 
