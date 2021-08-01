@@ -207,7 +207,7 @@ func _on_Area2D_area_entered(area):
 
 func _on_PositionTimer_timeout():
 	if Global.recordPos == true:
-		Global.AddPlayerPos(position)
+		Global.AddPlayerPos(global_position)
 #	print('timer')
 
 

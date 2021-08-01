@@ -6,3 +6,4 @@ func _ready():
 	#sets this scene as the current saved scen in global
 	Global.sceneSave()
 	$Player.position = Global.currentCPP
+	Global.recordPos = true

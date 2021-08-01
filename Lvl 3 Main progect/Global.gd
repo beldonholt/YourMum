@@ -34,11 +34,11 @@ func Death():
 	#This adds the player position every second to an array for the shadow man to use
 func AddPlayerPos(Pos):
 	var intPos = Pos.round()
-	if PlayerPos.back() != intPos:
-		if PlayerPos.size() <= ShadowSpawnTimer:
-			PlayerPos.append(intPos)
-#			print(intPos)
-#			print(PlayerPos.size())
+	if (PlayerPos.empty()) or (PlayerPos.back() != intPos):
+#		if PlayerPos.size() <= ShadowSpawnTimer:
+		PlayerPos.append(intPos)
+		print(str(PlayerPos.size()) + "-" + str(intPos))
+		
 
  #reseting the player position
 func ResetPlayerArray():
