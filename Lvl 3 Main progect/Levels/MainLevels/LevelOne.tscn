@@ -169,3 +169,6 @@ rotation = -1.5708
 
 [node name="Node2D2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1216, 256 )
+
+[node name="Spike" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1151.73, 2111.04 )
