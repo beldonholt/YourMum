@@ -9,7 +9,9 @@ func _ready():
 func _process(delta):
 	for i in $Area2D.get_overlapping_bodies():
 		if i.is_in_group("Player"):
-			Global.currentCPP = position
+			if Input.is_action_just_pressed("Interact"):
+				Global.currentCPP = position
+				pass
 			pass
 		pass
 	pass

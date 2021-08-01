@@ -14,9 +14,6 @@
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="BackGround" type="Node2D" parent="."]
 
@@ -167,8 +164,11 @@ rotation = -1.5708
 position = Vector2( 832, 1728 )
 rotation = -1.5708
 
-[node name="Node2D2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1216, 256 )
-
-[node name="Spike" parent="." instance=ExtResource( 8 )]
+[node name="Spike12" parent="Node2D" instance=ExtResource( 8 )]
 position = Vector2( 1151.73, 2111.04 )
+
+[node name="Spike16" parent="Node2D" instance=ExtResource( 8 )]
+position = Vector2( 1600, 2175.04 )
+
+[node name="Campfire" parent="." instance=ExtResource( 11 )]
+position = Vector2( 6528, 1152 )
