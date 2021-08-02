@@ -172,3 +172,6 @@ position = Vector2( 1600, 2175.04 )
 
 [node name="Campfire" parent="." instance=ExtResource( 11 )]
 position = Vector2( 6528, 1152 )
+
+[node name="Campfire2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1664, 1088 )
