@@ -1,20 +1,24 @@
 extends Node2D  
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	print("this is to annoy daniel west :)")
-	pass # Replace with function body.
-
 func _process(delta):
 	for i in $Area2D.get_overlapping_bodies():
 		if i.is_in_group("Player"):
 			if Input.is_action_just_pressed("Interact"):
 				Global.currentCPP = position
-				pass
-			pass
-		pass
-	pass
+				Global.On = true 
+			if Global.On == false and Global.currentCPP != position:
+				$Promt.visible = true
+	if Global.On:
+		$Promt.visible = false 
+		$AnimationPlayer.play("on")
+
+	else:
+		$AnimationPlayer.play("Cold")
+				
+	if Global.currentCPP != position:
+		$AnimationPlayer.play("Cold")
+	
 
 
 

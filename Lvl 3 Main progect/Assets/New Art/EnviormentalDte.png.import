@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_Tiles.png-41358dbeb35aeab6c8e4e3490f415d81.stex"
+path="res://.import/EnviormentalDte.png-3a668a6d3a9c772ce46fc3752b1f803f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Tiles/tileset_Tiles.png"
-dest_files=[ "res://.import/tileset_Tiles.png-41358dbeb35aeab6c8e4e3490f415d81.stex" ]
+source_file="res://Assets/New Art/EnviormentalDte.png"
+dest_files=[ "res://.import/EnviormentalDte.png-3a668a6d3a9c772ce46fc3752b1f803f.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
