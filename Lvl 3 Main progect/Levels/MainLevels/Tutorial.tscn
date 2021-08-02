@@ -1,12 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
 [ext_resource path="res://BaddieThings/Falling/SpikeFall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/MainLevels/Tutorial.gd" type="Script" id=3]
 [ext_resource path="res://BaddieThings/FallZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Interactibles/CampFire.tscn" type="PackedScene" id=6]
 [ext_resource path="res://BaddieThings/Spikes.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/dogica/OTF/dogica.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://Levels/Tiles_All/Enviormental.tres" type="TileSet" id=9]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-close-trees.png" type="Texture" id=23]
@@ -66,6 +68,13 @@ motion_mirroring = Vector2( 3552, 0 )
 position = Vector2( 428.115, -28.541 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 23 )
+
+[node name="Enviorment" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65683, 14, 0, 131186, 35, 0, 131216, 15, 0, 131226, 15, 0, 196628, 49, 0, 196722, 37, 0, 196741, 15, 0, 196745, 14, 0, 196768, 14, 0, 196769, 15, 0, 262147, 54, 0, 262149, 52, 0, 262254, 15, 0, 262261, 1, 0, 327708, 12, 0, 327709, 15, 0, 327711, 14, 0, 327712, 14, 0, 327713, 0, 0, 327714, 1, 0, 327715, 15, 0, 327784, 1, 0, 327786, 1, 0, 327787, 14, 0, 327803, 15, 0, 327804, 1, 0, 327805, 15, 0, 327806, 15, 0, 458747, 0, 0, 458751, 1, 0, 393220, 1, 0, 393222, 0, 0, 393223, 0, 0, 393224, 6, 0, 393227, 5, 0, 393229, 2, 0, 393232, 15, 0, 393233, 7, 0, 393234, 8, 0, 393235, 9, 0, 393236, 9, 0, 393237, 9, 0, 393238, 10, 0, 393239, 13, 0, 393241, 12, 0, 393242, 14, 0, 393252, 12, 0, 393254, 14, 0, 393266, 15, 0, 393269, 1, 0, 393270, 14, 0, 393271, 0, 0, 393274, 15, 0, 393277, 14, 0, 393278, 15, 0, 393280, 14, 0, 393281, 0, 0, 393297, 0, 0, 393298, 15, 0, 393302, 48, 0, 393304, 31, 0, 393305, 40, 0, 393306, 47, 0, 393307, 41, 0, 393310, 14, 0, 393313, 1, 0, 393314, 0, 0, 393316, 15, 0, 393317, 15, 0, 393318, 15, 0, 393319, 44, 0, 524280, 1, 0, 524282, 1, 0, 589828, 0, 0, 589890, 15, 0, 655441, 14, 0 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -196,5 +205,8 @@ shape = SubResource( 2 )
 "Interactive",
 ] instance=ExtResource( 5 )]
 position = Vector2( 170.732, 334.109 )
+
+[node name="Campfire" parent="." instance=ExtResource( 6 )]
+position = Vector2( 622.999, 384.588 )
 
 [connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]

@@ -11,6 +11,7 @@ var PlayerSelection = ""
 var recordPos = false
 var SPEED = 500
 var currentCPP = Vector2(0,0)
+var On = false 
 
 	#checking for the time for the shadow to spawn
 func _process(_delta):
