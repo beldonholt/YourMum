@@ -1,5 +1,7 @@
 extends Node2D  
-
+func _ready():
+	Global.On == false
+	
 
 func _process(delta):
 	for i in $Area2D.get_overlapping_bodies():
