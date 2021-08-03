@@ -21,7 +21,7 @@ func _process(_delta):
 	#saving the current level scene
 func sceneSave():
 	ActiveScene = "Levels/MainLevels/" + get_tree().get_current_scene().get_name() + ".tscn"
-	print(ActiveScene)
+#	print(ActiveScene)
 
 	#This is the code sending the character to the shadow realm also known as the death scene
 func Death():
@@ -38,7 +38,7 @@ func AddPlayerPos(Pos):
 	if (PlayerPos.empty()) or (PlayerPos.back() != intPos):
 #		if PlayerPos.size() <= ShadowSpawnTimer:
 		PlayerPos.append(intPos)
-		print(str(PlayerPos.size()) + "-" + str(intPos))
+#		print(str(PlayerPos.size()) + "-" + str(intPos))
 		
 
  #reseting the player position
