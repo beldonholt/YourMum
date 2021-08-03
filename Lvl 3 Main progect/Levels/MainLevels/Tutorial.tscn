@@ -200,6 +200,9 @@ position = Vector2( 5928.67, 403.903 )
 rotation = 3.14159
 scale = Vector2( 3, -3 )
 
+[node name="Campfire" parent="." instance=ExtResource( 10 )]
+position = Vector2( 768, 384 )
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -209,9 +212,6 @@ shape = SubResource( 2 )
 [node name="Player" parent="." groups=[
 "Interactive",
 ] instance=ExtResource( 5 )]
-position = Vector2( 170.732, 334.109 )
-
-[node name="Campfire" parent="Player" instance=ExtResource( 10 )]
-position = Vector2( 597.268, 49.891 )
+position = Vector2( 139.619, 401.991 )
 
 [connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]

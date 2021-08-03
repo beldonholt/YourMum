@@ -14,12 +14,12 @@ func _physics_process(_delta):
 	#print(Direction)
 	if Direction:
 		SPEED = -100
-		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.flip_h = false
 
 	
 	else:
 		SPEED = 100
-		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.flip_h = true
 
 		#print("face left")
 	
