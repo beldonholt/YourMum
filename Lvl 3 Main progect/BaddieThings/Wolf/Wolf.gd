@@ -30,11 +30,11 @@ func _physics_process(_delta):
 	Velocity = move_and_slide(Velocity,Vector2.UP)
 	
 	#if it hits a wall changes direction
-	if $Wall.is_colliding():
-		#print("wall")
-		$Wall.scale.x *= -1
-		#Direction =  0
-		$RayCast2D.position.x *= -1
+#	if $Wall.is_colliding():
+#		#print("wall")
+#		$Wall.scale.x *= -1
+#		#Direction =  0
+#		$RayCast2D.position.x *= -1
 		
 #	if $RayCast2D.is_colliding():
 #		print("ahsafvhuak vbfgulaiuernhjkgntfihnwstjrnhwui4th")
@@ -46,6 +46,11 @@ func _physics_process(_delta):
 		$RayCast2D.position.x *= -1
 		$Wall.rotation_degrees *= -1
 
+	if $Wall.is_colliding() and not $Wall.get_collider().is_in_group("Player"):
+		print("hasbf whe")
+		Direction = !Direction
+		$RayCast2D.position.x *= -1
+		$Wall.rotation_degrees *= -1
 
 func _on_Area2D_area_entered(area):
 	pass # Replace with function body.
