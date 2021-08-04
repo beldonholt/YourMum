@@ -13,6 +13,7 @@ var Interactive = false
 var Dashing
 var CanDash = false 
 var DashSpeed = 2000
+var fade = false
 
 
 #const = constant (wont change/ fixed) 
@@ -60,6 +61,11 @@ func _process(_delta):
 					velocity.x = -DashSpeed
 				velocity.y = 0
 				$Dash.start()
+				
+	if not $AnimationPlayer.is_playing() and fade:
+		get_tree().change_scene("res://Levels/MainLevels/LevelOne.tscn")
+		Global.recordPos = true
+		Global.PlayerDeaths = 0
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(_delta):
@@ -214,9 +220,10 @@ func _on_PositionTimer_timeout():
 
 func _on_Area2D_body_shape_entered(_body_id, _body, _body_shape, _local_shape):
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Levels/MainLevels/LevelOne.tscn")
-	Global.recordPos = true
-	Global.PlayerDeaths = 0
+	set_physics_process(false)
+	$AnimationPlayer.play("Fade")
+	fade = true
+
 
 
 
