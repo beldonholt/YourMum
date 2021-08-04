@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
 [ext_resource path="res://BaddieThings/Falling/SpikeFall.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://BaddieThings/Spikes.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/dogica/OTF/dogica.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://Levels/Tiles_All/Enviormental.tres" type="TileSet" id=9]
-[ext_resource path="res://Interactibles/CampFire.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-close-trees.png" type="Texture" id=23]
@@ -83,7 +82,7 @@ tile_data = PoolIntArray( -786453, 49, 0, -786452, 49, 1, -786451, 49, 1, -78645
 tile_set = ExtResource( 9 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 65684, 27, 0, 131213, 15, 0, 131217, 14, 0, 131224, 12, 0, 196740, 12, 0, 196744, 27, 0, 196764, 0, 0, 196766, 14, 0, 262255, 1, 0, 262260, 0, 0, 262264, 12, 0, 327697, 36, 0, 327708, 27, 0, 327711, 12, 0, 327804, 1, 0, 458747, 12, 0, 458749, 0, 0, 458750, 1, 0, 458751, 39, 0, 393216, 41, 0, 393221, 2, 0, 393223, 12, 0, 393233, 37, 0, 393240, 15, 0, 393242, 12, 0, 393249, 27, 0, 393252, 27, 0, 393254, 12, 0, 393269, 1, 0, 393270, 0, 0, 393272, 27, 0, 393274, 1, 0, 393275, 0, 0, 393276, 12, 0, 393279, 3, 0, 393280, 2, 0, 393289, 7, 0, 393290, 28, 0, 393291, 25, 0, 393292, 29, 0, 393293, 25, 0, 393294, 26, 0, 393295, 13, 0, 393298, 15, 0, 393299, 0, 0, 393302, 39, 0, 393303, 40, 0, 393304, 41, 0, 393310, 2, 0, 393311, 27, 0, 393314, 12, 0, 393316, 3, 0, 393319, 0, 0, 524281, 1, 0, 458801, 1, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 65684, 27, 0, 131213, 15, 0, 131217, 14, 0, 131224, 12, 0, 196740, 12, 0, 196744, 27, 0, 196764, 0, 0, 196766, 14, 0, 262255, 1, 0, 262260, 0, 0, 262264, 12, 0, 327697, 36, 0, 327708, 27, 0, 327711, 12, 0, 327804, 1, 0, 458747, 12, 0, 458749, 0, 0, 458750, 1, 0, 458751, 39, 0, 393216, 41, 0, 393221, 2, 0, 393223, 12, 0, 393233, 37, 0, 393240, 15, 0, 393242, 12, 0, 393249, 27, 0, 393252, 27, 0, 393254, 12, 0, 393269, 1, 0, 393270, 0, 0, 393272, 27, 0, 393274, 1, 0, 393275, 0, 0, 393276, 12, 0, 393279, 3, 0, 393280, 2, 0, 393282, 7, 0, 393283, 28, 0, 393284, 24, 0, 393285, 25, 0, 393286, 29, 0, 393287, 28, 0, 393288, 29, 0, 393289, 28, 0, 393290, 28, 0, 393291, 25, 0, 393292, 24, 0, 393293, 29, 0, 393294, 29, 0, 393295, 13, 0, 393298, 15, 0, 393299, 0, 0, 393302, 39, 0, 393303, 40, 0, 393304, 41, 0, 393310, 2, 0, 393311, 27, 0, 393314, 12, 0, 393316, 3, 0, 393319, 0, 0, 524281, 1, 0, 458801, 1, 0 )
 
 [node name="FallZone" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2332.45, 960 )
@@ -139,7 +138,7 @@ margin_right = 4737.44
 margin_bottom = 234.439
 rect_pivot_offset = Vector2( 1043.36, 78 )
 custom_fonts/font = SubResource( 1 )
-text = "Mind the gap
+text = "Mind the gaps
 "
 __meta__ = {
 "_edit_use_anchors_": false

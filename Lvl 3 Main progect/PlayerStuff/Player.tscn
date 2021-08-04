@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/herochar sprites(new)/player_red.png" type="Texture" id=1]
 [ext_resource path="res://PlayerStuff/Player.gd" type="Script" id=2]
@@ -43,30 +43,18 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-loop = true
+resource_name = "Fade"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Female:frame")
+tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 48, 49, 50 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Male:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 48, 49, 50 ]
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.298039 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -78,6 +66,33 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 50 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Male:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 50 ]
+}
+
+[sub_resource type="Animation" id=6]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Female:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
@@ -96,7 +111,7 @@ tracks/1/keys = {
 "values": [ 40, 41, 42, 43 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -124,7 +139,7 @@ tracks/1/keys = {
 "values": [ 56, 57, 58 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -152,7 +167,7 @@ tracks/1/keys = {
 "values": [ 80, 81 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Female:frame")
@@ -202,7 +217,7 @@ scale = Vector2( 4, -4 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 15
-frame = 75
+frame = 72
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
 "Player",
@@ -239,11 +254,12 @@ zoom = Vector2( 1.5, 1.5 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.0
 anims/Dash = SubResource( 3 )
-anims/Fall = SubResource( 4 )
-anims/Idle = SubResource( 5 )
-anims/Jump = SubResource( 6 )
-anims/Land = SubResource( 7 )
-anims/Walk = SubResource( 8 )
+anims/Fade = SubResource( 4 )
+anims/Fall = SubResource( 5 )
+anims/Idle = SubResource( 6 )
+anims/Jump = SubResource( 7 )
+anims/Land = SubResource( 8 )
+anims/Walk = SubResource( 9 )
 
 [node name="Sounds" type="Node" parent="."]
 
