@@ -30,10 +30,14 @@ func _ready():
 	else:
 		$Female.visible = true
 		PlayerSelction = !true
+	Global.restart = false 
+	Global.playerFirstPos = position
+	print(Global.playerFirstPos)
 	
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("Restart"):
+		Global.restart = false
 		get_tree().change_scene(Global.ActiveScene)
 		
 	# audio players
@@ -245,3 +249,9 @@ func _on_Dash_timeout():
 		velocity.x = Global.SPEED
 	if SpriteDireaction != true:
 		velocity.x = -Global.SPEED
+
+
+func _on_Area2D_area_shape_entered(area_id, area, area_shape, local_shape):
+	Global.restart  = true
+	Global.currentCPP = Vector2(0,0)
+	Global.Death()

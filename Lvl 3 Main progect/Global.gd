@@ -11,7 +11,9 @@ var PlayerSelection = ""
 var recordPos = false
 var SPEED = 500
 var currentCPP = Vector2(0,0)
-var On = false 
+var On 
+var restart = false
+var playerFirstPos = Vector2(0,0)
 
 	#checking for the time for the shadow to spawn
 func _process(_delta):
@@ -26,12 +28,16 @@ func sceneSave():
 
 	#This is the code sending the character to the shadow realm also known as the death scene
 func Death():
-	get_tree().change_scene("res://Levels/Ded/Dead.tscn")
-	PlayerDeaths += 1
-	print(PlayerDeaths)
+	if restart == true:
+		get_tree().change_scene("res://StartMenu.tscn")
+	else:
+		get_tree().change_scene("res://Levels/Ded/Dead.tscn")
+		PlayerDeaths += 1
+		print(PlayerDeaths)
+		ShadowSpeed += 10
 	ResetPlayerArray()
 	ShadowSpawned = false
-	ShadowSpeed += 10
+		
 
 	#This adds the player position every second to an array for the shadow man to use
 func AddPlayerPos(Pos):

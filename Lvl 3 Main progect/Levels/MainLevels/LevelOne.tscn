@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" type="Texture" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Interactibles/CampFire.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Levels/Tiles_All/Enviormental.tres" type="TileSet" id=12]
 [ext_resource path="res://Interactibles/Door.tscn" type="PackedScene" id=13]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 363.499
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource( 6 )
@@ -195,5 +198,18 @@ position = Vector2( 6528, 1152 )
 
 [node name="Campfire2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1664, 1088 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 6463.9, 2720.8 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[connection signal="area_shape_entered" from="Area2D" to="Player" method="_on_Area2D_area_shape_entered"]
 
 [editable path="Door"]

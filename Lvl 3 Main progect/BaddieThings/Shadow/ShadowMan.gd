@@ -1,8 +1,12 @@
 extends Node2D
 
 var ArrayPosition = 1
+var firstPosMove = false
 
 func _process(delta):
+	if firstPosMove == false and Global.currentCPP != Vector2(0,0):
+		$ShadowMan.position = Global.currentCPP +Vector2(100,0)
+		firstPosMove = true
 	if Global.ShadowSpawned:
 #		print("shadow spawned")
 		if not Global.PlayerPos.empty():
