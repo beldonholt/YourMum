@@ -4,10 +4,12 @@ var velocity = Vector2(0,0)
 var fall = false
 
 func _physics_process(_delta):
-	if $Check.get_collider().is_in_group("Player") == true:
-		fall = true
+	if $Check.is_colliding():
+		if $Check.get_collider().is_in_group("Player"):
+			fall = true
 	if fall == true:
 		Fall()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
