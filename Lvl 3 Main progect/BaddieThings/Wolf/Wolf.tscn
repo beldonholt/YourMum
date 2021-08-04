@@ -50,14 +50,11 @@ collision_mask = 4
 collide_with_areas = true
 
 [node name="Wall" type="RayCast2D" parent="."]
-position = Vector2( 8, 5.33333 )
+position = Vector2( 0, 8 )
 scale = Vector2( 1, 1.41326 )
 enabled = true
-cast_to = Vector2( 20, 0 )
-collision_mask = 4
-__meta__ = {
-"_edit_group_": true
-}
+cast_to = Vector2( 30, 0 )
+collision_mask = 6
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "DeathTouch",

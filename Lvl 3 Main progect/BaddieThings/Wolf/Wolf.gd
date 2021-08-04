@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+
 #enemy Constants
 const GRAVITY = 30
 var SPEED =  100
@@ -8,18 +9,20 @@ var Velocity = Vector2(0,0)
 # 1 means facing right in this term
 var Direction = true
 
+var WallX = 30
+
 func _physics_process(_delta):
 	Velocity.x = SPEED
 	#checks if sprite is going right or left and faces acordingly
 	#print(Direction)
 	if Direction:
-		SPEED = -100
-		$AnimatedSprite.flip_h = false
+		SPEED = 100
+		$AnimatedSprite.flip_h = true
 
 	
 	else:
-		SPEED = 100
-		$AnimatedSprite.flip_h = true
+		SPEED = -100
+		$AnimatedSprite.flip_h = false
 
 		#print("face left")
 	
@@ -39,18 +42,16 @@ func _physics_process(_delta):
 #	if $RayCast2D.is_colliding():
 #		print("ahsafvhuak vbfgulaiuernhjkgntfihnwstjrnhwui4th")
 	#if reaches edge of platform changes direction 
-	print($RayCast2D.is_colliding())
+	
 	if not $RayCast2D.is_colliding():
-		print("hasbf whe")
 		Direction = !Direction
 		$RayCast2D.position.x *= -1
-		$Wall.rotation_degrees *= -1
+		WallX *= -1
+		$Wall.cast_to.x = WallX
 
 	if $Wall.is_colliding() and not $Wall.get_collider().is_in_group("Player"):
-		print("hasbf whe")
+		print("abfh")
 		Direction = !Direction
 		$RayCast2D.position.x *= -1
-		$Wall.rotation_degrees *= -1
-
-func _on_Area2D_area_entered(area):
-	pass # Replace with function body.
+		WallX *= -1
+		$Wall.cast_to.x = WallX
