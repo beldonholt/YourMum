@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.40984, 24.1715 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
 [node name="Door" type="StaticBody2D"]
 scale = Vector2( 4, 4 )
@@ -35,7 +35,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonArea"]
 position = Vector2( 0, -7.58119 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [connection signal="area_entered" from="ButtonArea" to="." method="_on_ButtonArea_area_entered"]
 [connection signal="area_exited" from="ButtonArea" to="." method="_on_ButtonArea_area_exited"]

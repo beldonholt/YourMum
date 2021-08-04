@@ -90,7 +90,7 @@ margin_top = -13.7555
 margin_right = 41.0
 margin_bottom = 6.24455
 custom_fonts/font = SubResource( 5 )
-text = "[E]"
+text = "[X]"
 __meta__ = {
 "_edit_use_anchors_": false
 }
