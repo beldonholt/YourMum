@@ -205,9 +205,6 @@ scale = Vector2( 3, -3 )
 position = Vector2( 10400.1, 126.463 )
 shape = SubResource( 2 )
 
-[node name="Campfire" parent="." instance=ExtResource( 10 )]
-position = Vector2( 768, 384 )
-
 [node name="Player" parent="." groups=[
 "Interactive",
 ] instance=ExtResource( 5 )]
