@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 var DoorClosed = true
-var speed = 100
+var speed = 25
 
 func _on_ButtonArea_area_exited(_area):
 	print("exit")

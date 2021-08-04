@@ -17,6 +17,18 @@
 [node name="LevelOne" type="Node2D"]
 script = ExtResource( 6 )
 
+[node name="Door" parent="." instance=ExtResource( 13 )]
+position = Vector2( 5600, 872 )
+
+[node name="DoorSprite" parent="Door" index="0"]
+position = Vector2( 0, -2 )
+
+[node name="DoorCollision" parent="Door" index="1"]
+position = Vector2( 0, -2 )
+
+[node name="ButtonArea" parent="Door" index="2"]
+position = Vector2( 96, 52 )
+
 [node name="BackGround" type="Node2D" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="BackGround"]
@@ -101,9 +113,6 @@ position = Vector2( 4160, 896 )
 [node name="Spike" parent="Node2D" instance=ExtResource( 8 )]
 position = Vector2( 3904, 1088 )
 
-[node name="Spikes4" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( 5312, 768 )
-
 [node name="Spike2" parent="Node2D" instance=ExtResource( 8 )]
 position = Vector2( 5120, 1024 )
 
@@ -186,17 +195,5 @@ position = Vector2( 6528, 1152 )
 
 [node name="Campfire2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1664, 1088 )
-
-[node name="Door" parent="." instance=ExtResource( 13 )]
-position = Vector2( 5600, 872 )
-
-[node name="DoorSprite" parent="Door" index="0"]
-position = Vector2( 0, -2 )
-
-[node name="DoorCollision" parent="Door" index="1"]
-position = Vector2( 0, -2 )
-
-[node name="ButtonArea" parent="Door" index="2"]
-position = Vector2( 34, 36 )
 
 [editable path="Door"]
