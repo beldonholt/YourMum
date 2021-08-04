@@ -31,6 +31,7 @@ script = ExtResource( 1 )
 position = Vector2( -32.758, -19.5028 )
 frames = SubResource( 1 )
 animation = "Run Cycle "
+frame = 3
 speed_scale = 1.5
 playing = true
 centered = false
@@ -49,11 +50,14 @@ collision_mask = 4
 collide_with_areas = true
 
 [node name="Wall" type="RayCast2D" parent="."]
-position = Vector2( 2.66667, 8 )
+position = Vector2( 8, 5.33333 )
 scale = Vector2( 1, 1.41326 )
 enabled = true
 cast_to = Vector2( 20, 0 )
 collision_mask = 4
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "DeathTouch",
