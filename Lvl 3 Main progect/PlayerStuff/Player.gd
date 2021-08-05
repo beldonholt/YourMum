@@ -18,8 +18,8 @@ var fade = false
 
 #const = constant (wont change/ fixed) 
 
-var JUMPFORCE = -1300
-var GRAVITY = 38
+var JUMPFORCE = -1675
+var GRAVITY = 69
 
 #making a dash overlay using a texture progress to show recharge 
 func _ready():
@@ -39,6 +39,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Restart"):
 		Global.restart = false
 		get_tree().change_scene(Global.ActiveScene)
+	$UiAssets/TextureProgress.value = Global.PlayerDeaths
 		
 	# audio players
 	if $BackgroundMusic.playing == false and Global.ShadowSpawned == false:
@@ -139,6 +140,7 @@ func _physics_process(_delta):
 	
 	
 	
+	
 	#simulating Gravity with acceleration
 	if not Dashing:
 		velocity.y += GRAVITY
@@ -181,7 +183,7 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity,Vector2.UP)
 		
 		#player slows down when key not pressed
-	velocity = velocity.move_toward(Vector2(0,0),25)
+	velocity = velocity.move_toward(Vector2(0,0),55)
 	
 	
 	interact()

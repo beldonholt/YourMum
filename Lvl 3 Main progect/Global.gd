@@ -14,6 +14,7 @@ var currentCPP = Vector2(0,0)
 var On 
 var restart = false
 var playerFirstPos = Vector2(0,0)
+var value
 
 	#checking for the time for the shadow to spawn
 func _process(_delta):
@@ -30,11 +31,13 @@ func sceneSave():
 func Death():
 	if restart == true:
 		get_tree().change_scene("res://StartMenu.tscn")
+		pass
 	else:
 		get_tree().change_scene("res://Levels/Ded/Dead.tscn")
 		PlayerDeaths += 1
 		print(PlayerDeaths)
 		ShadowSpeed += 10
+		pass
 	ResetPlayerArray()
 	ShadowSpawned = false
 		

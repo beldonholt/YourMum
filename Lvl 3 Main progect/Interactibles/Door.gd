@@ -1,7 +1,8 @@
 extends StaticBody2D
 
 var DoorClosed = true
-var speed = 25
+var DoorCloseSpeed = 10
+var DoorOpenSpeed = 25
 
 func _on_ButtonArea_area_exited(_area):
 	print("exit")
@@ -17,8 +18,8 @@ func _on_ButtonArea_area_entered(area):
 
 func _process(delta):
 	if DoorClosed:
-		$DoorSprite.position = $DoorSprite.position.move_toward(Vector2(0,0),speed*delta)
-		$DoorCollision.position = $DoorCollision.position.move_toward(Vector2(0,0),speed*delta)
+		$DoorSprite.position = $DoorSprite.position.move_toward(Vector2(0,0),DoorCloseSpeed*delta)
+		$DoorCollision.position = $DoorCollision.position.move_toward(Vector2(0,0),DoorCloseSpeed*delta)
 	else:
-		$DoorSprite.position = $DoorSprite.position.move_toward(Vector2(0,50),speed*delta)
-		$DoorCollision.position = $DoorCollision.position.move_toward(Vector2(0,50),speed*delta)
+		$DoorSprite.position = $DoorSprite.position.move_toward(Vector2(0,50),DoorOpenSpeed*delta)
+		$DoorCollision.position = $DoorCollision.position.move_toward(Vector2(0,50),DoorOpenSpeed*delta)
