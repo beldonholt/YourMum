@@ -43,15 +43,16 @@ func _physics_process(_delta):
 #		print("ahsafvhuak vbfgulaiuernhjkgntfihnwstjrnhwui4th")
 	#if reaches edge of platform changes direction 
 	
-	if not $RayCast2D.is_colliding():
+	if not $Ground.is_colliding():
+		print("fuck")
 		Direction = !Direction
-		$RayCast2D.position.x *= -1
+		$Ground.position.x *= -1
 		WallX *= -1
 		$Wall.cast_to.x = WallX
 
 	if $Wall.is_colliding() and not $Wall.get_collider().is_in_group("Player"):
 		print("abfh")
 		Direction = !Direction
-		$RayCast2D.position.x *= -1
+		$Ground.position.x *= -1
 		WallX *= -1
 		$Wall.cast_to.x = WallX
