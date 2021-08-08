@@ -29,6 +29,7 @@ func _process(_delta):
 
 	else:
 		$AnimationPlayer.play("Cold")
+		Global.On = false 
 				
 	if Global.currentCPP != position:
 		$AnimationPlayer.play("Cold")
