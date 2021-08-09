@@ -44,7 +44,6 @@ func _physics_process(_delta):
 	#if reaches edge of platform changes direction 
 	
 	if not $Ground.is_colliding():
-		print("fuck")
 		Direction = !Direction
 		$Ground.position.x *= -1
 		WallX *= -1

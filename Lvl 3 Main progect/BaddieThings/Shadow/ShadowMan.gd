@@ -4,6 +4,7 @@ var ArrayPosition = 1
 var firstPosMove = false
 
 func _process(delta):
+	$AnimationPlayer.play("Move")
 #	if firstPosMove == false and Global.currentCPP != Vector2(0,0):
 #		Node2D.position = Global.currentCPP
 #		firstPosMove = true
