@@ -26,7 +26,53 @@ extents = Vector2( 18.8867, 117.222 )
 [node name="Tutorial" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="BackGround2" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BackGround2"]
+
+[node name="Far" type="ParallaxLayer" parent="BackGround2/ParallaxBackground"]
+modulate = Color( 0.568627, 1, 0.588235, 1 )
+self_modulate = Color( 0, 1, 0.0156863, 1 )
+motion_scale = Vector2( 0.01, 0.01 )
+motion_mirroring = Vector2( 1920, 1088 )
+
+[node name="Sprite" type="Sprite" parent="BackGround2/ParallaxBackground/Far"]
+position = Vector2( -847.57, -250.033 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="Trees-2" type="ParallaxLayer" parent="BackGround2/ParallaxBackground"]
+modulate = Color( 0.14902, 1, 0, 1 )
+motion_scale = Vector2( 0.2, 0.2 )
+motion_mirroring = Vector2( 3552, 0 )
+
+[node name="Sprite" type="Sprite" parent="BackGround2/ParallaxBackground/Trees-2"]
+position = Vector2( 434.948, -28.5732 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 20 )
+
+[node name="Background" type="ParallaxLayer" parent="BackGround2/ParallaxBackground"]
+modulate = Color( 0.164706, 0.87451, 0.223529, 1 )
+motion_scale = Vector2( 0.3, 0.3 )
+motion_mirroring = Vector2( 3552, 0 )
+
+[node name="Sprite" type="Sprite" parent="BackGround2/ParallaxBackground/Background"]
+scale = Vector2( 6, 6 )
+texture = ExtResource( 21 )
+
+[node name="Close" type="ParallaxLayer" parent="BackGround2/ParallaxBackground"]
+modulate = Color( 0.0392157, 0.529412, 0.0352941, 1 )
+motion_scale = Vector2( 0.5, 0.5 )
+motion_mirroring = Vector2( 3552, 0 )
+
+[node name="Sprite" type="Sprite" parent="BackGround2/ParallaxBackground/Close"]
+position = Vector2( 428.115, -28.541 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 23 )
+
 [node name="BackGround" type="Node2D" parent="."]
+visible = false
 __meta__ = {
 "_edit_lock_": true
 }
@@ -34,37 +80,45 @@ __meta__ = {
 [node name="ParallaxBackground" type="ParallaxBackground" parent="BackGround"]
 
 [node name="Far" type="ParallaxLayer" parent="BackGround/ParallaxBackground"]
+visible = false
 motion_scale = Vector2( 0.01, 0.01 )
 motion_mirroring = Vector2( 1920, 1088 )
 
 [node name="Sprite" type="Sprite" parent="BackGround/ParallaxBackground/Far"]
+visible = false
 position = Vector2( -847.57, -250.033 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 25 )
 centered = false
 
 [node name="Trees-2" type="ParallaxLayer" parent="BackGround/ParallaxBackground"]
+visible = false
 motion_scale = Vector2( 0.2, 0.2 )
 motion_mirroring = Vector2( 3552, 0 )
 
 [node name="Sprite" type="Sprite" parent="BackGround/ParallaxBackground/Trees-2"]
+visible = false
 position = Vector2( 434.948, -28.5732 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 20 )
 
 [node name="Background" type="ParallaxLayer" parent="BackGround/ParallaxBackground"]
+visible = false
 motion_scale = Vector2( 0.3, 0.3 )
 motion_mirroring = Vector2( 3552, 0 )
 
 [node name="Sprite" type="Sprite" parent="BackGround/ParallaxBackground/Background"]
+visible = false
 scale = Vector2( 6, 6 )
 texture = ExtResource( 21 )
 
 [node name="Close" type="ParallaxLayer" parent="BackGround/ParallaxBackground"]
+visible = false
 motion_scale = Vector2( 0.5, 0.5 )
 motion_mirroring = Vector2( 3552, 0 )
 
 [node name="Sprite" type="Sprite" parent="BackGround/ParallaxBackground/Close"]
+visible = false
 position = Vector2( 428.115, -28.541 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 23 )
