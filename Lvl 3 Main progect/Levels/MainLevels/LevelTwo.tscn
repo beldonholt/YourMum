@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Levels/MainLevels/LevelTwo.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=2]
-[ext_resource path="res://PlayerStuff/Player.tscn" type="PackedScene" id=3]
 
 [node name="LevelTwo" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,6 +11,3 @@ scale = Vector2( 4, 4 )
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
-
-[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 207.172, 130.034 )
