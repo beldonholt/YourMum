@@ -197,7 +197,7 @@ tracks/1/keys = {
 "values": [ 8, 9, 10, 11, 12, 13 ]
 }
 
-[sub_resource type="Theme" id=10]
+[sub_resource type="Theme" id=11]
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=[
 "Player",
@@ -212,7 +212,7 @@ scale = Vector2( 4, -4 )
 texture = ExtResource( 5 )
 hframes = 8
 vframes = 15
-frame = 81
+frame = 72
 
 [node name="Female" type="Sprite" parent="."]
 visible = false
@@ -222,7 +222,7 @@ scale = Vector2( 4, -4 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 15
-frame = 81
+frame = 72
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
 "Player",
@@ -252,7 +252,6 @@ position = Vector2( 2.15022, 1.96406 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -2, 4 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
 
@@ -335,7 +334,7 @@ margin_left = -1864.92
 margin_top = -1330.73
 margin_right = 1768.08
 margin_bottom = 475.269
-theme = SubResource( 10 )
+theme = SubResource( 11 )
 color = Color( 0, 0, 0, 0.298039 )
 __meta__ = {
 "_edit_use_anchors_": false
