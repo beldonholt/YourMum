@@ -15,6 +15,7 @@ var On
 var restart = false
 var playerFirstPos = Vector2(0,0)
 var value
+var levelNumber = 0
 
 	#checking for the time for the shadow to spawn
 func _process(_delta):

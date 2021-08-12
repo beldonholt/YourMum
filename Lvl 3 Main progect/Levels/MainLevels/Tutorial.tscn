@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
 [ext_resource path="res://BaddieThings/Falling/SpikeFall.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://BaddieThings/Spikes.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/dogica/OTF/dogica.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://Levels/Tiles_All/Enviormental.tres" type="TileSet" id=9]
+[ext_resource path="res://PlayerStuff/SoundManager.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levels/MainLevels/NextLevel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-far-trees.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-close-trees.png" type="Texture" id=23]
@@ -20,11 +22,10 @@ outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 8 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 18.8867, 117.222 )
-
 [node name="Tutorial" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="SoundManager" parent="." instance=ExtResource( 10 )]
 
 [node name="BackGround2" type="Node2D" parent="."]
 
@@ -250,12 +251,6 @@ position = Vector2( 8128.25, 322.57 )
 light_mask = 2
 position = Vector2( 8353.59, 192.189 )
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 10390.6, 126.463 )
-shape = SubResource( 2 )
-
 [node name="Player" parent="." groups=[
 "Interactive",
 ] instance=ExtResource( 5 )]
@@ -264,4 +259,5 @@ position = Vector2( 170.732, 334.109 )
 [node name="Wolf" parent="." instance=ExtResource( 6 )]
 position = Vector2( 6200.6, 397.49 )
 
-[connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]
+[node name="Area2D" parent="." instance=ExtResource( 11 )]
+position = Vector2( 10960.6, 192.107 )

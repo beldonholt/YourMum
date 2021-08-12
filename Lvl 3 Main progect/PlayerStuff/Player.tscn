@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/herochar sprites(new)/player_red.png" type="Texture" id=1]
 [ext_resource path="res://PlayerStuff/Player.gd" type="Script" id=2]
@@ -6,8 +6,6 @@
 [ext_resource path="res://Assets/HealthBarInsert.png" type="Texture" id=4]
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/herochar sprites(new)/herochar_spritesheet(new).png" type="Texture" id=5]
 [ext_resource path="res://Assets/Audio/vgm-atmospheric-deadspace.mp3" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Audio/vgm-atmospheric-below.mp3" type="AudioStream" id=7]
-[ext_resource path="res://Assets/Audio/mixkit-quick-positive-video-game-notification-interface-265.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Audio/Hit1.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/HealthBarOverLay.png" type="Texture" id=10]
 
@@ -197,7 +195,7 @@ tracks/1/keys = {
 "values": [ 8, 9, 10, 11, 12, 13 ]
 }
 
-[sub_resource type="Theme" id=11]
+[sub_resource type="Theme" id=10]
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=[
 "Player",
@@ -267,11 +265,6 @@ anims/Walk = SubResource( 9 )
 
 [node name="Sounds" type="Node" parent="."]
 
-[node name="DashRecharge" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 8 )
-volume_db = -2.529
-mix_target = 1
-
 [node name="Death" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 9 )
 volume_db = -7.077
@@ -284,15 +277,7 @@ one_shot = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -5.048
 pitch_scale = 0.46
-autoplay = true
-mix_target = 1
-
-[node name="ShadowMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-volume_db = -5.0
-pitch_scale = 0.7
 mix_target = 1
 
 [node name="Dash" type="Timer" parent="."]
@@ -334,8 +319,8 @@ margin_left = -1864.92
 margin_top = -1330.73
 margin_right = 1768.08
 margin_bottom = 475.269
-theme = SubResource( 11 )
-color = Color( 0, 0, 0, 0.298039 )
+theme = SubResource( 10 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

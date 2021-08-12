@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" type="Texture" id=2]
@@ -14,12 +14,13 @@
 [ext_resource path="res://Levels/Tiles_All/Enviormental.tres" type="TileSet" id=12]
 [ext_resource path="res://Interactibles/Door.tscn" type="PackedScene" id=13]
 [ext_resource path="res://BaddieThings/Wolf/Wolf.tscn" type="PackedScene" id=14]
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 363.499
+[ext_resource path="res://PlayerStuff/SoundManager.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Levels/MainLevels/NextLevel.tscn" type="PackedScene" id=16]
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource( 6 )
+
+[node name="SoundManager" parent="." instance=ExtResource( 15 )]
 
 [node name="Door" parent="." instance=ExtResource( 13 )]
 position = Vector2( 5600, 872 )
@@ -216,14 +217,8 @@ position = Vector2( -77.2844, 200.145 )
 [node name="Wolf" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1435.73, 202.909 )
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 6463.9, 2720.8 )
-collision_layer = 7
-collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
-
-[connection signal="area_shape_entered" from="Area2D" to="Player" method="_on_Area2D_area_shape_entered"]
+[node name="Area2D" parent="." instance=ExtResource( 16 )]
+position = Vector2( 6528, 2496 )
+rotation = 1.57079
 
 [editable path="Door"]
