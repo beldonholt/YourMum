@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/herochar sprites(new)/player_red.png" type="Texture" id=1]
 [ext_resource path="res://PlayerStuff/Player.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/HealthBarInsert.png" type="Texture" id=4]
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/herochar sprites(new)/herochar_spritesheet(new).png" type="Texture" id=5]
 [ext_resource path="res://Assets/Audio/vgm-atmospheric-deadspace.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Skull.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Audio/Hit1.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/HealthBarOverLay.png" type="Texture" id=10]
 
@@ -168,7 +169,7 @@ tracks/1/keys = {
 "values": [ 80, 81 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Female:frame")
@@ -195,7 +196,39 @@ tracks/1/keys = {
 "values": [ 8, 9, 10, 11, 12, 13 ]
 }
 
-[sub_resource type="Theme" id=10]
+[sub_resource type="Theme" id=11]
+
+[sub_resource type="Animation" id=13]
+resource_name = "SkullEyesFlare"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skull:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 7, 8 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "SkullFlare"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skull:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=[
 "Player",
@@ -210,7 +243,7 @@ scale = Vector2( 4, -4 )
 texture = ExtResource( 5 )
 hframes = 8
 vframes = 15
-frame = 72
+frame = 74
 
 [node name="Female" type="Sprite" parent="."]
 visible = false
@@ -220,7 +253,7 @@ scale = Vector2( 4, -4 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 15
-frame = 72
+frame = 74
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
 "Player",
@@ -261,7 +294,7 @@ anims/Fall = SubResource( 5 )
 anims/Idle = SubResource( 6 )
 anims/Jump = SubResource( 7 )
 anims/Land = SubResource( 8 )
-anims/Walk = SubResource( 9 )
+anims/Walk = SubResource( 10 )
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -319,7 +352,7 @@ margin_left = -1864.92
 margin_top = -1330.73
 margin_right = 1768.08
 margin_bottom = 475.269
-theme = SubResource( 10 )
+theme = SubResource( 11 )
 color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -327,6 +360,10 @@ __meta__ = {
 
 [node name="UiAssets" type="Node2D" parent="."]
 scale = Vector2( 6, 6 )
+
+[node name="UiPlayer" type="AnimationPlayer" parent="UiAssets"]
+anims/SkullEyesFlare = SubResource( 13 )
+anims/SkullFlare = SubResource( 12 )
 
 [node name="TextureProgress" type="TextureProgress" parent="UiAssets"]
 margin_left = -119.095
@@ -340,6 +377,13 @@ texture_progress = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Skull" type="Sprite" parent="UiAssets"]
+position = Vector2( -123.508, -63.9239 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+hframes = 16
+frame = 8
 
 [connection signal="timeout" from="PositionTimer" to="." method="_on_PositionTimer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

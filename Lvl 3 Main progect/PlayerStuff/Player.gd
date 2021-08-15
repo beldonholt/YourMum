@@ -41,7 +41,8 @@ func _process(_delta):
 		Global.restart = false
 		get_tree().change_scene(Global.ActiveScene)
 	$UiAssets/TextureProgress.value = Global.PlayerDeaths
-		
+	if Global.PlayerDeaths >= 1:
+			$UiAssets/UiPlayer.play("SkullFlare")
 	# audio players
 
 
@@ -72,7 +73,6 @@ func _process(_delta):
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(_delta):
-	
 	# if female
 	if PlayerSelction != true:
 		if Dashing and $AnimationPlayer.is_playing() == false:
@@ -206,6 +206,7 @@ func collide(area):
 #		print("hit")
 		#sending signal to global script
 		#connecting so it can play the sound
+
 		$Sounds/Death.play()
 		$Sounds/SoundPause.start()
 	elif area.is_in_group("NextLevel"):
