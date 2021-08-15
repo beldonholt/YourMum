@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Levels/MainLevels/CollisionShape2D.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 169.473 )
+
+[node name="Area2D" type="Area2D" groups=[
+"NextLevel",
+]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"NextLevel",
+]]
+shape = SubResource( 1 )
+script = ExtResource( 1 )

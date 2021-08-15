@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/herochar sprites(new)/player_blue.png" type="Texture" id=1]
+[ext_resource path="res://Assets/dogica/OTF/dogica.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/herochar sprites(new)/player_red.png" type="Texture" id=3]
+[ext_resource path="res://CharterSelection.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Charaters"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RedRidingHood:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 40, 41, 42, 43 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PlayerSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 40, 41, 42, 43 ]
+}
+
+[node name="CharterSelection" type="Node"]
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -611.0
+margin_top = -348.615
+margin_right = 1589.0
+margin_bottom = 1012.38
+color = Color( 0.317647, 0.266667, 0.266667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 152.184
+margin_top = 19.9536
+margin_right = 824.184
+margin_bottom = 86.9536
+custom_fonts/font = SubResource( 1 )
+text = "Chosoe Your Charater "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerSprite" type="Sprite" parent="."]
+position = Vector2( 200, 160 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 15
+frame = 40
+
+[node name="PlayerOne" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 6.0
+margin_right = 383.0
+margin_bottom = 596.0
+rect_pivot_offset = Vector2( -491.463, -8.81131 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RedRidingHood" type="Sprite" parent="."]
+position = Vector2( 760, 160 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 3 )
+hframes = 8
+vframes = 15
+frame = 40
+
+[node name="PlayerTwo" type="Button" parent="."]
+margin_left = 523.881
+margin_top = -1.71356
+margin_right = 1025.88
+margin_bottom = 601.286
+rect_pivot_offset = Vector2( -491.463, -8.81131 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Charaters = SubResource( 2 )
+
+[connection signal="pressed" from="PlayerOne" to="." method="_on_PlayerOne_pressed"]
+[connection signal="pressed" from="PlayerTwo" to="." method="_on_PlayerTwo_pressed"]
