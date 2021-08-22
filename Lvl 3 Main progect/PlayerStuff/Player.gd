@@ -14,7 +14,7 @@ var Dashing
 var CanDash = false 
 var DashSpeed = 2000
 var fade = false
-
+var levelArray = ["Levels/MainLevels/LevelOne.tscn", "Levels/MainLevels/LevelTwo.tscn"]
 
 #const = constant (wont change/ fixed) 
 
@@ -33,6 +33,7 @@ func _ready():
 	Global.restart = false 
 	Global.playerFirstPos = position
 	print(Global.playerFirstPos)
+	$BackgroundMusic.play()
 	
 	
 func _process(_delta):
@@ -40,13 +41,11 @@ func _process(_delta):
 		Global.restart = false
 		get_tree().change_scene(Global.ActiveScene)
 	$UiAssets/TextureProgress.value = Global.PlayerDeaths
-		
+	if Global.PlayerDeaths >= 1:
+			$UiAssets/UiPlayer.play("SkullFlare")
 	# audio players
-	if $BackgroundMusic.playing == false and Global.ShadowSpawned == false:
-		$BackgroundMusic.play()
-	else:
-		if $ShadowMusic.playing == false and Global.ShadowSpawned == true:
-			$ShadowMusic.play()
+
+
 	if is_on_wall():
 		Dashing = false 
 	if is_on_floor():
@@ -68,13 +67,12 @@ func _process(_delta):
 				$Dash.start()
 				
 	if not $AnimationPlayer.is_playing() and fade:
-		get_tree().change_scene("res://Levels/MainLevels/LevelOne.tscn")
+		get_tree().change_scene(levelArray[Global.levelNumber - 1])
 		Global.recordPos = true
 		Global.PlayerDeaths = 0
 
 #func _physics_process(delta): does fucion at games refressh rate (60fps)
 func _physics_process(_delta):
-	
 	# if female
 	if PlayerSelction != true:
 		if Dashing and $AnimationPlayer.is_playing() == false:
@@ -208,9 +206,15 @@ func collide(area):
 #		print("hit")
 		#sending signal to global script
 		#connecting so it can play the sound
+
 		$Sounds/Death.play()
 		$Sounds/SoundPause.start()
-	
+	elif area.is_in_group("NextLevel"):
+		set_physics_process(false)
+		$AnimationPlayer.play("Fade")
+		Global.levelNumber += 1
+		fade = true
+		pass
 
 
 func _on_Area2D_area_entered(area):
@@ -222,17 +226,6 @@ func _on_PositionTimer_timeout():
 	if Global.recordPos == true:
 		Global.AddPlayerPos(global_position)
 #	print('timer')
-
-
-
-func _on_Area2D_body_shape_entered(_body_id, _body, _body_shape, _local_shape):
-# warning-ignore:return_value_discarded
-	set_physics_process(false)
-	$AnimationPlayer.play("Fade")
-	fade = true
-
-
-
 
 func _on_SoundPause_timeout():
 	Death = true
@@ -252,9 +245,3 @@ func _on_Dash_timeout():
 		velocity.x = Global.SPEED
 	if SpriteDireaction != true:
 		velocity.x = -Global.SPEED
-
-
-func _on_Area2D_area_shape_entered(area_id, area, area_shape, local_shape):
-	Global.restart  = true
-	Global.currentCPP = Vector2(0,0)
-	Global.Death()
