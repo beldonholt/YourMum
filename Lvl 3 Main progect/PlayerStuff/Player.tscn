@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/herochar sprites(new)/player_red.png" type="Texture" id=1]
 [ext_resource path="res://PlayerStuff/Player.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Audio/mixkit-quick-positive-video-game-notification-interface-265.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Audio/Hit1.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/HealthBarOverLay.png" type="Texture" id=10]
+[ext_resource path="res://Assets/New Art/Skull.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.8595, 31.7371 )
@@ -197,7 +198,7 @@ tracks/1/keys = {
 "values": [ 8, 9, 10, 11, 12, 13 ]
 }
 
-[sub_resource type="Theme" id=11]
+[sub_resource type="Theme" id=10]
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=[
 "Player",
@@ -334,20 +335,26 @@ margin_left = -1864.92
 margin_top = -1330.73
 margin_right = 1768.08
 margin_bottom = 475.269
-theme = SubResource( 11 )
+theme = SubResource( 10 )
 color = Color( 0, 0, 0, 0.298039 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="UiAssets" type="Node2D" parent="."]
+position = Vector2( -41.6223, -40.433 )
 scale = Vector2( 6, 6 )
 
+[node name="Sprite" type="Sprite" parent="UiAssets"]
+position = Vector2( -112.578, -60.6496 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
 [node name="TextureProgress" type="TextureProgress" parent="UiAssets"]
-margin_left = -119.095
-margin_top = -66.5346
-margin_right = -39.0955
-margin_bottom = -60.5346
+margin_left = -103.635
+margin_top = -64.3544
+margin_right = -23.6353
+margin_bottom = -58.3544
 max_value = 25.0
 texture_under = ExtResource( 4 )
 texture_over = ExtResource( 3 )
