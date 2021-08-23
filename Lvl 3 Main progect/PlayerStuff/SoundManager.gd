@@ -7,7 +7,7 @@ func _ready():
 	randomize()
 	musicNum = randi() % 2
 	print(backgroundMusic[musicNum])
-	$BackgroundMusic.stream = backgroundMusic[musicNum]
+	$BackgroundMusic.stream = load(backgroundMusic[musicNum])
 	$BackgroundMusic.play()
 	pass
 
