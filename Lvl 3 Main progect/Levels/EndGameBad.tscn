@@ -1,0 +1,139 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/dogica/OTF/dogicapixel.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Levels/EndGameBad.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "End"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Scroll"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10, 15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -49.6381, 626.321 ), Vector2( -44.2927, 130.982 ), Vector2( -52.3018, -47.8868 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 15, 20 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.88 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -82.4069
+margin_top = -34.4611
+margin_right = 1146.59
+margin_bottom = 730.539
+color = Color( 0.180392, 0.180392, 0.180392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0.88 )
+margin_left = -49.6381
+margin_top = 626.321
+margin_right = 1108.36
+margin_bottom = 1421.32
+custom_fonts/font = SubResource( 1 )
+text = "Sometimes, we just can't hold on.
+
+
+
+
+
+
+Sometimes it's all too much, 
+
+
+
+
+
+
+our shadow eventually catches up 
+
+
+
+
+
+But as the cool embrace of darkness wraps around me 
+
+
+
+
+
+
+finally,
+
+
+
+
+
+
+
+
+I am free
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/End = SubResource( 3 )
+anims/Scroll = SubResource( 2 )
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 390.164
+margin_top = 271.939
+margin_right = 614.164
+margin_bottom = 331.939
+custom_fonts/font = SubResource( 4 )
+text = "I am free"
+__meta__ = {
+"_edit_use_anchors_": false
+}

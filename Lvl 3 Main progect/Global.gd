@@ -42,6 +42,8 @@ func Death():
 	ResetPlayerArray()
 	ShadowSpawned = false
 		
+func EndGame():
+	get_tree().change_scene("res://Levels/EndGameBad.tscn")
 
 	#This adds the player position every second to an array for the shadow man to use
 func AddPlayerPos(Pos):
