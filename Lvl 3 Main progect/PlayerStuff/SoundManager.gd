@@ -10,6 +10,3 @@ func _ready():
 	$BackgroundMusic.stream = load(backgroundMusic[musicNum])
 	$BackgroundMusic.play()
 	pass
-
-func _process(delta):
-	pass

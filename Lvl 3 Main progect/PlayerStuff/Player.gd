@@ -42,11 +42,11 @@ func _process(_delta):
 		get_tree().change_scene(Global.ActiveScene)
 	$UiAssets/TextureProgress.value = Global.PlayerDeaths
 	
-	if Global.PlayerDeaths >= 1 and Global.PlayerDeaths < 5:
-		$UiAssets/UiPlayer.play("SkullFlare")
-	elif Global.PlayerDeaths >=5 and Global.PlayerDeaths < 15:
-		$UiAssets/UiPlayer.play("SkullMid")
-	elif Global.PlayerDeaths >= 15:
+#	if Global.PlayerDeaths >= 1 and Global.PlayerDeaths < 5:
+#		$UiAssets/UiPlayer.play("SkullFlare")
+#	elif Global.PlayerDeaths >=5 and Global.PlayerDeaths < 15:
+#		$UiAssets/UiPlayer.play("SkullMid")
+	if Global.PlayerDeaths >= 15:
 		Global.EndGame()
 
 
