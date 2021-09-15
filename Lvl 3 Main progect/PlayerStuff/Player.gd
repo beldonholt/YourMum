@@ -33,7 +33,7 @@ func _ready():
 	Global.restart = false 
 	Global.playerFirstPos = position
 	print(Global.playerFirstPos)
-	$BackgroundMusic.play()
+	
 	
 	
 func _process(_delta):
@@ -41,14 +41,14 @@ func _process(_delta):
 		Global.restart = false
 		get_tree().change_scene(Global.ActiveScene)
 	$UiAssets/TextureProgress.value = Global.PlayerDeaths
+	if Global.PlayerDeaths >= 1 and Global.PlayerDeaths < 5:
+			$UiAssets/UiPlayer.play("SkullFlare")
+	if Global.PlayerDeaths == 5:
+		$UiAssets/UiPlayer.play("SkullEyesFlare")
+	elif Global.PlayerDeaths > 5:
+		$UiAssets/UiPlayer.play("LargeFlare")
 	
-#	if Global.PlayerDeaths >= 1 and Global.PlayerDeaths < 5:
-#		$UiAssets/UiPlayer.play("SkullFlare")
-#	elif Global.PlayerDeaths >=5 and Global.PlayerDeaths < 15:
-#		$UiAssets/UiPlayer.play("SkullMid")
-	if Global.PlayerDeaths >= 15:
-		Global.EndGame()
-
+	# audio players
 
 
 	if is_on_wall():
