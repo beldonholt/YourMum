@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" type="Texture" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://BaddieThings/Wolf/Wolf.tscn" type="PackedScene" id=14]
 [ext_resource path="res://PlayerStuff/SoundManager.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Levels/MainLevels/NextLevel.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Background/2-super far.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Background/1-Background.png" type="Texture" id=18]
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource( 6 )
@@ -79,6 +81,28 @@ motion_mirroring = Vector2( 3552, 0 )
 position = Vector2( 428.115, -28.541 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 5 )
+
+[node name="Cave" type="ParallaxBackground" parent="BackGround"]
+offset = Vector2( 100, 1000 )
+transform = Transform2D( 1, 0, 0, 1, 100, 1000 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BackGround/Cave"]
+position = Vector2( -68, 88 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BackGround/Cave/ParallaxLayer"]
+position = Vector2( 464, 476 )
+scale = Vector2( 8.25478, 19.44 )
+texture = ExtResource( 18 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BackGround/Cave"]
+
+[node name="Sprite" type="Sprite" parent="BackGround/Cave/ParallaxLayer2"]
+position = Vector2( 116, 464 )
+scale = Vector2( 10.0637, 20.48 )
+texture = ExtResource( 17 )
 
 [node name="BadThings" type="Node2D" parent="."]
 
@@ -212,7 +236,7 @@ position = Vector2( 6528, 1152 )
 position = Vector2( 1664, 1088 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( -77.2844, 200.145 )
+position = Vector2( 952, -608 )
 
 [node name="Wolf" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1435.73, 202.909 )
