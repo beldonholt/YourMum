@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/MainLevels/LevelTwo.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=2]
@@ -7,12 +7,9 @@
 [ext_resource path="res://BaddieThings/Spikes.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BaddieThings/Falling/SpikeFall.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Interactibles/CampFire.tscn" type="PackedScene" id=7]
-[ext_resource path="res://PlayerStuff/SoundManager.tscn" type="PackedScene" id=8]
 
 [node name="LevelTwo" type="Node2D"]
 script = ExtResource( 1 )
-
-[node name="SoundManager" parent="." instance=ExtResource( 8 )]
 
 [node name="GroundClutter" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )

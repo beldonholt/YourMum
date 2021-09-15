@@ -9,7 +9,7 @@ outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "End"
 length = 5.0
 tracks/0/type = "value"
@@ -25,8 +25,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Scroll"
+[sub_resource type="Animation" id=3]
 length = 20.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:rect_position")
@@ -123,8 +122,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/End = SubResource( 3 )
-anims/Scroll = SubResource( 2 )
+anims/End = SubResource( 2 )
+anims/Scroll = SubResource( 3 )
 
 [node name="Label2" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
