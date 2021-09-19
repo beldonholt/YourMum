@@ -3,4 +3,5 @@
 [ext_resource path="res://PlayerStuff/SoundManager.gd" type="Script" id=1]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer"]
+pause_mode = 2
 script = ExtResource( 1 )

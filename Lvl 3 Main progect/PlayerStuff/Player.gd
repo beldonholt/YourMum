@@ -211,7 +211,6 @@ func collide(area):
 #		print("hit")
 		#sending signal to global script
 		#connecting so it can play the sound
-
 		$Sounds/Death.play()
 		$Sounds/SoundPause.start()
 	elif area.is_in_group("NextLevel"):
@@ -250,3 +249,4 @@ func _on_Dash_timeout():
 		velocity.x = Global.SPEED
 	if SpriteDireaction != true:
 		velocity.x = -Global.SPEED
+
