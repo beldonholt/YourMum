@@ -47,6 +47,8 @@ func _process(_delta):
 		$UiAssets/UiPlayer.play("SkullEyesFlare")
 	elif Global.PlayerDeaths > 5:
 		$UiAssets/UiPlayer.play("LargeFlare")
+	if Global.PlayerDeaths >= 15:
+		get_tree().change_scene("res://Levels/EndGameBad.tscn")
 	
 	# audio players
 
