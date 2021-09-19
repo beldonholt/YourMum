@@ -13,7 +13,7 @@
 extents = Vector2( 18.8595, 31.7371 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 18.1946, 29.4587 )
+extents = Vector2( 19.1365, 29.4587 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Dash"
