@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/herochar sprites(new)/player_red.png" type="Texture" id=1]
 [ext_resource path="res://PlayerStuff/Player.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/New Art/platform_metroidvania asset pack v1.01/herochar sprites(new)/herochar_spritesheet(new).png" type="Texture" id=5]
 [ext_resource path="res://PlayerStuff/Pause.gd" type="Script" id=6]
 [ext_resource path="res://Skull.png" type="Texture" id=7]
+[ext_resource path="res://Assets/dogica/OTF/dogicabold.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://Assets/Audio/Hit1.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/HealthBarOverLay.png" type="Texture" id=10]
 
@@ -246,6 +247,12 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
+[sub_resource type="DynamicFont" id=14]
+size = 64
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
 [node name="KinematicBody2D" type="KinematicBody2D" groups=[
 "Player",
 ]]
@@ -401,8 +408,50 @@ frame = 11
 pause_mode = 2
 script = ExtResource( 6 )
 
+[node name="Grade" type="ColorRect" parent="Pause"]
+visible = false
+self_modulate = Color( 1, 0.980392, 0.980392, 1 )
+show_behind_parent = true
+margin_left = -1864.92
+margin_top = -1330.73
+margin_right = 1768.08
+margin_bottom = 475.269
+theme = SubResource( 10 )
+color = Color( 0.184314, 0.184314, 0.184314, 0.333333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Pause"]
+visible = false
+margin_left = -326.363
+margin_top = -223.331
+margin_right = 325.637
+margin_bottom = -169.331
+custom_fonts/font = SubResource( 14 )
+text = "start menu"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Pause"]
+visible = false
+margin_left = -324.628
+margin_top = 189.734
+margin_right = 327.372
+margin_bottom = 243.734
+custom_fonts/font = SubResource( 14 )
+text = "Quit Game"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="timeout" from="PositionTimer" to="." method="_on_PositionTimer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_shape_exited" from="Area2D" to="." method="_on_Area2D_area_shape_exited"]
 [connection signal="timeout" from="Sounds/SoundPause" to="." method="_on_SoundPause_timeout"]
 [connection signal="timeout" from="Dash" to="." method="_on_Dash_timeout"]
+[connection signal="button_down" from="Pause/Button" to="Pause" method="_on_Button_button_down"]
+[connection signal="button_down" from="Pause/Button2" to="Pause" method="_on_Button2_button_down"]
