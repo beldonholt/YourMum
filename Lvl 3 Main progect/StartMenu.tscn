@@ -62,6 +62,7 @@ __meta__ = {
 }
 
 [node name="Main Menu" type="Node2D" parent="."]
+position = Vector2( -1, 0 )
 
 [node name="Start" type="Button" parent="Main Menu"]
 margin_left = 16.6704
