@@ -21,8 +21,9 @@ var levelArray = ["Levels/MainLevels/LevelOne.tscn", "Levels/MainLevels/LevelTwo
 var JUMPFORCE = -1675
 var GRAVITY = 69
 
-#making a dash overlay using a texture progress to show recharge 
+
 func _ready():
+	#skin select
 	Dashing = false
 	if Global.PlayerSelection:
 		$Male.visible = true
@@ -40,6 +41,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Restart"):
 		Global.restart = false
 		get_tree().change_scene(Global.ActiveScene)
+		#tracks player death on ui and plays animation based on deaths
 	$UiAssets/TextureProgress.value = Global.PlayerDeaths
 	if Global.PlayerDeaths >= 1 and Global.PlayerDeaths < 5:
 			$UiAssets/UiPlayer.play("SkullFlare")
@@ -50,9 +52,7 @@ func _process(_delta):
 	if Global.PlayerDeaths >= 15:
 		get_tree().change_scene("res://Levels/EndGameBad.tscn")
 	
-	# audio players
-
-
+	#making sure the player can dash
 	if is_on_wall():
 		Dashing = false 
 	if is_on_floor():
