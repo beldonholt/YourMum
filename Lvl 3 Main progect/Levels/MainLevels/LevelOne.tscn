@@ -78,6 +78,18 @@ __meta__ = {
 
 [node name="BadThings" type="Node2D" parent="."]
 
+[node name="Door" parent="." instance=ExtResource( 13 )]
+position = Vector2( 5600, 872 )
+
+[node name="DoorSprite" parent="Door" index="0"]
+position = Vector2( 0, -2 )
+
+[node name="DoorCollision" parent="Door" index="1"]
+position = Vector2( 0, -2 )
+
+[node name="ButtonArea" parent="Door" index="2"]
+position = Vector2( 96, 52 )
+
 [node name="TileMaps" type="Node2D" parent="."]
 
 [node name="FloorClutter" type="TileMap" parent="TileMaps"]
@@ -206,18 +218,6 @@ position = Vector2( 6528, 1152 )
 
 [node name="Campfire2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1664, 1088 )
-
-[node name="Door" parent="." instance=ExtResource( 13 )]
-position = Vector2( 5600, 872 )
-
-[node name="DoorSprite" parent="Door" index="0"]
-position = Vector2( 0, -2 )
-
-[node name="DoorCollision" parent="Door" index="1"]
-position = Vector2( 0, -2 )
-
-[node name="ButtonArea" parent="Door" index="2"]
-position = Vector2( 96, 52 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, 248 )

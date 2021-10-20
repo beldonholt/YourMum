@@ -8,7 +8,7 @@ func _ready():
 	if Global.ActiveScene == "Levels/MainLevels/LevelTwo.tscn":
 		$Player.position = Global.currentCPP
 	Global.sceneSave()
-
+	Global.ResetPlayerArray()
 	
 	Global.recordPos = true
 	
