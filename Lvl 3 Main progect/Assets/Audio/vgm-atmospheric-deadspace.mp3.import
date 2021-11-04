@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/vgm-atmospheric-deadspace.mp3-498763fa3529c8eb0f2838270a8cf393.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/vgm-atmospheric-deadspace.mp3"
+dest_files=[ "res://.import/vgm-atmospheric-deadspace.mp3-498763fa3529c8eb0f2838270a8cf393.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

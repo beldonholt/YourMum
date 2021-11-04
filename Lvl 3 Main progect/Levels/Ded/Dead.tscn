@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Levels/Ded/Button.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Ded/Dead.gd" type="Script" id=2]
+[ext_resource path="res://Assets/dogica/OTF/dogica.otf" type="DynamicFontData" id=3]
+
+
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0.537255, 0.0705882, 0.0705882, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -57.6877
@@ -20,7 +30,11 @@ margin_top = -578.413
 margin_right = 34.6363
 margin_bottom = 19.5866
 rect_scale = Vector2( 3, 3 )
-text = "YOUR LIGHT FADES AWAY 
+custom_fonts/font = SubResource( 1 )
+text = "It's catching up 
+
+go faster 
+
 
 Click to Retry"
 align = 1
@@ -32,9 +46,9 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="."]
 margin_left = 1.41425
-margin_top = 2.8284
+margin_top = -2.51096
 margin_right = 1024.41
-margin_bottom = 604.828
+margin_bottom = 599.489
 flat = true
 script = ExtResource( 1 )
 __meta__ = {

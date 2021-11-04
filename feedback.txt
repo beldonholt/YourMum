@@ -1,0 +1,19 @@
+dash too quick
+verticle momentum maintained during dash
+hold jump to vary jump height
+if shadow gets within a certain distance, dashes forwards
+shadow next position = player position plus player momentum
+limiters on shadow speed at times
+
+-The options menu does not work, so I couldn't adjust volume, so I just muted the whole application instead.
+-That high pitched screech when the dash recharges is really annoying, opt for something less piercing, or for visual cues
+-You can get a 3rd jump if you walk off a ledge and jump, then you can do another midair jump, despite there only being one midair jump available.
+-The shadow cannot kill you if you just keep holding an arrow key on flat ground
+-There is a segment where you must doublejump>dash and theres no way to get over the gap, making it really annoying when you reach the gap with no dashes
+-There is no way to hasten dash recharge, making the gap worse
+-The character selection are different pixel sizes, making it jarring
+-The character is a bit too floaty
+-Theres no backstory or why or how the game starts
+
+crystally pedistal sprite instead of campfire
+collect crystals around the place to bring back to main crystal pedistal and make the light brigter and keep the shadow away.
