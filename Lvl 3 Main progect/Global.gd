@@ -37,7 +37,7 @@ func Death():
 		get_tree().change_scene("res://Levels/Ded/Dead.tscn")
 		PlayerDeaths += 1
 		print(PlayerDeaths)
-		ShadowSpeed += 10
+		ShadowSpeed += 105
 		pass
 	ResetPlayerArray()
 	ShadowSpawned = false

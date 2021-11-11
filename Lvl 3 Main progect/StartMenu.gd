@@ -18,11 +18,12 @@ func _on_Start_pressed():
 
 
 func _on_Quit_pressed():
+	#quits game
 	get_tree().quit()
 
 
 func _on_Options_pressed():
-	print("this ")
+#	print("this ")
 	$Options_menu.visible = true
 	$"Main Menu".visible = false
 

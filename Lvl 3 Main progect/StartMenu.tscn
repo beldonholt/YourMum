@@ -54,23 +54,24 @@ margin_left = 19.0
 margin_top = 20.0
 margin_right = 936.0
 margin_bottom = 98.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.835294, 0.0862745, 0.0862745, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Scared of the dark"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Main Menu" type="Node2D" parent="."]
+position = Vector2( -1, 0 )
 
 [node name="Start" type="Button" parent="Main Menu"]
 margin_left = 16.6704
 margin_top = 99.5314
 margin_right = 164.671
 margin_bottom = 152.531
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_disabled = Color( 0.584314, 0.145098, 0.145098, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 action_mode = 0
 text = "Start"
 flat = true
@@ -84,8 +85,8 @@ margin_left = 14.281
 margin_top = 173.262
 margin_right = 214.281
 margin_bottom = 221.262
-custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Options"
 flat = true
 align = 0

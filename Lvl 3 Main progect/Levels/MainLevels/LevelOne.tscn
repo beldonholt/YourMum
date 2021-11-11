@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Levels/Tiles_All/tileset_Tiles_All.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Background/parallax_demon_woods_pack/layers/parallax-demon-woods-mid-trees.png" type="Texture" id=2]
@@ -14,25 +14,10 @@
 [ext_resource path="res://Levels/Tiles_All/Enviormental.tres" type="TileSet" id=12]
 [ext_resource path="res://Interactibles/Door.tscn" type="PackedScene" id=13]
 [ext_resource path="res://BaddieThings/Wolf/Wolf.tscn" type="PackedScene" id=14]
-[ext_resource path="res://PlayerStuff/SoundManager.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Levels/MainLevels/NextLevel.tscn" type="PackedScene" id=16]
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource( 6 )
-
-[node name="SoundManager" parent="." instance=ExtResource( 15 )]
-
-[node name="Door" parent="." instance=ExtResource( 13 )]
-position = Vector2( 5600, 872 )
-
-[node name="DoorSprite" parent="Door" index="0"]
-position = Vector2( 0, -2 )
-
-[node name="DoorCollision" parent="Door" index="1"]
-position = Vector2( 0, -2 )
-
-[node name="ButtonArea" parent="Door" index="2"]
-position = Vector2( 96, 52 )
 
 [node name="BackGround" type="Node2D" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -80,7 +65,30 @@ position = Vector2( 428.115, -28.541 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 5 )
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -72.0
+margin_top = 1208.0
+margin_right = 7128.0
+margin_bottom = 3256.0
+rect_pivot_offset = Vector2( 2720, 544 )
+color = Color( 0.133333, 0.133333, 0.129412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="BadThings" type="Node2D" parent="."]
+
+[node name="Door" parent="." instance=ExtResource( 13 )]
+position = Vector2( 5600, 872 )
+
+[node name="DoorSprite" parent="Door" index="0"]
+position = Vector2( 0, -2 )
+
+[node name="DoorCollision" parent="Door" index="1"]
+position = Vector2( 0, -2 )
+
+[node name="ButtonArea" parent="Door" index="2"]
+position = Vector2( 96, 52 )
 
 [node name="TileMaps" type="Node2D" parent="."]
 
@@ -212,7 +220,7 @@ position = Vector2( 6528, 1152 )
 position = Vector2( 1664, 1088 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( -77.2844, 200.145 )
+position = Vector2( 0, 248 )
 
 [node name="Wolf" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1435.73, 202.909 )

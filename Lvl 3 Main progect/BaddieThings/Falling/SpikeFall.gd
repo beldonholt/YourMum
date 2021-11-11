@@ -17,6 +17,7 @@ func _ready():
 	$Active.visible = false 
 
 func Fall():
+	#checks if the player is under the spikes that fall 
 	$Check.enabled = false 
 	velocity.y += GRAVITY
 	position += velocity 

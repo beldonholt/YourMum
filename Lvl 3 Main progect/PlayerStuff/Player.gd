@@ -21,8 +21,9 @@ var levelArray = ["Levels/MainLevels/LevelOne.tscn", "Levels/MainLevels/LevelTwo
 var JUMPFORCE = -1675
 var GRAVITY = 69
 
-#making a dash overlay using a texture progress to show recharge 
+
 func _ready():
+	#skin select
 	Dashing = false
 	if Global.PlayerSelection:
 		$Male.visible = true
@@ -40,6 +41,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Restart"):
 		Global.restart = false
 		get_tree().change_scene(Global.ActiveScene)
+		#tracks player death on ui and plays animation based on deaths
 	$UiAssets/TextureProgress.value = Global.PlayerDeaths
 	if Global.PlayerDeaths >= 1 and Global.PlayerDeaths < 5:
 			$UiAssets/UiPlayer.play("SkullFlare")
@@ -47,10 +49,10 @@ func _process(_delta):
 		$UiAssets/UiPlayer.play("SkullEyesFlare")
 	elif Global.PlayerDeaths > 5:
 		$UiAssets/UiPlayer.play("LargeFlare")
+	if Global.PlayerDeaths >= 15:
+		get_tree().change_scene("res://Levels/EndGameBad.tscn")
 	
-	# audio players
-
-
+	#making sure the player can dash
 	if is_on_wall():
 		Dashing = false 
 	if is_on_floor():
@@ -211,7 +213,6 @@ func collide(area):
 #		print("hit")
 		#sending signal to global script
 		#connecting so it can play the sound
-
 		$Sounds/Death.play()
 		$Sounds/SoundPause.start()
 	elif area.is_in_group("NextLevel"):
@@ -250,3 +251,11 @@ func _on_Dash_timeout():
 		velocity.x = Global.SPEED
 	if SpriteDireaction != true:
 		velocity.x = -Global.SPEED
+
+
+func _on_Fin_body_entered(body):
+	if Global.ActiveScene == "Levels/MainLevels/LevelTwo.tscn":
+		get_tree().change_scene("res://Levels/end.tscn")
+	else: 
+		pass
+
