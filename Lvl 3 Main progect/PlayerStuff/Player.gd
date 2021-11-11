@@ -252,3 +252,10 @@ func _on_Dash_timeout():
 	if SpriteDireaction != true:
 		velocity.x = -Global.SPEED
 
+
+func _on_Fin_body_entered(body):
+	if Global.ActiveScene == "Levels/MainLevels/LevelTwo.tscn":
+		get_tree().change_scene("res://Levels/end.tscn")
+	else: 
+		pass
+
